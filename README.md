@@ -14,8 +14,10 @@
 
 Every CAN frame uses **8 bytes**:
 
-- **Byte 0** = Protocol Header
+- **Byte 0** = Protocol Header 
 - **Bytes 1–7** = Payload
+Only Open Request, Heartbeat / Keep-Alive and Ping-Pong doesn't have this specific Byte 0 Protocol Header
+In the further documentation the Byte 0 is not added to the paiload for easier writing. 
 
 ### Byte 0 Format
 High Nibble (4 bits) = Packet Type
@@ -82,8 +84,8 @@ Claim Area:
 to clear an entire area write 30 instead of 36
 
 Write Data:
-E0 AA BB 00 XX XX XX XX
-XX XX XX XX XX XX XX XX
+E0 AA BB 00 XX XX XX
+XX XX XX XX XX XX XX
 
 E0: command to write
 AA: 02 + lenght for the Text to show
@@ -97,19 +99,21 @@ Usually it looks like this when the whole content is replaced:
 |---------|----------------------------------|------------------------------------------|
 |→ MMI    | `36 01 01`                       | Claim top line                           |
 |← Cluster| `ACK`                            | ACK                                      |
-|→ MMI    | `E0 AA BB 00 XX XX XX XX`        | write top line                           |
+|→ MMI    | `E0 AA BB 00 XX XX XX`           | write top line                           |
 |← Cluster| `ACK`                            | ACK                                      |
 |→ MMI    | `36 01 02`                       | Clear entire zone                        |
 |← Cluster| `ACK`                            | ACK                                      |
-|→ MMI    | `E0 AA 05 00 XX XX XX XX`        | Middle header                            |
+|→ MMI    | `E0 AA 05 00 XX XX XX`           | Middle header                            |
 |← Cluster| `ACK`                            | ACK                                      |
-|→ MMI    | `E0 AA 06 00 XX XX XX XX`        | Middle body 1                            |
+|→ MMI    | `E0 AA 06 00 XX XX XX`           | Middle body 1                            |
 |← Cluster| `ACK`                            | ACK                                      |
-|→ MMI    | `E0 AA 07 00 XX XX XX XX`        | Middle body 2                            |
+|→ MMI    | `E0 AA 07 00 XX XX XX`           | Middle body 2                            |
 |← Cluster| `ACK`                            | ACK                                      |
-|→ MMI    | `E0 AA 08 00 XX XX XX XX`        | Middle body 3                            |
+|→ MMI    | `E0 AA 08 00 XX XX XX`           | Middle body 3                            |
 |← Cluster| `ACK`                            | ACK                                      |
-|→ MMI    | `E0 AA 09 00 XX XX XX XX`        | Middle body 4                            |
+|→ MMI    | `E0 AA 09 00 XX XX XX`           | Middle body 4                            |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `E4 02 01 02`                    | Menu/highlight control (when needed)     |
 |← Cluster| `ACK`                            | ACK                                      |
 |→ MMI    | `32 01 02`                       | commit to top line                       |
 |← Cluster| `ACK`                            | ACK                                      |
@@ -153,7 +157,7 @@ Len = 2 + number_of_characters
 
 Example: `"Hello"` (5 chars) → `E0 07 01 00 48 65 6C 6C 6F`
 
-## 4. Typical Transaction 
+## 5. Typical Transaction 
 
 ```text
 1. Claim     → 36 01 01    → wait ACK
