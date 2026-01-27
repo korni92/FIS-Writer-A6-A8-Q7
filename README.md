@@ -1,4 +1,4 @@
-# Audi A8 DIS (Instrument Cluster) – DDP Protocol Documentation
+# Audi A8 DIS (Instrument Cluster)
 
 **Tested / observed on:** Audi A8 4E (D3) with MMI 2G / 2G High with PeakCan. Code is for PeakCan
 
