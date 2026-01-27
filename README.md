@@ -84,13 +84,13 @@ Claim Area:
 to clear an entire area write 30 instead of 36
 
 Write Data:
-E0 AA BB 00 XX XX XX
-XX XX XX XX XX XX XX
+`E0 AA BB 00 XX XX XX
+XX XX XX XX XX XX XX`
 
-E0: command to write
+`E0: command to write
 AA: 02 + lenght for the Text to show
 BB: Line to write to
-XX: Data in ASCII
+XX: Data in ASCII`
 
 Text can also be nested, instead of writing each line indiviually. But each line needs to prepared in the way described above. 
 Usually it looks like this when the whole content is replaced:
