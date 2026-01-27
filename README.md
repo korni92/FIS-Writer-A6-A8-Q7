@@ -77,7 +77,41 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 
 5. **Channel is now OPEN** – ready to claim zones and write data
 
-## 3. Important Opcodes
+## 3. Messages
+Claim Area:
+36 01 01 -> Top Line of the cluster (where Radio Station is displayed)
+36 01 02 -> To write to the middle section
+to clear an entire area write 30 instead of 36
+
+Write Data:
+E0 AA BB 00 XX XX XX XX
+XX XX XX XX XX XX XX XX
+
+E0: command to write
+AA: 02 + lenght for the Text to show
+BB: Line to write to
+XX: Data in ASCII
+
+Text can also be nested, instead of writing each line indiviually. But each line needs to prepared in the way described above. 
+Usually it looks like this when the whole content is replaced:
+
+| Message                          | Description                              |
+|----------------------------------|------------------------------------------|
+| `36 01 01`                       | Claim top line                           |
+| `E0 AA BB 00 XX XX XX XX`        | write top line                           |
+| `36 01 02`                       | Clear entire zone                        |
+| `E0 AA 05 00 XX XX XX XX`        | Middle header                            |
+| `E0 AA 06 00 XX XX XX XX`        | Middle body 1                            |
+| `E0 AA 07 00 XX XX XX XX`        | Middle body 2                            |
+| `E0 AA 08 00 XX XX XX XX`        | Middle body 3                            |
+| `E0 AA 09 00 XX XX XX XX`        | Middle body 4                            |
+| `32 01 01`                       | commit to top line                       |
+| `ACK`                            | cluster will ACK                         |
+| `32 01 02.`                      | comit to middle part                     |
+| `ACK`                            | cluster will ACK                         |
+
+
+## 4. Important Opcodes
 
 | Opcode | Example                          | Description                              |
 |--------|----------------------------------|------------------------------------------|
@@ -99,7 +133,7 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 - `06` Middle body 1
 - `07` Middle body 2
 - `08` Middle body 3
-- `09` Middle footer
+- `09` Middle body 4
 
 ### Text Length Calculation
 Len = 2 + number_of_characters
@@ -109,7 +143,7 @@ Len = 2 + number_of_characters
 
 Example: `"Hello"` (5 chars) → `E0 07 01 00 48 65 6C 6C 6F`
 
-## 4. Typical Transaction (Atomic Update – Top Line)
+## 4. Typical Transaction 
 
 ```text
 1. Claim     → 36 01 01    → wait ACK
