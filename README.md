@@ -2,7 +2,9 @@
 
 Reverse-engineered protocol for injecting custom text/data into the 2003–2010 Audi A8 (D3) instrument cluster (DIS/Kombi) using the Display Data Protocol (DDP).
 
-**Tested / observed on:** Audi A8 4E (D3) with MMI 2G / 2G High and aftermarket CAN injectors.
+**Tested / observed on:** Audi A8 4E (D3) with MMI 2G / 2G High with PeakCan. Code is for PeakCan
+
+<img width="997" height="771" alt="cluster" src="https://github.com/user-attachments/assets/94657e35-08e7-4df5-9fb7-f312ba62fa5d" />
 
 **CAN Bus:** Cluster **500 kbps**
 
