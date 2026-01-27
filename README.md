@@ -93,20 +93,32 @@ XX: Data in ASCII
 Text can also be nested, instead of writing each line indiviually. But each line needs to prepared in the way described above. 
 Usually it looks like this when the whole content is replaced:
 
-| Message                          | Description                              |
-|----------------------------------|------------------------------------------|
-| `36 01 01`                       | Claim top line                           |
-| `E0 AA BB 00 XX XX XX XX`        | write top line                           |
-| `36 01 02`                       | Clear entire zone                        |
-| `E0 AA 05 00 XX XX XX XX`        | Middle header                            |
-| `E0 AA 06 00 XX XX XX XX`        | Middle body 1                            |
-| `E0 AA 07 00 XX XX XX XX`        | Middle body 2                            |
-| `E0 AA 08 00 XX XX XX XX`        | Middle body 3                            |
-| `E0 AA 09 00 XX XX XX XX`        | Middle body 4                            |
-| `32 01 01`                       | commit to top line                       |
-| `ACK`                            | cluster will ACK                         |
-| `32 01 02.`                      | comit to middle part                     |
-| `ACK`                            | cluster will ACK                         |
+| Dir     | Message                          | Description                              |
+|---------|----------------------------------|------------------------------------------|
+|→ MMI    | `36 01 01`                       | Claim top line                           |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `E0 AA BB 00 XX XX XX XX`        | write top line                           |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `36 01 02`                       | Clear entire zone                        |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `E0 AA 05 00 XX XX XX XX`        | Middle header                            |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `E0 AA 06 00 XX XX XX XX`        | Middle body 1                            |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `E0 AA 07 00 XX XX XX XX`        | Middle body 2                            |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `E0 AA 08 00 XX XX XX XX`        | Middle body 3                            |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `E0 AA 09 00 XX XX XX XX`        | Middle body 4                            |
+|← Cluster| `ACK`                            | ACK                                      |
+|→ MMI    | `32 01 02`                       | commit to top line                       |
+|← Cluster| `ACK`                            | ACK                                      |
+|← Cluster| `3B 02 02 03`                    | cluster confirms that it shows middle    |
+|→ MMI    | `ACK`                            | ACK                                      |
+|→ MMI    | `32 01 01.`                      | comit to middle part                     |
+|← Cluster| `ACK`                            | ACK                                      |
+|← Cluster| `3B 02 01 03`                    | cluster confirms that it shows top line  |
+|→ MMI    | `ACK`                            | ACK                                      |
 
 
 ## 4. Important Opcodes
