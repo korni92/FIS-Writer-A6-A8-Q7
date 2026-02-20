@@ -1,3 +1,11 @@
+/* 
+Quick and dirty to use the cluster on the bench without the car and to get rid of most warning lights and messages.
+It's made for my car, so it's for ACC and dynmanic headlight.
+
+You also need to know your 0x65F message content to get rid of component protection warning and SAFE message.
+Just replace yours data in sendVIN and make sure to place it at the correct mux.
+*/
+
 #include "driver/twai.h"
 
 #define TX_PIN 4
