@@ -60,21 +60,25 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 
 | Step | Direction | Payload (after header)         | Notes                       |
 |------|-----------|--------------------------------|-----------------------------|
-| 1    | → MMI     | 00 02 4D 02                    | Param 10                    |
-|      | ← Cluster | 01 03 48 01 02                 | → send ACK                  |
-| 2    | → MMI     | 00 02 4D 02                    | Param 11                    |
-|      | ← Cluster | 01 03 48 02 02                 | → send ACK                  |
-| 3    | → MMI     | 00 02 4D 01                    | Param 12                    |
-|      | ← Cluster | 01 03 48 02 01                 | → send ACK                  |
-| 4    | → MMI     | 02 01 48                       | Param 13                    |
-|      | ← Cluster | (ACK expected)                 |                             |
+| 1    | → MMI     | 00 02 4D 02                    | Param  request 10           |
+|      | ← Cluster | BX                             | → send ACK                  |
+|      | ← Cluster | 01 03 48 02 02                 | → send param                |
+| 2    | → MMI     | BX                             | send ACK                    |
+|      | → MMI     | 00 02 4D 01                    | Param  request 11           |
+|      | ← Cluster | BX                             | → send ACK                  |
+|      | ← Cluster | 01 03 48 02 01                 | → send param                |
+| 3    | → MMI     | BX                             | send ACK                    |
+|      | → MMI     | 02 01 48                       | Param request 12            |
+| 4    | ← Cluster | BX                             | → send ACK                  |
+|      | ← Cluster | 03 10 48 0B 50 08 0C           | → send param                |
+|      | ← Cluster | 45 30 39 00 00 01 00           | → send param                |
+|      | ← Cluster | 02 01 01 10                    | → send param                | 
+|      | → MMI     | BX                             | send ACK                    |
+| 5    | → MMI     | A3                             | Keep Alive                  |
+|      | → MMI     | A1 0F 8A FF 4A FF              | Keep Alive                  |
 
-4. **Final Burst from Cluster** (receive & ACK each frame)
-← [2x] 03 10 48 0B 50 08 0C
-← [2x] 45 30 39 00 00 01 00
-← [1x] 02 01 01 10             ← last frame – send final ACK
-
-
+* BX: the X is for the sequenz number
+  
 5. **Channel is now OPEN** – ready to claim zones and write data
 
 ## 3. Messages
