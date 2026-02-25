@@ -74,7 +74,7 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 |      | ← Cluster | 45 30 39 00 00 01 00           | → send param                |
 |      | ← Cluster | 02 01 01 10                    | → send param                | 
 |      | → MMI     | BX                             | send ACK                    |
-| 5    | → MMI     | A3                             | Keep Alive                  |
+| 5    | → Cluster | A3                             | Keep Alive                  |
 |      | → MMI     | A1 0F 8A FF 4A FF              | Keep Alive                  |
 
 * BX: the X is for the sequenz number
