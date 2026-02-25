@@ -168,6 +168,12 @@ Len = 2 + number_of_characters
 
 Example: `"Hello"` (5 chars) → `E0 07 01 00 48 65 6C 6C 6F`
 
+### Indicator/Highlight (for opcode `E4`)
+E4 AA BB CC
+- `AA` Line 1-4 (00 for no line, 01 for line at 06, 02 for line at 07, ...)
+- `BB` Arrow control (00 no arrow, 01 arrow up, 02 arrow down, 03 arrow up and down)
+- `CC` unknown
+
 ## 5. Typical Transaction 
 
 ```text
