@@ -58,24 +58,30 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 
 3. **Parameter Exchange** (strictly sequential – wait for ACK after each!)
 
-| Step | Direction | Payload (after header)         | Notes                       |
-|------|-----------|--------------------------------|-----------------------------|
-| 1    | → MMI     | 00 02 4D 02                    | Param  request 10           |
-|      | ← Cluster | BX                             | → send ACK                  |
-|      | ← Cluster | 01 03 48 02 02                 | → send param                |
-| 2    | → MMI     | BX                             | send ACK                    |
-|      | → MMI     | 00 02 4D 01                    | Param  request 11           |
-|      | ← Cluster | BX                             | → send ACK                  |
-|      | ← Cluster | 01 03 48 02 01                 | → send param                |
-| 3    | → MMI     | BX                             | send ACK                    |
-|      | → MMI     | 02 01 48                       | Param request 12            |
-| 4    | ← Cluster | BX                             | → send ACK                  |
-|      | ← Cluster | 03 10 48 0B 50 08 0C           | → send param                |
-|      | ← Cluster | 45 30 39 00 00 01 00           | → send param                |
-|      | ← Cluster | 02 01 01 10                    | → send param                | 
-|      | → MMI     | BX                             | send ACK                    |
-| 5    | → Cluster | A3                             | Keep Alive                  |
-|      | → MMI     | A1 0F 8A FF 4A FF              | Keep Alive                  |
+| Step | Direction | Payload (after header)         | Notes                                                |
+|------|-----------|--------------------------------|------------------------------------------------------|
+| 1    | → MMI     | 00 02 4D 02                    | Param Request 1 (Seq 0)                              |
+|      | ← Cluster | BX                             | ACK from Cluster (Seq 1)                             |
+|      | ← Cluster | 01 03 48 02 02                 | Param Response (Seq 0)                               |
+|      | → MMI     | BX                             | ACK from MMI (Seq 1)                                 |
+| Delay| ← Cluster | A3                             | Cluster pauses to process. Keep responding to PINGs! |
+| Delay| → MMI     | A1 0F 8A FF 4A FF              | send PONG                                            |
+| 2    | → MMI     | 00 02 4D 02                    | Param Request 2 (Seq 1)                              |
+|      | ← Cluster | BX                             | ACK from Cluster (Seq 2)                             |
+|      | ← Cluster | 01 03 48 02 02                 | Param Response (Seq 1)                               |
+|      | → MMI     | BX                             | ACK from MMI (Seq 2)                                 |
+| 3    | → MMI     | 00 02 4D 01                    | Param Request 3 (Seq 2)                              |
+|      | ← Cluster | BX                             | ACK from Cluster (Seq 3)                             |
+|      | ← Cluster | 01 03 48 02 01                 | Param Response (Seq 2)                               |
+|      | → MMI     | BX                             | ACK from MMI (Seq 3)                                 |
+| 4    | → MMI     | 02 01 48                       | Param Request 4 (Seq 3)                              |
+|      | ← Cluster | BX                             | ACK from Cluster (Seq 4)                             |
+|      | ← Cluster | 03 10 48 0B 50 08 0C           | Final Burst: BODY Frame 1 (Seq 3)                    |
+|      | ← Cluster | 45 30 39 00 00 01 00           | Final Burst: BODY Frame 2 (Seq 4)                    |
+|      | ← Cluster | 02 01 01 10                    | Final Burst: END Frame (Seq 5)                       | 
+|      | → MMI     | BX                             | Final ACK from MMI (Seq 6)                           |
+| 6    | → Cluster | A3                             | Channel Open PING                                    |
+|      | → MMI     | A1 0F 8A FF 4A FF              | Channel Open PONG                                    |
 
 * BX: the X is for the sequenz number
   
