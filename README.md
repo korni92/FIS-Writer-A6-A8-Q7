@@ -141,11 +141,12 @@ Usually it looks like this when the whole content is replaced:
 |--------|----------------------------------|------------------------------------------|
 | `36`   | `36 01 01`                       | Claim / Start transaction (Zone)         |
 | `32`   | `32 01 02`                       | Release / Commit transaction             |
-| `30`   | `30 01 02`                       | Clear entire zone                        |
+| `30`   | `30 01 02`                       | Initialize / Subscribe to Zone           |
 | `E0`   | `E0 0D 01 00 48 65 6C ...`       | Write text (Len + Line + 00 + data)      |
 | `E4`   | `E4 02 ...`                      | Menu/highlight control                   |
 | `E2`   | `E2 01 01`                       | Force source (Phone=01, Media=06, ...)   |
 | `3B`   | `3B ...`                         | Cluster confirmation after Release       |
+| `09`   | `09 ...`                         | Error from Cluster                       |
 
 ### Zone IDs
 - `01` → Top line (yellow/red/orange bar)
