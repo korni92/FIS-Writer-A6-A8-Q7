@@ -52,7 +52,6 @@ class MMITester:
             if rx.arbitration_id == CAN_ID_RX:
                 b0 = rx.data[0]
                 if b0 == 0xA3:
-                    # Added missing log here so you can see the cluster asking for it!
                     self.log_traffic("CLUS -> MMI", "A3", "HEARTBEAT (PING IN)")
                     self.send_raw([0xA1, 0x0F, 0x8A, 0xFF, 0x4A, 0xFF], "HEARTBEAT (PONG)")
                     continue
@@ -182,4 +181,5 @@ if __name__ == "__main__":
     tester.perform_handshake()
     
     if tester.is_connected:
+
         tester.run_keepalive_loop()
