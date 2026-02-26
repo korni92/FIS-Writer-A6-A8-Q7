@@ -95,7 +95,7 @@ class MMITester:
 
         expected_ack = (seq + 1) % 16
         start_wait = time.time()
-        while time.time() - start_wait < 1.0:
+        while time.time() - start_wait < 2.0:
             rx = self._recv_filtered(0.05)
             if not rx: continue
             
@@ -261,7 +261,7 @@ class DISPayloadManager:
         return False
 
     def write_text(self, line_id, text_str):
-        text_bytes = text_str.encode('ascii', errors='replace')
+        text_bytes = text_str.encode('cp1252', errors='replace')
         length_byte = 0x02 + len(text_bytes)
         payload = [OP_WRITE, length_byte, line_id, 0x00] + list(text_bytes)
         return self.driver.send_message(payload)
