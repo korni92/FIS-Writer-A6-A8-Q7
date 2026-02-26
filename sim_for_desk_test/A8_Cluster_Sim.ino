@@ -13,34 +13,36 @@ Hardware ESP32-S3-Zero with SN65 CAN transiver
 #define TX_PIN 4
 #define RX_PIN 5
 
-// Timer
+// --- TIMER ---
 unsigned long last540Time = 0; // 10ms
-unsigned long last1A0Time = 0; // 10ms
+unsigned long last1A0Time = 0; // 20ms
 unsigned long last5A0Time = 0; // 20ms
 unsigned long last480Time = 0; // 20ms
 unsigned long last5C0Time = 0; // 20ms 
-unsigned long last590Time = 0; // 50ms
-unsigned long last050Time = 0; // 20ms
+unsigned long last590Time = 0; // 50ms 
+unsigned long last050Time = 0; // 100ms
 unsigned long last2C5Time = 0; // 100ms
-unsigned long last550Time = 0; // 200ms
+unsigned long last3E2Time = 0; // 100ms
+unsigned long last550Time = 0; // 100ms
 unsigned long last568Time = 0; // 100ms
 unsigned long last394Time = 0; // 100ms 
 unsigned long last65FTime = 0; // 1000ms
 
 const int INTERVAL_540 = 10;
-const int INTERVAL_1A0 = 10;
+const int INTERVAL_1A0 = 20;
 const int INTERVAL_5A0 = 20;
 const int INTERVAL_480 = 20;
 const int INTERVAL_5C0 = 20;
 const int INTERVAL_590 = 50;    
-const int INTERVAL_050 = 20;   
+const int INTERVAL_050 = 100;   
 const int INTERVAL_2C5 = 100;   
-const int INTERVAL_550 = 200;   
+const int INTERVAL_3E2 = 100; 
+const int INTERVAL_550 = 100;   
 const int INTERVAL_568 = 100;
 const int INTERVAL_394 = 100;
 const int INTERVAL_65F = 1000;
 
-// Zähler
+// --- ZÄHLER ---
 uint8_t counter_2C5 = 0;
 uint8_t counter_050 = 0;
 uint8_t counter_568 = 0;
@@ -59,23 +61,23 @@ uint8_t seq_480_index = 0;
 // Status-Merker
 bool busOffReported = false;
 
-// Daten Motorstg (Replay)
+// Daten Motorstg (Replay) - OBD2 Lampe (Bit 11) deaktiviert (Byte 1 = 0x00)
 const uint8_t data_480[15][8] = {
-  {0xC1, 0x08, 0xBC, 0xD7, 0x00, 0x08, 0x0C, 0xA6},
-  {0x20, 0x08, 0xC2, 0xD7, 0x00, 0x08, 0x0C, 0x39},
-  {0x20, 0x08, 0xC8, 0xD7, 0x00, 0x08, 0x0C, 0x33},
-  {0x20, 0x08, 0xCE, 0xD7, 0x00, 0x08, 0x0C, 0x35},
-  {0x20, 0x08, 0xD4, 0xD7, 0x00, 0x08, 0x0C, 0x2F},
-  {0x52, 0x08, 0xDA, 0xD7, 0x00, 0x08, 0x0C, 0x53},
-  {0x52, 0x08, 0xE0, 0xD7, 0x00, 0x08, 0x0C, 0x69},
-  {0x52, 0x08, 0xE6, 0xD7, 0x00, 0x08, 0x0C, 0x6F},
-  {0x52, 0x08, 0xEC, 0xD7, 0x00, 0x08, 0x0C, 0x65},
-  {0xA8, 0x08, 0xF2, 0xD7, 0x00, 0x08, 0x0C, 0x81},
-  {0xA8, 0x08, 0xF8, 0xD7, 0x00, 0x08, 0x0C, 0x8B},
-  {0xA8, 0x08, 0xFE, 0xD7, 0x00, 0x08, 0x0C, 0x8D},
-  {0xA8, 0x08, 0x04, 0xD8, 0x00, 0x08, 0x0C, 0x78},
-  {0xC1, 0x08, 0x0A, 0xD8, 0x00, 0x08, 0x0C, 0x1F},
-  {0xC1, 0x08, 0x10, 0xD8, 0x00, 0x08, 0x0C, 0x05}
+  {0xC1, 0x00, 0xBC, 0xD7, 0x00, 0x08, 0x0C, 0xA6},
+  {0x20, 0x00, 0xC2, 0xD7, 0x00, 0x08, 0x0C, 0x39},
+  {0x20, 0x00, 0xC8, 0xD7, 0x00, 0x08, 0x0C, 0x33},
+  {0x20, 0x00, 0xCE, 0xD7, 0x00, 0x08, 0x0C, 0x35},
+  {0x20, 0x00, 0xD4, 0xD7, 0x00, 0x08, 0x0C, 0x2F},
+  {0x52, 0x00, 0xDA, 0xD7, 0x00, 0x08, 0x0C, 0x53},
+  {0x52, 0x00, 0xE0, 0xD7, 0x00, 0x08, 0x0C, 0x69},
+  {0x52, 0x00, 0xE6, 0xD7, 0x00, 0x08, 0x0C, 0x6F},
+  {0x52, 0x00, 0xEC, 0xD7, 0x00, 0x08, 0x0C, 0x65},
+  {0xA8, 0x00, 0xF2, 0xD7, 0x00, 0x08, 0x0C, 0x81},
+  {0xA8, 0x00, 0xF8, 0xD7, 0x00, 0x08, 0x0C, 0x8B},
+  {0xA8, 0x00, 0xFE, 0xD7, 0x00, 0x08, 0x0C, 0x8D},
+  {0xA8, 0x00, 0x04, 0xD8, 0x00, 0x08, 0x0C, 0x78},
+  {0xC1, 0x00, 0x0A, 0xD8, 0x00, 0x08, 0x0C, 0x1F},
+  {0xC1, 0x00, 0x10, 0xD8, 0x00, 0x08, 0x0C, 0x05}
 };
 
 void setup() {
@@ -84,7 +86,7 @@ void setup() {
   Serial.println("--- Audi A8 Sim ---");
 
   twai_general_config_t g_config = TWAI_GENERAL_CONFIG_DEFAULT((gpio_num_t)TX_PIN, (gpio_num_t)RX_PIN, TWAI_MODE_NORMAL);
-  
+  // Sende-Warteschlange hoch halten, da wir sehr viele Pakete senden
   g_config.tx_queue_len = 30; 
   
   twai_timing_config_t t_config = TWAI_TIMING_CONFIG_500KBITS(); 
@@ -182,33 +184,65 @@ void loop() {
     sendAirbag1();
   }
 
-  // 9. Airbag 2 (ID 0x550) - 100ms
+  // 9. Klima / Außentemperatur (ID 0x3E2) - 100ms
+  if (currentMillis - last3E2Time >= INTERVAL_3E2) {
+    last3E2Time = currentMillis;
+    sendKlima();
+  }
+
+  // 10. Airbag 2 (ID 0x550) - 100ms
   if (currentMillis - last550Time >= INTERVAL_550) {
     last550Time = currentMillis;
     sendAirbag2();
   }
 
-  // 10. ACC (ID 0x568) - 100ms
+  // 11. ACC (ID 0x568) - 100ms
   if (currentMillis - last568Time >= INTERVAL_568) {
     last568Time = currentMillis;
     sendACC();
   }
 
-  // 11. LWR / AFS (ID 0x394) - 100ms
+  // 12. LWR / AFS (ID 0x394) - 100ms
   if (currentMillis - last394Time >= INTERVAL_394) {
     last394Time = currentMillis;
     sendLWR();
   }
 
-  // 12. Fahrgestellnummer (ID 0x65F) - 1000ms
+  // 13. Fahrgestellnummer (ID 0x65F) - 1000ms
   if (currentMillis - last65FTime >= INTERVAL_65F) {
     last65FTime = currentMillis;
     sendVIN();
   }
 }
 
-// Hilfsfunktion für die Nachrichten
-// WICHTIG: twai_transmit hat jetzt pdMS_TO_TICKS(5) anstelle von 0, damit bei einem Engpass keine Nachricht gelöscht wird!
+// --- HILFSFUNKTIONEN FÜR DIE NACHRICHTEN ---
+
+void sendKlima() {
+  twai_message_t message = { .identifier = 0x3E2, .data_length_code = 8 };
+
+  // ==========================================
+  // HIER DIE GEWÜNSCHTE TEMPERATUR EINTRAGEN:
+  // ==========================================
+  float desiredTempC = 21.5; // Beispiel: 21,5 °C Außentemperatur
+  
+  // Berechnung des CAN-Raw-Wertes (Umkehrung der DBC-Formel)
+  // Formel: (Temperatur + 50) * 2
+  uint8_t tempRaw = (uint8_t)((desiredTempC + 50.0) * 2.0);
+
+  message.data[0] = 0x00; 
+  message.data[1] = tempRaw; // AussenTemp_aus_Wasserkasten (Byte 1)
+  message.data[2] = 0x13; 
+  message.data[3] = 0x03; 
+  message.data[4] = 0x63; 
+  message.data[5] = 0x00; 
+  message.data[6] = 0x82; 
+  
+  // Das 8. Byte (ungefilterte Temperatur Stoßstange) lassen wir 
+  // wie im Trace auf 0xFF, der Tacho nutzt ohnehin den Wasserkasten-Wert.
+  message.data[7] = 0xFF; 
+
+  twai_transmit(&message, pdMS_TO_TICKS(5));
+}
 
 void sendBremse1() {
   twai_message_t message = { .identifier = 0x1A0, .data_length_code = 8 };
