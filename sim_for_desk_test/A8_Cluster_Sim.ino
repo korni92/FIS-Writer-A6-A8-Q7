@@ -6,6 +6,8 @@ You also need to know your 0x65F message content to get rid of component protect
 Just replace yours data in sendVIN and make sure to place it at the correct mux.
 
 Hardware ESP32-S3-Zero with SN65 CAN transiver
+
+With simulator option via serial console
 */
 
 #include "driver/twai.h"
@@ -13,17 +15,40 @@ Hardware ESP32-S3-Zero with SN65 CAN transiver
 #define TX_PIN 4
 #define RX_PIN 5
 
+// --- INTERAKTIVE WERTE (Manuelle Steuerung) ---
+float currentRPM = 850.0;     // Drehzahl (U/min)
+float currentPedal = 0.0;     // Gaspedal (%)
+float currentTorque = 15.0;   // Wunschmoment (%)
+float currentOilTemp = 90.0;  // Öltemperatur (°C)
+float currentBoost = 1.0;     // Ladedruck (Bar)
+float currentTempC = 21.5;    // Außentemperatur (°C)
+
+String serialBuffer = "";     // Puffer für serielle Eingaben
+
+// --- SIMULATION / AUTO-REV EINSTELLUNGEN ---
+bool demoMode = false;        // Status der Simulation
+const float SIM_IDLE_RPM = 850.0;   // Leerlauf-Drehzahl
+const float SIM_MAX_RPM = 5500.0;   // Maximale Drehzahl beim Gasgeben
+const float SIM_MAX_PEDAL = 80.0;   // Maximale Gaspedalstellung (%)
+const float SIM_MAX_TORQUE = 65.0;  // Maximales Drehmoment (%)
+const float SIM_IDLE_BOOST = 1.0;   // Ladedruck im Leerlauf (Bar)
+const float SIM_MAX_BOOST = 1.3;    // Ladedruck beim Gasgeben (Bar)
+const float SIM_BASE_OIL = 90.0;    // Basis-Öltemperatur (°C)
+
+
 // --- TIMER ---
 unsigned long last540Time = 0; // 10ms
 unsigned long last1A0Time = 0; // 20ms
 unsigned long last5A0Time = 0; // 20ms
 unsigned long last480Time = 0; // 20ms
+unsigned long last280Time = 0; // 20ms 
 unsigned long last5C0Time = 0; // 20ms 
 unsigned long last590Time = 0; // 50ms 
 unsigned long last050Time = 0; // 100ms
 unsigned long last2C5Time = 0; // 100ms
-unsigned long last3E2Time = 0; // 100ms
+unsigned long last3E2Time = 0; // 100ms 
 unsigned long last550Time = 0; // 100ms
+unsigned long last555Time = 0; // 100ms 
 unsigned long last568Time = 0; // 100ms
 unsigned long last394Time = 0; // 100ms 
 unsigned long last65FTime = 0; // 1000ms
@@ -32,12 +57,14 @@ const int INTERVAL_540 = 10;
 const int INTERVAL_1A0 = 20;
 const int INTERVAL_5A0 = 20;
 const int INTERVAL_480 = 20;
+const int INTERVAL_280 = 20;    
 const int INTERVAL_5C0 = 20;
 const int INTERVAL_590 = 50;    
 const int INTERVAL_050 = 100;   
 const int INTERVAL_2C5 = 100;   
-const int INTERVAL_3E2 = 100; 
+const int INTERVAL_3E2 = 100;   
 const int INTERVAL_550 = 100;   
+const int INTERVAL_555 = 100;   
 const int INTERVAL_568 = 100;
 const int INTERVAL_394 = 100;
 const int INTERVAL_65F = 1000;
@@ -61,7 +88,7 @@ uint8_t seq_480_index = 0;
 // Status-Merker
 bool busOffReported = false;
 
-// Daten Motorstg (Replay) - OBD2 Lampe (Bit 11) deaktiviert (Byte 1 = 0x00)
+// Daten Motorstg (Replay) - OBD2 Lampe deaktiviert
 const uint8_t data_480[15][8] = {
   {0xC1, 0x00, 0xBC, 0xD7, 0x00, 0x08, 0x0C, 0xA6},
   {0x20, 0x00, 0xC2, 0xD7, 0x00, 0x08, 0x0C, 0x39},
@@ -80,13 +107,108 @@ const uint8_t data_480[15][8] = {
   {0xC1, 0x00, 0x10, 0xD8, 0x00, 0x08, 0x0C, 0x05}
 };
 
+void printHelp() {
+  Serial.println("\n--- SIMULATOR BEFEHLE ---");
+  Serial.println("Tippe Buchstabe + Wert (z.B. R3000) und druecke Enter:");
+  Serial.printf(" [R] Drehzahl (aktuell: %.0f U/min)\n", currentRPM);
+  Serial.printf(" [C] Aussentemp (aktuell: %.1f Grad C)\n", currentTempC);
+  Serial.printf(" [O] Oeltemp    (aktuell: %.1f Grad C)\n", currentOilTemp);
+  Serial.printf(" [B] Ladedruck  (aktuell: %.2f Bar)\n", currentBoost);
+  Serial.printf(" [P] Gaspedal   (aktuell: %.1f %%)\n", currentPedal);
+  Serial.printf(" [T] Drehmoment (aktuell: %.1f %%)\n", currentTorque);
+  Serial.println(" [S] Auto-Rev Simulation AN/AUS schalten");
+  Serial.println(" [?] Diese Hilfe anzeigen");
+  Serial.println("-------------------------\n");
+}
+
+void processSerialCommand(String input) {
+  input.trim();
+  if (input.length() == 0) return;
+  
+  char cmd = toupper(input.charAt(0));
+  float val = input.substring(1).toFloat();
+
+  switch(cmd) {
+    case 'R': currentRPM = val;     Serial.printf("-> Drehzahl gesetzt auf: %.0f\n", currentRPM); break;
+    case 'C': currentTempC = val;   Serial.printf("-> Aussentemperatur gesetzt auf: %.1f\n", currentTempC); break;
+    case 'O': currentOilTemp = val; Serial.printf("-> Oeltemperatur gesetzt auf: %.1f\n", currentOilTemp); break;
+    case 'B': currentBoost = val;   Serial.printf("-> Ladedruck gesetzt auf: %.2f\n", currentBoost); break;
+    case 'P': currentPedal = val;   Serial.printf("-> Gaspedal gesetzt auf: %.1f%%\n", currentPedal); break;
+    case 'T': currentTorque = val;  Serial.printf("-> Wunschmoment gesetzt auf: %.1f%%\n", currentTorque); break;
+    case 'S': 
+      demoMode = !demoMode; 
+      Serial.printf("-> Auto-Rev Simulation: %s\n", demoMode ? "AKTIV" : "AUSGESCHALTET"); 
+      break;
+    case '?': 
+    case 'H': printHelp(); break;
+    default: Serial.println("Unbekannter Befehl. Tippe '?' fuer Hilfe.");
+  }
+}
+
+void handleSerialInput() {
+  while (Serial.available()) {
+    char c = (char)Serial.read();
+    if (c == '\n' || c == '\r') {
+      if (serialBuffer.length() > 0) {
+        processSerialCommand(serialBuffer);
+        serialBuffer = ""; 
+      }
+    } else {
+      serialBuffer += c;
+    }
+  }
+}
+
+// Hilfsfunktion für weiche Übergänge in der Simulation
+float mapFloat(float x, float in_min, float in_max, float out_min, float out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+void updateSimulation() {
+  if (!demoMode) return;
+
+  // Ein Zyklus dauert 4000 Millisekunden (4 Sekunden)
+  unsigned long t = millis() % 4000; 
+
+  if (t < 1000) {
+    // Phase 1: Gas geben (0 bis 1 Sekunde)
+    currentPedal  = mapFloat(t, 0, 1000, 0.0, SIM_MAX_PEDAL);
+    currentRPM    = mapFloat(t, 0, 1000, SIM_IDLE_RPM, SIM_MAX_RPM);
+    currentTorque = mapFloat(t, 0, 1000, 15.0, SIM_MAX_TORQUE);
+    currentBoost  = mapFloat(t, 0, 1000, SIM_IDLE_BOOST, SIM_MAX_BOOST);
+  } else if (t < 2500) {
+    // Phase 2: Vom Gas gehen, Drehzahl fällt (1 bis 2,5 Sekunden)
+    currentPedal  = 0.0;
+    currentRPM    = mapFloat(t, 1000, 2500, SIM_MAX_RPM, SIM_IDLE_RPM);
+    currentTorque = mapFloat(t, 1000, 2500, SIM_MAX_TORQUE, 15.0);
+    currentBoost  = mapFloat(t, 1000, 2500, SIM_MAX_BOOST, SIM_IDLE_BOOST);
+  } else {
+    // Phase 3: Leerlauf halten (2,5 bis 4 Sekunden)
+    currentPedal  = 0.0;
+    currentRPM    = SIM_IDLE_RPM;
+    currentTorque = 15.0;
+    currentBoost  = SIM_IDLE_BOOST;
+  }
+
+  // Öltemperatur schwankt ganz langsam und sanft um den Basiswert herum (+/- 2 Grad)
+  currentOilTemp = SIM_BASE_OIL + (sin(millis() / 2000.0) * 2.0);
+}
+
 void setup() {
   Serial.begin(115200);
-  delay(1000);
-  Serial.println("--- Audi A8 Sim ---");
+  
+  // FIX FÜR ESP32-S3: Warten, bis der PC die USB-Verbindung geöffnet hat.
+  unsigned long startWait = millis();
+  while (!Serial && (millis() - startWait < 3000)) {
+    delay(10);
+  }
+  
+  delay(500); // Kurzer Puffer für den Serial Monitor zum Synchronisieren
+  
+  Serial.println("\n--- Audi A8 Sim ---");
+  printHelp();
 
   twai_general_config_t g_config = TWAI_GENERAL_CONFIG_DEFAULT((gpio_num_t)TX_PIN, (gpio_num_t)RX_PIN, TWAI_MODE_NORMAL);
-  // Sende-Warteschlange hoch halten, da wir sehr viele Pakete senden
   g_config.tx_queue_len = 30; 
   
   twai_timing_config_t t_config = TWAI_TIMING_CONFIG_500KBITS(); 
@@ -108,6 +230,12 @@ void setup() {
 }
 
 void loop() {
+  // 0. Serielle Eingaben prüfen
+  handleSerialInput();
+  
+  // 1. Simulations-Werte im Hintergrund berechnen (falls aktiv)
+  updateSimulation();
+
   // Bus Status überwachen
   twai_status_info_t status_info;
   twai_get_status_info(&status_info);
@@ -136,79 +264,76 @@ void loop() {
   // Normale Sende Logik
   unsigned long currentMillis = millis();
 
-  // 1. Getriebe (ID 0x540) - 10ms
   if (currentMillis - last540Time >= INTERVAL_540) {
     last540Time = currentMillis;
     sendGetriebe();
   }
 
-  // 2. Bremse 1 (ID 0x1A0) - 20ms
   if (currentMillis - last1A0Time >= INTERVAL_1A0) {
     last1A0Time = currentMillis;
     sendBremse1();
   }
 
-  // 3. Bremse 2 (ID 0x5A0) - 20ms
   if (currentMillis - last5A0Time >= INTERVAL_5A0) {
     last5A0Time = currentMillis;
     sendBremse2();
   }
 
-  // 4. Motor (ID 0x480) - 20ms
   if (currentMillis - last480Time >= INTERVAL_480) {
     last480Time = currentMillis;
     sendMotor();
   }
 
-  // 5. EPB Parkbremse (ID 0x5C0) - 20ms
+  if (currentMillis - last280Time >= INTERVAL_280) {
+    last280Time = currentMillis;
+    sendMotor1();
+  }
+
   if (currentMillis - last5C0Time >= INTERVAL_5C0) {
     last5C0Time = currentMillis;
     sendEPB();
   }
 
-  // 6. Luftfederung (ID 0x590) - 50ms
   if (currentMillis - last590Time >= INTERVAL_590) {
     last590Time = currentMillis;
     sendLuftfederung();
   }
 
-  // 7. Zündung (ID 0x2C5) - 100ms
   if (currentMillis - last2C5Time >= INTERVAL_2C5) {
     last2C5Time = currentMillis;
     sendKlemme15();
   }
 
-  // 8. Airbag 1 (ID 0x050) - 100ms
   if (currentMillis - last050Time >= INTERVAL_050) {
     last050Time = currentMillis;
     sendAirbag1();
   }
 
-  // 9. Klima / Außentemperatur (ID 0x3E2) - 100ms
   if (currentMillis - last3E2Time >= INTERVAL_3E2) {
     last3E2Time = currentMillis;
     sendKlima();
   }
 
-  // 10. Airbag 2 (ID 0x550) - 100ms
   if (currentMillis - last550Time >= INTERVAL_550) {
     last550Time = currentMillis;
     sendAirbag2();
   }
 
-  // 11. ACC (ID 0x568) - 100ms
+  if (currentMillis - last555Time >= INTERVAL_555) {
+    last555Time = currentMillis;
+    sendMotor7();
+  }
+
   if (currentMillis - last568Time >= INTERVAL_568) {
     last568Time = currentMillis;
     sendACC();
   }
 
-  // 12. LWR / AFS (ID 0x394) - 100ms
   if (currentMillis - last394Time >= INTERVAL_394) {
     last394Time = currentMillis;
     sendLWR();
   }
 
-  // 13. Fahrgestellnummer (ID 0x65F) - 1000ms
   if (currentMillis - last65FTime >= INTERVAL_65F) {
     last65FTime = currentMillis;
     sendVIN();
@@ -219,28 +344,48 @@ void loop() {
 
 void sendKlima() {
   twai_message_t message = { .identifier = 0x3E2, .data_length_code = 8 };
-
-  // ==========================================
-  // HIER DIE GEWÜNSCHTE TEMPERATUR EINTRAGEN:
-  // ==========================================
-  float desiredTempC = 21.5; // Beispiel: 21,5 °C Außentemperatur
-  
-  // Berechnung des CAN-Raw-Wertes (Umkehrung der DBC-Formel)
-  // Formel: (Temperatur + 50) * 2
-  uint8_t tempRaw = (uint8_t)((desiredTempC + 50.0) * 2.0);
-
+  uint8_t tempRaw = (uint8_t)((currentTempC + 50.0) * 2.0);
   message.data[0] = 0x00; 
-  message.data[1] = tempRaw; // AussenTemp_aus_Wasserkasten (Byte 1)
+  message.data[1] = tempRaw; 
   message.data[2] = 0x13; 
   message.data[3] = 0x03; 
   message.data[4] = 0x63; 
   message.data[5] = 0x00; 
   message.data[6] = 0x82; 
-  
-  // Das 8. Byte (ungefilterte Temperatur Stoßstange) lassen wir 
-  // wie im Trace auf 0xFF, der Tacho nutzt ohnehin den Wasserkasten-Wert.
   message.data[7] = 0xFF; 
+  twai_transmit(&message, pdMS_TO_TICKS(5));
+}
 
+void sendMotor1() {
+  twai_message_t message = { .identifier = 0x280, .data_length_code = 8 };
+  uint16_t rpmRaw = (uint16_t)(currentRPM * 4.0);
+  uint8_t pedalRaw = (uint8_t)(currentPedal / 0.4);
+  uint8_t torqueRaw = (uint8_t)(currentTorque / 0.39);
+
+  message.data[0] = 0x01; 
+  message.data[1] = 0x18; 
+  message.data[2] = rpmRaw & 0xFF;        
+  message.data[3] = (rpmRaw >> 8) & 0xFF; 
+  message.data[4] = 0x18; 
+  message.data[5] = pedalRaw; 
+  message.data[6] = 0x17; 
+  message.data[7] = torqueRaw; 
+  twai_transmit(&message, pdMS_TO_TICKS(5));
+}
+
+void sendMotor7() {
+  twai_message_t message = { .identifier = 0x555, .data_length_code = 8 };
+  uint8_t oilTempRaw = (uint8_t)(currentOilTemp + 60.0);
+  uint8_t boostRaw = (uint8_t)(currentBoost / 0.02);
+
+  message.data[0] = 0xE9; 
+  message.data[1] = 0x00;
+  message.data[2] = 0x7E;
+  message.data[3] = 0x01;
+  message.data[4] = boostRaw;   
+  message.data[5] = 0x01;
+  message.data[6] = 0x0C;
+  message.data[7] = oilTempRaw; 
   twai_transmit(&message, pdMS_TO_TICKS(5));
 }
 
@@ -282,7 +427,6 @@ void sendMotor() {
 
 void sendEPB() {
   twai_message_t message = { .identifier = 0x5C0, .data_length_code = 8 };
-  
   message.data[0] = counter_5C0; 
   message.data[1] = 0x00; 
   message.data[2] = 0x81; 
@@ -290,28 +434,23 @@ void sendEPB() {
   message.data[4] = 0x20; 
   message.data[5] = 0x00; 
   message.data[6] = 0x00;
-
   message.data[7] = message.data[0] ^ message.data[1] ^ message.data[2] ^ 
                     message.data[3] ^ message.data[4] ^ message.data[5] ^ 
                     message.data[6];
-
   twai_transmit(&message, pdMS_TO_TICKS(5));
   if (++counter_5C0 > 0x0F) counter_5C0 = 0;
 }
 
 void sendLuftfederung() {
   twai_message_t message = { .identifier = 0x590, .data_length_code = 8 };
-  
   message.data[1] = counter_590;                  
   message.data[0] = counter_590 ^ 0x03;           
-  
   message.data[2] = 0x43;
   message.data[3] = 0x00;
   message.data[4] = 0x40;
   message.data[5] = 0xFE;
   message.data[6] = 0xFE;
   message.data[7] = 0x00;
-
   twai_transmit(&message, pdMS_TO_TICKS(5));
   if (++counter_590 > 0x0F) counter_590 = 0;
 }
@@ -364,8 +503,6 @@ void sendACC() {
 
 void sendLWR() {
   twai_message_t message = { .identifier = 0x394, .data_length_code = 8 };
-  
-  // Statische Werte aus Trace
   message.data[0] = 0x0B;
   message.data[1] = 0x81;
   message.data[2] = 0x7E;
@@ -373,10 +510,7 @@ void sendLWR() {
   message.data[4] = 0x00;
   message.data[5] = 0x00;
   message.data[6] = 0x00;
-  
-  // Zähler ins obere Nibble von Byte 7 schreiben
   message.data[7] = (counter_394 << 4);
-  
   twai_transmit(&message, pdMS_TO_TICKS(5));
   if (++counter_394 > 0x0F) counter_394 = 0;
 }
