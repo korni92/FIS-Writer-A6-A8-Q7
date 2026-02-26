@@ -83,9 +83,26 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 | 6    | → Cluster | A3                             | Channel Open PING                                    |
 |      | → MMI     | A1 0F 8A FF 4A FF              | Channel Open PONG                                    |
 
+Now needing to claim the desired screens
+
+| Step | Direction | Payload (after header)         | Notes                                                |
+|------|-----------|--------------------------------|------------------------------------------------------|
+| 7    | → MMI     | 30 01 01                       | Claim Area 1 (Seq 4)                                 |
+|      | ← Cluster | BX                             | ACK from Cluster (Seq 5)                             |
+|      | ← Cluster | 31 03 01 01 04                 | Param Response (Seq 6)                               |
+|      | → MMI     | BX                             | ACK from MMI (Seq 7)                                 |
+|      | → MMI     | 30 01 02                       | Claim Area 2 (Seq 5)                                 |
+|      | ← Cluster | BX                             | ACK from Cluster (Seq 6)                             |
+|      | ← Cluster | 31 03 02 01 04                 | Param Response (Seq 7)                               |
+|      | → MMI     | BX                             | ACK from MMI (Seq 8)                                 |
+|      | → MMI     | 30 01 03                       | Claim Area 3 (Seq 6)                                 |
+|      | ← Cluster | BX                             | ACK from Cluster (Seq 7)                             |
+|      | ← Cluster | 31 03 03 01 04                 | Param Response (Seq 8)                               |
+|      | → MMI     | BX                             | ACK from MMI (Seq 9)                                 |
+
 * BX: the X is for the sequenz number
   
-5. **Channel is now OPEN** – ready to claim zones and write data
+8. **Channel is now OPEN** – ready to write data
 
 ## 3. Messages
 Claim Area:
@@ -140,6 +157,7 @@ Usually it looks like this when the whole content is replaced:
 | Opcode | Example                          | Description                              |
 |--------|----------------------------------|------------------------------------------|
 | `36`   | `36 01 01`                       | Claim / Start transaction (Zone)         |
+| `31`   | `32 01 01`                       | Answere to claim                         |
 | `32`   | `32 01 02`                       | Release / Commit transaction             |
 | `30`   | `30 01 02`                       | Initialize / Subscribe to Zone           |
 | `E0`   | `E0 0D 01 00 48 65 6C ...`       | Write text (Len + Line + 00 + data)      |
