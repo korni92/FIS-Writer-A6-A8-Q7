@@ -171,7 +171,7 @@ Usually it looks like this when the whole content is replaced:
 - `BB` → Screen Display Option
 - `CC` → Text Line ID
 - `DD` → Text Length
-- `EE` Status Code
+- `EE` → Status Code
   
 ### Zone IDs
 - `01` → Top line
@@ -191,8 +191,11 @@ Usually it looks like this when the whole content is replaced:
 - `09` Middle body 4
 
 ### Status Code (for opcode `3B`)
-- `00` Error
-- `03` Showing
+- `00` → Error
+- `01` → Ready (after cluster was using its own screen for warnings or other content
+- `02` → Busy (cluster uses its screen for warnings or informations
+- `03` → Showing
+- `E0` → FATAL ERROR (needs Hardware Restart)
 
 ### Text Length Calculation
 Len = 2 + number_of_characters
