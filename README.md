@@ -154,21 +154,33 @@ Usually it looks like this when the whole content is replaced:
 
 ## 4. Important Opcodes
 
-| Opcode | Example                          | Description                              |
-|--------|----------------------------------|------------------------------------------|
-| `36`   | `36 01 01`                       | Claim / Start transaction (Zone)         |
-| `31`   | `32 01 01`                       | Answere to claim                         |
-| `32`   | `32 01 02`                       | Release / Commit transaction             |
-| `30`   | `30 01 02`                       | Initialize / Subscribe to Zone           |
-| `E0`   | `E0 0D 01 00 48 65 6C ...`       | Write text (Len + Line + 00 + data)      |
-| `E4`   | `E4 02 ...`                      | Menu/highlight control                   |
-| `E2`   | `E2 01 01`                       | Force source (Phone=01, Media=06, ...)   |
-| `3B`   | `3B ...`                         | Cluster confirmation after Release       |
-| `09`   | `09 ...`                         | Error from Cluster                       |
+| Opcode | Example                          | Description                                                 |
+|--------|----------------------------------|-------------------------------------------------------------|
+| `30`   | `30 01 AA`                       | Initialize / Subscribe to Zone                              |
+| `31`   | `31 03 AA 01 04`                 | Answere to claim                                            |
+| `32`   | `32 01 AA`                       | Release / Commit transaction                                |
+| `34`   | `34 01 AA`                       | unknown, might something to display, gets responded with 3B |
+| `36`   | `36 01 AA`                       | Claim / Start transaction (Zone)                            |
+| `E0`   | `E0 DD CC 00 ...`                | Write text (Len + Line + 00 + data)                         |
+| `E4`   | `E4 ...`                         | Menu/highlight control                                      |
+| `E2`   | `E2 01 BB`                       | Force source (Phone=01, Media=06, ...)                      |
+| `3B`   | `3B ...`                         | Cluster confirmation after Release                          |
+| `09`   | `09 ...`                         | Error from Cluster                                          |
 
+- `AA` → Zone ID
+- `BB` → Screen Display Option
+- `CC` → Text Line ID
+- `DD` → Text Length
+  
 ### Zone IDs
-- `01` → Top line (yellow/red/orange bar)
-- `02` → Middle area (trip computer / menu / navigation)
+- `01` → Top line
+- `02` → Middle area
+- `03` → Nav screen
+
+### Screen Display Option
+- `01` → Telephone
+- `03` → Navigation
+- `06` → Media
 
 ### Text Line IDs (for opcode `E0`)
 - `01` Top line
