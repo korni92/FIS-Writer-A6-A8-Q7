@@ -216,5 +216,14 @@ Nested Update whole screen
 ````
 
 It's also possible to just replace one line by sending `Claim` for the area, `Write` for the wanted line and `Release`
-Also just updating the `Indicator/Highlight` is possible the same way. If a line needs to be cleared, just send empty Data for it, otherwise the content stays there
+Also just updating the `Indicator/Highlight` is possible, just send the Opcode `E4` with needed configuration and after ACK from cluster, just send write command `32 01 02` and this will be confirmed by the cluster. 
+
+Updating just Indicator/Highlight
+```text
+1. Indicator → E4 ...      → wait ACK
+2. Release   → 32 01 02    → wait ACK
+3. Confirm   ← 3B 02 02 03 → send ACK
+```
+
+If a line needs to be cleared, just send empty Data for it, otherwise the content stays there
 till it's overwritten. 
