@@ -164,13 +164,14 @@ Usually it looks like this when the whole content is replaced:
 | `E0`   | `E0 DD CC 00 ...`                | Write text (Len + Line + 00 + data)                         |
 | `E4`   | `E4 ...`                         | Menu/highlight control                                      |
 | `E2`   | `E2 01 BB`                       | Force source (Phone=01, Media=06, ...)                      |
-| `3B`   | `3B ...`                         | Cluster confirmation after Release                          |
+| `3B`   | `3B 02 AA EE`                    | Cluster confirmation after Release and Status Code          |
 | `09`   | `09 ...`                         | Error from Cluster                                          |
 
 - `AA` → Zone ID
 - `BB` → Screen Display Option
 - `CC` → Text Line ID
 - `DD` → Text Length
+- `EE` Status Code
   
 ### Zone IDs
 - `01` → Top line
@@ -188,6 +189,10 @@ Usually it looks like this when the whole content is replaced:
 - `07` Middle body 2
 - `08` Middle body 3
 - `09` Middle body 4
+
+### Status Code (for opcode `3B`)
+- `00` Error
+- `03` Showing
 
 ### Text Length Calculation
 Len = 2 + number_of_characters
