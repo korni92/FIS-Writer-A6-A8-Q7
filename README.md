@@ -194,10 +194,27 @@ E4 AA BB CC
 
 ## 5. Typical Transaction 
 
+Just Top Line
 ```text
 1. Claim     → 36 01 01    → wait ACK
 2. Write     → E0 ...      → wait ACK (multi-frame: 20 → 20 → 10)
 3. Release   → 32 01 01    → wait ACK
 4. Confirm   ← 3B ...      → send ACK
+````
 
+Nested Update whole screen
+```text
+1. Claim     → 36 01 01    → wait ACK
+2. Write     → E0 ...      → wait ACK (multi-frame: 20 → 20 → 10)
+3. Claim     → 36 01 02    → wait ACK
+4. Write     → E0 ...      → wait ACK (multi-frame: 20 → 20 → 10)
+5. Indicator → E4 ...      → wait ACK
+6. Release   → 32 01 02    → wait ACK
+7. Confirm   ← 3B 02 02 03 → send ACK
+8. Release   → 32 01 01    → wait ACK
+9. Confirm   ← 3B 02 01 03 → send ACK
+````
 
+It's also possible to just replace one line by sending `Claim` for the area, `Write` for the wanted line and `Release`
+Also just updating the `Indicator/Highlight` is possible the same way. If a line needs to be cleared, just send empty Data for it, otherwise the content stays there
+till it's overwritten. 
