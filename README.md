@@ -215,8 +215,15 @@ Nested Update whole screen
 9. Confirm   ← 3B 02 01 03 → send ACK
 ````
 
-It's also possible to just replace one line by sending `Claim` for the area, `Write` for the wanted line and `Release`
-Also just updating the `Indicator/Highlight` is possible, just send the Opcode `E4` with needed configuration and after ACK from cluster, just send write command `32 01 02` and this will be confirmed by the cluster. 
+It's also possible to just replace one line or more in the middle part by sending `Write E0` for the wanted line and `Release` if you don't switch the screen between radio, telephone or gave it to the cluster before. This works as long as just the middle part content is update, when top part needs an update, for the next middle part write, it needs to be claimed again with `36`.
+For example: The middle area was already claimed for the mode and the lines 05 - 09 need to be updated, just sending the lines that should be updated and release it.
+
+Updating line or lines on the active middle part
+```text
+1. Write     → E0 ...      → wait ACK (multi-frame: 20 → 20 → 10)
+2. Release   → 32 01 02    → wait ACK
+3. Confirm   ← 3B 02 02 03 → send ACK
+````
 
 Updating just Indicator/Highlight
 ```text
@@ -224,6 +231,7 @@ Updating just Indicator/Highlight
 2. Release   → 32 01 02    → wait ACK
 3. Confirm   ← 3B 02 02 03 → send ACK
 ```
+Just updating the `Indicator/Highlight` is possible, by sending the Opcode `E4` with needed configuration and after ACK from cluster, just send write command `32 01 02` and this will be confirmed by the cluster. 
 
 If a line needs to be cleared, just send empty Data for it, otherwise the content stays there
 till it's overwritten. 
