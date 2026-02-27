@@ -179,7 +179,6 @@ Usually it looks like this when the whole content is replaced:
 
 ### Screen Display Option
 - `01` → Telephone
-- `03` → Navigation
 - `06` → Media
 
 ### Text Line IDs (for opcode `E0`)
