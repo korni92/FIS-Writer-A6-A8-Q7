@@ -277,37 +277,63 @@ till it's overwritten.
 The Navigation screen is handled completely separately from the Media/Telephone views. It utilizes Zone 0x03 and introduces unique graphical opcodes for drawing turn arrows and distance bars.
 Navigation Graphics
 
-Distance Bar (Opcode DE)
+### Distance Bar (Opcode DE)
 Draws the vertical progress bar on the right side of the screen (typically used for distance to next turn).
+```text
+Show Bar: DE 01 XX (Where XX ranges from 0x00 empty to 0xF9 full).
+Hide Bar: DE 00
+```
 
-    Show Bar: DE 01 XX (Where XX ranges from 0x00 empty to 0xF9 full).
-
-    Hide Bar: DE 00
-
-Turn Arrows (Opcode DC)
+### Turn Arrows (Opcode DC)
 Draws the graphical arrows. The structure is: DC AA BB CC CC...
+```text
+- AA = Length of following bytes
+- BB = Arrow Group (Acts like a directory/category)
+- CC = Data (Specific arrow modifier/angle. Can be multiple bytes)
+```
 
-    AA = Length of following bytes
+### Known Arrow Groups (BB):
+```text
+- 0A: Standard turn arrows (Data 00 = Straight, 10 = 20° left, 80 = 180° U-turn left, etc.)
+- 0B: Highway/Autobahn arrows (Data FF = Long straight from bottom)
+- 0C: Highway Exits (Data C0 = Exit right, 40 = Exit left)
+- 0D: Complex junctions / overlapping streets
+- 0F: Lane merges (Data 00 = Merge right)
+```
 
-    BB = Arrow Group (Acts like a directory/category)
-
-    CC = Data (Specific arrow modifier/angle. Can be multiple bytes)
-
-Known Arrow Groups (BB):
-
-    0A: Standard turn arrows (Data 00 = Straight, 10 = 20° left, 80 = 180° U-turn left, etc.)
-
-    0B: Highway/Autobahn arrows (Data FF = Long straight from bottom)
-
-    0C: Highway Exits (Data C0 = Exit right, 40 = Exit left)
-
-    0D: Complex junctions / overlapping streets
-
-    0F: Lane merges (Data 00 = Merge right)
-
-Navigation Transaction Flows
-
+### Navigation Transaction Flows
 The cluster state machine is very strict when transitioning between standard modes (Zone 02) and Nav mode (Zone 03). You must explicitly flush the active zone before claiming the other, otherwise the cluster will crash (0x09 E0).
 
 Entering Nav Mode (From Media/Phone)
 To enter Nav mode, you must first clear the middle section of the standard screen, release it, and then claim the Nav zone.
+```text
+1. Claim Standard   → 36 01 02       → wait ACK
+2. Write Empty      → E0 02 05 00    → wait ACK (Clear headline)
+3. Release Standard → 32 01 02       → wait ACK
+4. Confirm Flush    ← 3B 02 02 00    → send ACK (Cluster acknowledges 02 is flushed)
+5. Claim Nav        → 36 01 03       → wait ACK
+6. Write Texts      → E0 ... 0A/0B/0C→ wait ACK
+7. Draw Arrow       → DC ...         → wait ACK
+8. Draw Bar         → DE ...         → wait ACK
+9. Release Nav      → 32 01 03       → wait ACK
+10. Confirm Show    ← 3B 02 03 03    → send ACK
+```
+
+### Updating Active Nav Mode
+Once Zone `03` is active, you can update it just like Zone `02`.
+```text
+1. Claim Nav        → 36 01 03       → wait ACK
+2. Write/Draw       → E0 / DC / DE   → wait ACK
+3. Release Nav      → 32 01 03       → wait ACK
+4. Confirm Show     ← 3B 02 03 03    → send ACK
+```
+
+### Exiting Nav Mode (Back to Media/Phone)
+Just claiming Zone `02` is not enough to force the cluster to leave the Nav screen. You must send a source switch command `E2`, followed by a dummy Claim/Release of Zone `02` to force the UI to redraw.
+```text
+1. Force Source     → E2 01 06       → wait ACK (06 = Media, 01 = Phone)
+2. Claim Standard   → 36 01 02       → wait ACK
+3. Release Standard → 32 01 02       → wait ACK
+4. Confirm Flush    ← 3B 02 03 00    → send ACK (Cluster acknowledges 03 is flushed)
+5. Confirm Show     ← 3B 02 02 03    → send ACK (Cluster confirms 02 is now showing)
+```
