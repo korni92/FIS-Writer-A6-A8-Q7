@@ -166,12 +166,19 @@ Usually it looks like this when the whole content is replaced:
 | `E2`   | `E2 01 BB`                       | Force source (Phone=01, Media=06, ...)                      |
 | `3B`   | `3B 02 AA EE`                    | Cluster confirmation after Release and Status Code          |
 | `09`   | `09 ...`                         | Error from Cluster                                          |
+| `DC`   | `DC FF GG HH`                    | Draw Navigation Arrow (Length + Group + Data)               |
+| `DE`   | `DE JJ KK.`                      | Draw Navigation Distance Bar (01 + Fill level, 00 hides)    |
 
 - `AA` → Zone ID
 - `BB` → Screen Display Option
 - `CC` → Text Line ID
 - `DD` → Text Length
 - `EE` → Status Code
+- `FF` → amount of following bytes
+- `GG` → Group of Arrows
+- `HH` → Arrow configuration
+- `JJ` → 00 = status bar off | 01 = status bar on
+- `KK` → FF - 00 full - empty
   
 ### Zone IDs
 - `01` → Top line
@@ -190,12 +197,22 @@ Usually it looks like this when the whole content is replaced:
 - `08` Middle body 3
 - `09` Middle body 4
 
+### Navigation screen (Only for clamimed Screen Zone ID 03 wirh opcode `E0`)
+- `0A` Headline (Street name)
+- `0B` Top left (Distance/Turn info)
+- `0C` Bottom left (Distance till Destination)
+- `0D` Bottom right (Time at arrival)
+
 ### Status Code (for opcode `3B`)
-- `00` → Error
-- `01` → Ready (after cluster was using its own screen for warnings or other content
-- `02` → Busy (cluster uses its screen for warnings or informations
-- `03` → Showing
+- `00` → Abort / Flush (Cluster confirms the previous zone was cleared to make room for a new one. Not necessarily an error!)
+- `01` → Ready (Cluster screen is free again after showing a warning)
+- `02` → Busy (Cluster is actively displaying a vehicle warning/info. Must retry 32 release later)
+- `03` → Showing (Success)
 - `E0` → FATAL ERROR (needs Hardware Restart)
+
+### Hardware Busy/ Error
+Just giving `9X` means we need to try again after X x 10 millisecond with the same message and same seq counter.
+If you get 0x09 02 03 E0, you have violated the transaction state machine (e.g., trying to write to Zone 0x03 without first sending a 32 Release for Zone 0x02). This causes a fatal crash requiring a hardware restart.
 
 ### Text Length Calculation
 Len = 2 + number_of_characters
@@ -254,3 +271,43 @@ Just updating the `Indicator/Highlight` is possible, by sending the Opcode `E4` 
 
 If a line needs to be cleared, just send empty Data for it, otherwise the content stays there
 till it's overwritten. 
+
+## 6. Navigation Screen (Zone 0x03)
+
+The Navigation screen is handled completely separately from the Media/Telephone views. It utilizes Zone 0x03 and introduces unique graphical opcodes for drawing turn arrows and distance bars.
+Navigation Graphics
+
+Distance Bar (Opcode DE)
+Draws the vertical progress bar on the right side of the screen (typically used for distance to next turn).
+
+    Show Bar: DE 01 XX (Where XX ranges from 0x00 empty to 0xF9 full).
+
+    Hide Bar: DE 00
+
+Turn Arrows (Opcode DC)
+Draws the graphical arrows. The structure is: DC AA BB CC CC...
+
+    AA = Length of following bytes
+
+    BB = Arrow Group (Acts like a directory/category)
+
+    CC = Data (Specific arrow modifier/angle. Can be multiple bytes)
+
+Known Arrow Groups (BB):
+
+    0A: Standard turn arrows (Data 00 = Straight, 10 = 20° left, 80 = 180° U-turn left, etc.)
+
+    0B: Highway/Autobahn arrows (Data FF = Long straight from bottom)
+
+    0C: Highway Exits (Data C0 = Exit right, 40 = Exit left)
+
+    0D: Complex junctions / overlapping streets
+
+    0F: Lane merges (Data 00 = Merge right)
+
+Navigation Transaction Flows
+
+The cluster state machine is very strict when transitioning between standard modes (Zone 02) and Nav mode (Zone 03). You must explicitly flush the active zone before claiming the other, otherwise the cluster will crash (0x09 E0).
+
+Entering Nav Mode (From Media/Phone)
+To enter Nav mode, you must first clear the middle section of the standard screen, release it, and then claim the Nav zone.
