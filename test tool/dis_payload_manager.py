@@ -2,7 +2,6 @@ import can
 import time
 import logging
 import re
-import msvcrt
 
 # --- Configuration ---
 CAN_INTERFACE = 'pcan'
@@ -22,9 +21,6 @@ OP_HIGHLIGHT = 0xE4
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
-
-
-# LAYER 1: CAN BUS DRIVER
 
 class MMITester:
     def __init__(self, channel=CAN_CHANNEL, interface=CAN_INTERFACE, bitrate=CAN_BITRATE):
@@ -95,6 +91,7 @@ class MMITester:
 
         expected_ack = (seq + 1) % 16
         start_wait = time.time()
+        
         while time.time() - start_wait < 2.0:
             rx = self._recv_filtered(0.05)
             if not rx: continue
@@ -108,6 +105,14 @@ class MMITester:
                     self.log_traffic("CLUS -> MMI", bytes(rx.data).hex(' ').upper(), f"ACK IN (Seq {rx_seq})")
                     self.tx_seq = expected_ack
                     return True
+            elif b0 == 0x9A:
+                wait_ms = rx.data[1] if len(rx.data) > 1 else 100
+                self.log_traffic("CLUS -> MMI", bytes(rx.data).hex(' ').upper(), f"CLUSTER BUSY 0x9A (Wait {wait_ms}ms)")
+                time.sleep(wait_ms / 1000.0)
+                self.log_traffic("MMI -> CLUS", bytes(data).hex(' ').upper(), f"RESENDING DATA {type_str} OUT (Seq {seq})")
+                self.bus.send(msg)
+                start_wait = time.time() 
+                continue
             elif high_nib in [0x10, 0x20]:
                 self.rx_queue.append(rx)
                 
@@ -160,24 +165,40 @@ class MMITester:
                 return False
         return True
 
-    def wait_for_confirmation(self, expected_zone: int):
-        """Wait for 0x3B confirmation OR gracefully handle 0x09 error from cluster."""
+    def wait_for_confirmation(self, expected_zone, timeout=3.0):
         logger.info(f"Waiting for Cluster Confirmation (0x3B) for Zone {expected_zone:02X}...")
-        payload = self.wait_for_cluster_message(timeout=2.0)
+        start_wait = time.time()
+        
+        while time.time() - start_wait < timeout:
+            payload = self.wait_for_cluster_message(timeout=0.5)
+            
+            if payload:
+                if payload[0] == 0x3B:
+                    confirmed_zone = payload[2] if len(payload) > 2 else 0
+                    status_code = payload[3] if len(payload) > 3 else 0x00
+                    
+                    if confirmed_zone == expected_zone and status_code == 0x03:
+                        logger.info(f"✅ Confirmation received for Zone {expected_zone:02X} (Status: 03 SHOWING)")
+                        return 'SUCCESS'
+                    elif status_code == 0x02:
+                        logger.warning(f"⏳ Cluster Busy/Warning Active (Zone {confirmed_zone:02X}, Status 02).")
+                        return 'BUSY'
+                    elif status_code == 0x01:
+                        logger.info(f"🟢 Cluster Free (Zone {confirmed_zone:02X}, Status 01).")
+                        return 'FREE'
+                    else:
+                        status_str = "SHOWING/OK" if status_code == 0x03 else "ERROR/ABORT"
+                        logger.warning(f"⚠️ Intermediate 3B: Zone {confirmed_zone:02X}, Status {status_code:02X} ({status_str}). Waiting for target...")
+                        continue
+                        
+                elif payload[0] == 0x09:
+                    zone = payload[1] if len(payload) > 1 else 0
+                    error_code = payload[4] if len(payload) > 4 else 0
+                    logger.error(f"❌ Cluster ERROR 0x09 (invalid param) Zone {zone:02X} Code {error_code:02X}")
+                    return 'ERROR'
 
-        if payload:
-            if payload[0] == 0x3B and len(payload) > 2 and payload[2] == expected_zone:
-                logger.info(f"✅ Confirmation received for Zone {expected_zone:02X}")
-                return True
-
-            elif payload[0] == 0x09:   # Cluster error (invalid highlight etc.)
-                zone = payload[1] if len(payload) > 1 else 0
-                extra = ' '.join(f'{b:02X}' for b in payload[2:]) if len(payload) > 2 else ''
-                logger.error(f"❌ Cluster ERROR 0x09 (invalid param) Zone {zone:02X} | {extra}")
-                return True   # continue anyway - keep-alive stays alive
-
-        logger.warning(f"Failed to receive 0x3B confirmation for Zone {expected_zone:02X}")
-        return False
+        logger.warning(f"Failed to receive 0x3B confirmation for Zone {expected_zone:02X} within timeout.")
+        return 'TIMEOUT'
 
     def perform_handshake(self):
         self.rx_queue.clear()
@@ -196,15 +217,10 @@ class MMITester:
         self.active_sleep(1.0)
 
         logger.info("\n--- 3. PARAMETER EXCHANGE & FINAL BURST ---")
-        logger.info("\n[Step 1 - Param 10]")
         if self.send_data_and_wait_ack([0x00, 0x02, 0x4D, 0x02]): self.wait_for_cluster_message() 
-        logger.info("\n[Delay - Keep-alives processing...]")
         self.active_sleep(2.0)
-        logger.info("\n[Step 2 - Param 11]")
         if self.send_data_and_wait_ack([0x00, 0x02, 0x4D, 0x02]): self.wait_for_cluster_message()
-        logger.info("\n[Step 3 - Param 12]")
         if self.send_data_and_wait_ack([0x00, 0x02, 0x4D, 0x01]): self.wait_for_cluster_message()
-        logger.info("\n[Step 4 - Param 13 & Final Burst]")
         if self.send_data_and_wait_ack([0x02, 0x01, 0x48]): self.wait_for_cluster_message()
 
         logger.info("\n======================================")
@@ -212,18 +228,6 @@ class MMITester:
         logger.info("======================================")
         self.is_connected = True
 
-    def run_keepalive_loop(self):
-        logger.info("\nEntering background keep-alive loop. Press Ctrl+C to exit.")
-        try:
-            while True:
-                self._recv_filtered(0.5)
-        except KeyboardInterrupt:
-            logger.info("Shutting down...")
-            self.bus.shutdown()
-
-
-
-# LAYER 2: PAYLOAD FORMATTER
 
 class DISPayloadManager:
     def __init__(self, driver):
@@ -233,11 +237,7 @@ class DISPayloadManager:
         logger.info(f"\n>> Initializing Zone {zone_id:02X}")
         self.driver.send_message([OP_INIT, 0x01, zone_id])
         resp = self.driver.wait_for_cluster_message(timeout=2.0)
-        if resp and resp[0] == 0x31:
-            logger.info(f"   ✅ Zone {zone_id:02X} Initialized successfully.")
-            return True
-        logger.warning(f"   ❌ Failed to initialize Zone {zone_id:02X}.")
-        return False
+        return resp and resp[0] == 0x31
 
     def init_all_zones(self):
         self.init_zone(0x01)
@@ -255,9 +255,23 @@ class DISPayloadManager:
         return self.driver.send_message([OP_CLAIM, 0x01, zone_id])
 
     def release_zone(self, zone_id):
-        success = self.driver.send_message([OP_RELEASE, 0x01, zone_id])
-        if success:
-            return self.driver.wait_for_confirmation(zone_id)
+        # Retry loop for Busy (02) or Free (01) states
+        for attempt in range(6): 
+            success = self.driver.send_message([OP_RELEASE, 0x01, zone_id])
+            if success:
+                status = self.driver.wait_for_confirmation(zone_id)
+                if status == 'SUCCESS':
+                    return True
+                elif status == 'BUSY':
+                    logger.info("Cluster Busy! Waiting 2.0s before retrying release...")
+                    time.sleep(2.0)
+                    continue
+                elif status == 'FREE':
+                    logger.info("Cluster Free! Retrying release immediately...")
+                    time.sleep(0.5)
+                    continue
+                elif status == 'ERROR' or status == 'TIMEOUT':
+                    return False
         return False
 
     def write_text(self, line_id, text_str):
@@ -266,27 +280,50 @@ class DISPayloadManager:
         payload = [OP_WRITE, length_byte, line_id, 0x00] + list(text_bytes)
         return self.driver.send_message(payload)
 
-    def set_highlight(self, p1: int, p2: int, p3: int | None = None):
-        """Send E4 with 2 or 3 control bytes (supports AA BB CC)."""
+    def set_highlight(self, p1: int, p2: int, p3: int = None):
         if p3 is None:
-            logger.info(f"\n>> Setting Highlight: [{p1:02X} {p2:02X}]")
             payload = [OP_HIGHLIGHT, 0x02, p1, p2]
         else:
-            logger.info(f"\n>> Setting Highlight: [{p1:02X} {p2:02X} {p3:02X}]")
             payload = [OP_HIGHLIGHT, 0x03, p1, p2, p3]
         return self.driver.send_message(payload)
 
-    def write_smart_string(self, input_str: str):
-        """Robust token parser - correctly handles E4 with 2 or 3 params + standalone E4."""
-        if not input_str.strip():
-            return
+    def write_nav_bar(self, value):
+        if value < 0:
+            logger.info("\n>> Hiding Nav Bar (DE 00)")
+            return self.driver.send_message([0xDE, 0x00])
+        else:
+            logger.info(f"\n>> Drawing Nav Bar: {value:02X}")
+            return self.driver.send_message([0xDE, 0x01, value])
 
+    def draw_arrow(self, line_id, hex_data_str):
+        try:
+            data_bytes = [int(x, 16) for x in hex_data_str.strip().split()]
+            if not data_bytes: return False
+            length_byte = 1 + len(data_bytes) 
+            payload = [0xDC, length_byte, line_id] + data_bytes
+            logger.info(f"\n>> Drawing Arrow on {line_id:02X}: {hex_data_str}")
+            return self.driver.send_message(payload)
+        except ValueError:
+            logger.error("Invalid hex string for arrow data.")
+            return False
+
+    def send_raw_payload(self, hex_string):
+        try:
+            payload = [int(x, 16) for x in hex_string.strip().split()]
+            if not payload: return False
+            logger.info(f"\n>> Sending Raw Payload: {hex_string}")
+            return self.driver.send_message(payload)
+        except ValueError:
+            logger.error("Invalid hex string for raw payload.")
+            return False
+
+    def write_smart_string(self, input_str: str):
+        if not input_str.strip(): return
         tokens = re.split(r'\s+', input_str.strip().upper())
         i = 0
-
         top_line_update = None
         middle_line_updates = []
-        highlight_params = None   # tuple of 2 or 3 ints
+        highlight_params = None   
         source_param = None
 
         def is_tag(t: str) -> bool:
@@ -297,54 +334,39 @@ class DISPayloadManager:
             if is_tag(token):
                 tag = token
                 i += 1
-
                 if tag == 'E4':
-                    # Collect 2 or 3 hex parameters after E4
                     params = []
                     while i < len(tokens) and len(params) < 3:
                         try:
                             params.append(int(tokens[i], 16))
                             i += 1
-                        except ValueError:
-                            break
-                    if len(params) >= 2:
-                        highlight_params = tuple(params)
+                        except ValueError: break
+                    if len(params) >= 2: highlight_params = tuple(params)
                     continue
-
                 elif tag == 'E2':
                     if i < len(tokens):
                         try:
                             source_param = int(tokens[i], 16)
                             i += 1
-                        except ValueError:
-                            pass
+                        except ValueError: pass
                     continue
-
                 else:
-                    # Normal line tag (01, 05-09, 00)
                     try:
                         line_hex = int(tag, 16)
-                        # Collect text until next tag
                         text_parts = []
                         while i < len(tokens) and not is_tag(tokens[i]):
                             text_parts.append(tokens[i])
                             i += 1
                         text_clean = ' '.join(text_parts).strip()
-                        if text_clean == '.':
-                            text_clean = ""
-
-                        if line_hex == 0x01:
-                            top_line_update = (line_hex, text_clean)
+                        if text_clean == '.': text_clean = ""
+                        if line_hex == 0x01: top_line_update = (line_hex, text_clean)
                         elif line_hex in [0x00, 0x05, 0x06, 0x07, 0x08, 0x09]:
                             middle_line_updates.append((line_hex, text_clean))
-                    except ValueError:
-                        pass
+                    except ValueError: pass
                     continue
-
             else:
-                i += 1  # skip junk
+                i += 1 
 
-        # Execution logic
         has_top = top_line_update is not None
         has_mid = bool(middle_line_updates) or highlight_params is not None or source_param is not None
 
@@ -353,146 +375,23 @@ class DISPayloadManager:
             time.sleep(0.05)
             self.write_text(top_line_update[0], top_line_update[1])
             time.sleep(0.05)
-            if not has_mid:
-                self.release_zone(0x01)
+            if not has_mid: self.release_zone(0x01)
 
         if has_mid:
             self.claim_zone(0x02)
             time.sleep(0.05)
-
             if source_param is not None:
                 self.switch_source(source_param)
                 time.sleep(0.05)
-
             for line_hex, text_clean in middle_line_updates:
                 self.write_text(line_hex, text_clean)
                 time.sleep(0.05)
-
             if highlight_params is not None:
-                if len(highlight_params) == 3:
-                    self.set_highlight(*highlight_params)
-                else:
-                    self.set_highlight(highlight_params[0], highlight_params[1])
+                if len(highlight_params) == 3: self.set_highlight(*highlight_params)
+                else: self.set_highlight(highlight_params[0], highlight_params[1])
                 time.sleep(0.05)
-
             self.release_zone(0x02)
             time.sleep(0.05)
 
         if has_top and has_mid:
             self.release_zone(0x01)
-
-
-
-# LAYER 3: USER INTERFACE
-
-def print_menu():
-    print("\n" + "="*40)
-    print("      AUDI A8 DIS - CONTROL MENU")
-    print("="*40)
-    print(" [m] Switch to Media Screen")
-    print(" [p] Switch to Phone Screen")
-    print(" [i] Input Smart Text (e.g., '01 Radio 06 Line 1 E4 02 01')")
-    print(" [d] Toggle CAN Debug Traffic")
-    print(" [q] Quit")
-    print("="*40)
-    print("> ", end='', flush=True)
-
-if __name__ == "__main__":
-    driver = MMITester()
-    driver.show_traffic = True 
-    
-    driver.perform_handshake()
-    
-    if not driver.is_connected:
-        logger.error("Handshake failed. Exiting.")
-        exit(1)
-
-    manager = DISPayloadManager(driver)
-    
-    logger.info("\n--- 4. INITIALIZING DISPLAY ZONES ---")
-    driver.active_sleep(0.5)
-    manager.init_all_zones()
-    
-    typing_active = False
-    input_buffer = ""
-    
-    driver.show_traffic = False 
-    print_menu()
-
-    try:
-        while True:
-            driver._recv_filtered(0.01)
-
-            if msvcrt.kbhit():
-                key = msvcrt.getch()
-                
-                if typing_active:
-                    if key == b'\r': 
-                        print()
-                        if input_buffer:
-                            logger.info(f"Injecting: {input_buffer}")
-                            was_debug = driver.show_traffic
-                            driver.show_traffic = True 
-                            manager.write_smart_string(input_buffer)
-                            driver.show_traffic = was_debug
-                            
-                        typing_active = False
-                        input_buffer = ""
-                        print_menu()
-                        
-                    elif key == b'\x1b': 
-                        print("\nCancelled.")
-                        typing_active = False
-                        input_buffer = ""
-                        print_menu()
-                        
-                    elif key == b'\x08': 
-                        if len(input_buffer) > 0:
-                            input_buffer = input_buffer[:-1]
-                            print('\b \b', end='', flush=True)
-                    else:
-                        try:
-                            char = key.decode('cp437')
-                            input_buffer += char
-                            print(char, end='', flush=True)
-                        except: pass
-                else:
-                    cmd = key.lower()
-                    
-                    if cmd == b'd':
-                        driver.show_traffic = not driver.show_traffic
-                        status = "ON" if driver.show_traffic else "OFF"
-                        print(f"\n--- DEBUG TRAFFIC: {status} ---")
-                        if not driver.show_traffic: print_menu()
-                        
-                    elif cmd == b'm':
-                        print("\nSwitching to Media...")
-                        was_debug = driver.show_traffic
-                        driver.show_traffic = True
-                        manager.switch_source(0x06)
-                        driver.show_traffic = was_debug
-                        print_menu()
-                        
-                    elif cmd == b'p':
-                        print("\nSwitching to Phone...")
-                        was_debug = driver.show_traffic
-                        driver.show_traffic = True
-                        manager.switch_source(0x01)
-                        driver.show_traffic = was_debug
-                        print_menu()
-                        
-                    elif cmd == b'i':
-                        typing_active = True
-                        input_buffer = ""
-                        print("\nCOMMAND MODE (Type string, Enter to send, Esc to cancel):")
-                        print("Ex: E2 01 01 Telefon 06 Addressbook E4 01 00")
-                        print("> ", end='', flush=True)
-                        
-                    elif cmd == b'q':
-                        print("\nQuitting...")
-                        break
-
-    except KeyboardInterrupt:
-        logger.info("\nStopping...")
-        
-    driver.bus.shutdown()
