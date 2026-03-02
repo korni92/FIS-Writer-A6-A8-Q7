@@ -188,6 +188,7 @@ Usually it looks like this when the whole content is replaced:
 
 ### BB Screen Display Option
 - `01` → Telephone
+- `02` → Radio
 - `06` → Media
 
 ### CC Text Line IDs (for opcode `E0`)
@@ -207,7 +208,7 @@ Usually it looks like this when the whole content is replaced:
 - `0D` Bottom right (Time at arrival)
 
 ### EE Status Code (for opcode `3B`)
-- `00` → Abort / Flush (Cluster confirms the previous zone was cleared to make room for a new one. Not necessarily an error!)
+- `00` → Back to Trip Computer
 - `01` → Ready (Cluster screen is free again after showing a warning)
 - `02` → Busy (Cluster is actively displaying a vehicle warning/info. Must retry 32 release later)
 - `03` → Showing (Success)
@@ -355,9 +356,26 @@ EE 80 8X
 ```text
 1. Claim              → 36 01 01                → wait ACK
 2. Write middle part  → E0 DD 03 00 ...         → wait ACK (multi-frame: 20 → 20 → 10)
-3. Write right part   → E0 DD 04 00 EE 80 8X    → wait ACK
-4. Release            → 32 01 02                → wait ACK (multi-frame: 20 → 20 → 10)
+3. Write right part   → E0 DD 04 00 EE 80 8X    → wait ACK 
+4. Release            → 32 01 02                → wait ACK
 5. Confirm            ← 3B 02 03 03             → send ACK
 ```
 
 Signal strengh is handled like all other, it can be updated indivdually. 
+
+### GOOD TO KNOW:
+
+## After using split Top Line
+When split Top line (line ID `03` `04` was used and it should be used the whole top line (line ID `01`), the MMI sends claim `36 01 01`, sends empty data for line IDs `03` `04`, releases and after getting confirm `3B`, it claims top line `36 01 01` again and sends data to line ID `01`
+
+```text
+1. Claim              → 36 01 01                → wait ACK
+2. Clear Line ID 03   → E0 02 03 00             → wait ACK
+3. Clear Line ID 04   → E0 02 04 00             → wait ACK
+4. Release            → 32 01 01                → wait ACK
+5. Confirm            ← 3B 02 03 03             → send ACK
+6. Claim              → 36 01 01                → wait ACK
+7. Writes Line ID 01  → E0 DD 01 00 ...         → wait ACK (multi-frame: 20 → 20 → 10)
+8. Release            → 32 01 01                → wait ACK
+9. Confirm            ← 3B 02 01 03             → send ACK
+```
