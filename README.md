@@ -192,6 +192,8 @@ Usually it looks like this when the whole content is replaced:
 
 ### Text Line IDs (for opcode `E0`)
 - `01` Top line
+- `03` Also Top Line in Tel screen??? 01 in Tel screen works too
+- `04` Phone Status bar in Top line with Text Line ID `03` before. 3/5 bars (EE 80 83) 4/5 (EE 80 84)
 - `05` Middle header
 - `06` Middle body 1
 - `07` Middle body 2
@@ -338,3 +340,12 @@ Just claiming Zone `02` is not enough to force the cluster to leave the Nav scre
 4. Confirm Flush    ← 3B 02 03 00    → send ACK (Cluster acknowledges 03 is flushed)
 5. Confirm Show     ← 3B 02 02 03    → send ACK (Cluster confirms 02 is now showing)
 ```
+
+## 7. Phone Screen Option (E2 01 01)
+
+Specialities of Phone screen option. It has some extra line options and signs.
+Beside the Top line `01`, the phone screen option supports `03`, which also lets show an signal strenght indicator in top line with a second message for write to line 4 `E0 DD 04`. It's displayed with standard top line command `36 01 01`
+
+Phone strenght:
+
+EE 80 84
