@@ -364,7 +364,7 @@ EE 80 8X
 
 Signal strengh is handled like all other, it can be updated indivdually. 
 
-## Giving screen back to cluster (stop displaying)
+## 9. Giving screen back to cluster (stop displaying)
 If Trip Computer should be displayed again, the Opcode `34` is used for this. I have just seen it in combination with middle part (34 01 02) and after stopping navigation (34 01 03), so the Nav screen cant be reaced when not active. 
 The cluster will confirm this with Opcode `3B` with matching zone ID and Status `04` at the end. (3B 02 AA EE).
 It's important to keep Heartbeat / Keep-Alive active, so the screen can always be reclaimed. 
