@@ -161,7 +161,7 @@ Usually it looks like this when the whole content is replaced:
 | `32`   | `32 01 AA`                       | Release / Commit transaction                                |
 | `34`   | `34 01 AA`                       | unknown, might something to display, gets responded with 3B |
 | `36`   | `36 01 AA`                       | Claim / Start transaction (Zone)                            |
-| `E0`   | `E0 DD CC 00 ...`                | Write text (Len + Line + 00 + data)                         |
+| `E0`   | `E0 DD CC LL ...`                | Write text (Len + Line + 00 + data)                         |
 | `E4`   | `E4 ...`                         | Menu/highlight control                                      |
 | `E2`   | `E2 01 BB`                       | Force source (Phone=01, Media=06, ...)                      |
 | `3B`   | `3B 02 AA EE`                    | Cluster confirmation after Release and Status Code          |
@@ -179,6 +179,7 @@ Usually it looks like this when the whole content is replaced:
 - `HH` → Arrow configuration
 - `JJ` → 00 = status bar off | 01 = status bar on
 - `KK` → FF - 00 full - empty
+- `LL` → Text color 00 = Screen Display Option depending | 01 = white
   
 ### Zone IDs
 - `01` → Top line
