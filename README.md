@@ -348,7 +348,7 @@ Just claiming Zone `02` is not enough to force the cluster to leave the Nav scre
 Specialities of Phone screen option. It has some extra line options and signs.
 In Top Line `36 01 01`, lets show an signal strenght indicator in top line with a second message for write to line 4 `E0 DD 04`. If Top line is split, the middle part is adressed with Text Line ID `03` and the right side with Text Line ID `04`
 
-### Phone signal strenght:
+### Phone signal strenght handled for quick update
 
 EE 80 8X
 
@@ -388,5 +388,13 @@ When split Top line (line ID `03` `04` was used and it should be used the whole 
 ### Special letters
 
 Are treated as letters. Here are the HEX data to send to show the special ones, Audi an own format
-► EE 80 AE
-▼ EE 80 AD
+| Sign         | Hex Data |
+|--------------|----------|
+| `►`          | EE 80 AE |
+| `▼`          | EE 80 AD |
+| `Signal 0/5` | EE 80 80 |
+| `Signal 1/5` | EE 80 81 |
+| `Signal 2/5` | EE 80 82 |
+| `Signal 3/5` | EE 80 83 |
+| `Signal 4/5` | EE 80 84 |
+| `Signal 5/5` | EE 80 85 |
