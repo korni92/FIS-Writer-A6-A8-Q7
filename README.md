@@ -191,9 +191,9 @@ Usually it looks like this when the whole content is replaced:
 - `06` → Media
 
 ### Text Line IDs (for opcode `E0`)
-- `01` Top line
-- `03` Also Top Line in Tel screen??? 01 in Tel screen works too
-- `04` Phone Status bar in Top line with Text Line ID `03` before. 3/5 bars (EE 80 83) 4/5 (EE 80 84)
+- `01` Top line complete
+- `03` Top line middle
+- `04` Top line right side
 - `05` Middle header
 - `06` Middle body 1
 - `07` Middle body 2
@@ -344,8 +344,20 @@ Just claiming Zone `02` is not enough to force the cluster to leave the Nav scre
 ## 7. Phone Screen Option (E2 01 01)
 
 Specialities of Phone screen option. It has some extra line options and signs.
-Beside the Top line `01`, the phone screen option supports `03`, which also lets show an signal strenght indicator in top line with a second message for write to line 4 `E0 DD 04`. It's displayed with standard top line command `36 01 01`
+In Top Line `36 01 01`, lets show an signal strenght indicator in top line with a second message for write to line 4 `E0 DD 04`. If Top line is split, the middle part is adressed with Text Line ID `03` and the right side with Text Line ID `04`
 
-Phone strenght:
+### Phone signal strenght:
 
-EE 80 84
+EE 80 8X
+
+- `X` for filled signal bars 0-5
+
+```text
+1. Claim              → 36 01 01                → wait ACK
+2. Write middle part  → E0 DD 03 00 ...         → wait ACK (multi-frame: 20 → 20 → 10)
+3. Write right part   → E0 DD 04 00 EE 80 8X    → wait ACK
+4. Release            → 32 01 02                → wait ACK (multi-frame: 20 → 20 → 10)
+5. Confirm            ← 3B 02 03 03             → send ACK
+```
+
+Signal strengh is handled like all other, it can be updated indivdually. 
