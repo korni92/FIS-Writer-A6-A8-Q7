@@ -187,9 +187,9 @@ Usually it looks like this when the whole content is replaced:
 - `03` → Nav screen
 
 ### BB Screen Display Option
-- `01` → Telephone
-- `02` → Radio
-- `06` → Media
+- `01` → Telephone (Green)
+- `02` → Radio (Red)
+- `06` → Media (Red)
 
 ### CC Text Line IDs (for opcode `E0`)
 - `01` Top line complete
@@ -221,8 +221,8 @@ If you get 0x09 02 03 E0, you have violated the transaction state machine (e.g.,
 
 ### DD Text Length Calculation
 Len = 2 + number_of_characters
-↑   └───────────────┘
-(Line ID + 00 separator)
+ ↑         └───────────────┘
+
 
 
 Example: `"Hello"` (5 chars) → `E0 07 01 00 48 65 6C 6C 6F`
@@ -385,3 +385,8 @@ When split Top line (line ID `03` `04` was used and it should be used the whole 
 8. Release            → 32 01 01                → wait ACK
 9. Confirm            ← 3B 02 01 03             → send ACK
 ```
+### Special letters
+
+Are treated as letters. Here are the HEX data to send to show the special ones, Audi an own format
+► EE 80 AE
+▼ EE 80 AD
