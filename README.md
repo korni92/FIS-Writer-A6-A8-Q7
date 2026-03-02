@@ -161,7 +161,7 @@ Usually it looks like this when the whole content is replaced:
 | `32`   | `32 01 AA`                       | Release / Commit transaction                                |
 | `34`   | `34 01 AA`                       | unknown, might something to display, gets responded with 3B |
 | `36`   | `36 01 AA`                       | Claim / Start transaction (Zone)                            |
-| `E0`   | `E0 DD CC LL ...`                | Write text (Len + Line + 00 + data)                         |
+| `E0`   | `E0 DD CC LL ...`                | Write text (Len + Line + Text color + data)                  |
 | `E4`   | `E4 ...`                         | Menu/highlight control                                      |
 | `E2`   | `E2 01 BB`                       | Force source (Phone=01, Media=06, ...)                      |
 | `3B`   | `3B 02 AA EE`                    | Cluster confirmation after Release and Status Code          |
@@ -181,16 +181,16 @@ Usually it looks like this when the whole content is replaced:
 - `KK` → FF - 00 full - empty
 - `LL` → Text color 00 = Screen Display Option depending | 01 = white
   
-### Zone IDs
+### AA Zone IDs
 - `01` → Top line
 - `02` → Middle area
 - `03` → Nav screen
 
-### Screen Display Option
+### BB Screen Display Option
 - `01` → Telephone
 - `06` → Media
 
-### Text Line IDs (for opcode `E0`)
+### CC Text Line IDs (for opcode `E0`)
 - `01` Top line complete
 - `03` Top line middle
 - `04` Top line right side
@@ -200,13 +200,13 @@ Usually it looks like this when the whole content is replaced:
 - `08` Middle body 3
 - `09` Middle body 4
 
-### Navigation screen (Only for clamimed Screen Zone ID 03 wirh opcode `E0`)
+### CC Navigation screen (Only for clamimed Screen Zone ID 03 wirh opcode `E0`)
 - `0A` Headline (Street name)
 - `0B` Top left (Distance/Turn info)
 - `0C` Bottom left (Distance till Destination)
 - `0D` Bottom right (Time at arrival)
 
-### Status Code (for opcode `3B`)
+### EE Status Code (for opcode `3B`)
 - `00` → Abort / Flush (Cluster confirms the previous zone was cleared to make room for a new one. Not necessarily an error!)
 - `01` → Ready (Cluster screen is free again after showing a warning)
 - `02` → Busy (Cluster is actively displaying a vehicle warning/info. Must retry 32 release later)
@@ -217,7 +217,7 @@ Usually it looks like this when the whole content is replaced:
 Just giving `9X` means we need to try again after X x 10 millisecond with the same message and same seq counter.
 If you get 0x09 02 03 E0, you have violated the transaction state machine (e.g., trying to write to Zone 0x03 without first sending a 32 Release for Zone 0x02). This causes a fatal crash requiring a hardware restart.
 
-### Text Length Calculation
+### DD Text Length Calculation
 Len = 2 + number_of_characters
 ↑   └───────────────┘
 (Line ID + 00 separator)
