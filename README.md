@@ -193,6 +193,7 @@ Usually it looks like this when the whole content is replaced:
 
 ### CC Text Line IDs (for opcode `E0`)
 - `01` Top line complete
+- `02` Top line left
 - `03` Top line middle
 - `04` Top line right side
 - `05` Middle header
@@ -373,6 +374,8 @@ It's important to keep Heartbeat / Keep-Alive active, so the screen can always b
 
 ### After using split Top Line
 When split Top line (line ID `03` `04` was used and it should be used the whole top line (line ID `01`), the MMI sends claim `36 01 01`, sends empty data for line IDs `03` `04`, releases and after getting confirm `3B`, it claims top line `36 01 01` again and sends data to line ID `01`
+Opposite when using split top line, `01` needs to be cleared.
+If the previous content is not cleared, when switching, it shows old content underneath the new.
 
 ```text
 1. Claim              → 36 01 01                → wait ACK
