@@ -179,7 +179,7 @@ Usually it looks like this when the whole content is replaced:
 - `HH` → Arrow configuration
 - `JJ` → 00 = status bar off | 01 = status bar on
 - `KK` → FF - 00 full - empty
-- `LL` → Text color 00 = Screen Display Option depending | 01 = white
+- `LL` → Text color 00 = 01 Color inversion
   
 ### AA Zone IDs
 - `01` → Top line
@@ -224,9 +224,15 @@ If you get 0x09 02 03 E0, you have violated the transaction state machine (e.g.,
 Len = 2 + number_of_characters
  ↑         └───────────────┘
 
-
-
 Example: `"Hello"` (5 chars) → `E0 07 01 00 48 65 6C 6C 6F`
+
+### LL Text color
+Line ID 06-09:
+Can be inverted between white 01 and Display Screen Option color 00
+
+Line ID 01 - 05
+Can be inverted between white 00 and red 01
+
 
 ### Indicator/Highlight (for opcode `E4`)
 E4 AA BB CC
