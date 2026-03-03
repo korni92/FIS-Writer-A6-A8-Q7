@@ -388,13 +388,73 @@ When split Top line (line ID `03` `04` was used and it should be used the whole 
 ### Special letters
 
 Are treated as letters. Here are the HEX data to send to show the special ones, Audi an own format
-| Sign         | Hex Data |
-|--------------|----------|
-| `►`          | EE 80 AE |
-| `▼`          | EE 80 AD |
-| `Signal 0/5` | EE 80 80 |
-| `Signal 1/5` | EE 80 81 |
-| `Signal 2/5` | EE 80 82 |
-| `Signal 3/5` | EE 80 83 |
-| `Signal 4/5` | EE 80 84 |
-| `Signal 5/5` | EE 80 85 |
+| Sign         | Hex Data      | Describtion             |
+|--------------|---------------|-------------------------|
+| `!`          | EE 80 21      |                         |
+| `"`          | EE 80 22      |                         |
+| `#`          | EE 80 23      |                         |
+| `$`          | EE 80 24      |                         |
+| `%`          | EE 80 25      |                         |
+| `&`          | EE 80 26      |                         |
+| `(`          | EE 80 28      |                         |
+| `0`          | EE 80 30      |                         |
+| `1`          | EE 80 31      |                         |
+| `2`          | EE 80 32      |                         |
+| `3`          | EE 80 33      |                         |
+| `4`          | EE 80 34      |                         |
+| `5`          | EE 80 35      |                         |
+| `6`          | EE 80 36      |                         |
+| `7`          | EE 80 37      |                         |
+| `8`          | EE 80 38      |                         |
+| `9`          | EE 80 39      |                         |
+| `:`          | EE 80 3A      |                         |
+| `;`          | EE 80 3B      |                         |
+| `<`          | EE 80 3C      |                         |
+| `=`          | EE 80 3D      |                         |
+| `>`          | EE 80 3E      |                         |
+| `?`          | EE 80 3F      |                         |
+| `@`          | EE 80 40      |                         |
+| `A`          | EE 80 40 - 5A | Big letters A to Z      |
+| `[`          | EE 80 5B      |                         |
+| `\`          | EE 80 5C      |                         |
+| `]`          | EE 80 5D      |                         |
+| `^`          | EE 80 5E      |                         |
+| `_`          | EE 80 5F      |                         |
+| `            | EE 80 60      |                         |
+| `a`          | EE 80 61 - 7A | Small letters a to z    |
+| `{`          | EE 80 7B      |                         |
+| straight bar | EE 80 7C      |                         |
+| `}`          | EE 80 7D      |                         |
+| `~`          | EE 80 7E      |                         |
+| `Signal 0/5` | EE 80 80      |                         |
+| `Signal 1/5` | EE 80 81      |                         |
+| `Signal 2/5` | EE 80 82      |                         |
+| `Signal 3/5` | EE 80 83      |                         |
+| `Signal 4/5` | EE 80 84      |                         |
+| `Signal 5/5` | EE 80 85      |                         |
+| Phone Pickup | EE 80 88      |                         |
+| `...`        | EE 80 89      |                         |
+|Antenna symbl | EE 80 9A      |                         |
+|Speaker crossed| EE 80 9B      |                         |
+| `→`          | EE 80 9C      |                         |
+| Time AM Logo | EE 80 9D      |                         |
+| Time PM Logo | EE 80 9E      |                         |
+| Speaker      | EE 80 9F      |                         |
+| Play logo    | EE 80 A0      |                         |
+| TP logo      | EE 80 A1      |                         |
+| TMC logo     | EE 80 A2      |                         |
+|Speaker corssed| EE 80 A3      |                         |
+| Factory symbol| EE 80 A4      |                         |
+| House symbol | EE 80 A5      |                         |
+| Phone symbol | EE 80 A6      |                         |
+| Mobil symbol | EE 80 A7      |                         |
+| Fax symbol   | EE 80 A8      |                         |
+| Pager symbol | EE 80 A9      |                         |
+| Car symbol   | EE 80 AA      |                         |
+| thick `?`    | EE 80 AB      |                         |
+| Simc. symbol | EE 80 AC      |                         |
+| `▼`          | EE 80 AD      |                         |
+| `►`          | EE 80 AE      |                         |
+| Folder symbol| EE 80 AF      |                         |
+| Big Space    | EE 80 BE      |                         |
+
