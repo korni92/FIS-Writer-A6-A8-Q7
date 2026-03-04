@@ -1,0 +1,3260 @@
+DTC 	DTC Text
+P000100 	Fuel Volume Regulator Control Circuit/Open
+P000A00 	A Camshaft Position Slow Response (Bank 1)
+P000B00 	B Camshaft Position Slow Response (Bank 1)
+P000C00 	A Camshaft Position Slow Response (Bank 2)
+P000D00 	B Camshaft Position Slow Response (Bank 2)
+P001000 	A Camshaft Position Actuator Circuit/Open (Bank1)
+P001100 	A Camshaft Position (Bank1) Timing over-advanced or System Performance
+P001200 	A Camshaft Position (Bank1) Timing over-retarded
+P001300 	B Camshaft Position Actuator Circuit/Open (Bank1)
+P001400 	B Camshaft Position (Bank1) Timing over-advanced or System Performance
+P001500 	B Camshaft Position (Bank1) Timing over-retarded
+P001600 	Crankshaft Position-Camshaft Position Correlation Bank 1 Sensor A
+P001700 	Crankshaft Position-Camshaft Position Correlation Bank 1 Sensor B
+P001800 	Crankshaft Position-Camshaft Position Correlation Bank 2 Sensor A
+P001900 	Crankshaft Position-Camshaft Position Correlation Bank 2 Sensor B
+P002000 	A Camshaft Position ActuatorCircuit(Bank2)
+P002100 	A Camshaft Position (Bank2) Timing over-advanced or System Performance
+P002200 	A Camshaft Position (Bank2) Timing over-retarded
+P002300 	B Camshaft Position Actuator Circuit(Bank2)
+P002400 	B Camshaft Position (Bank2) Timing over-advanced or System Performance
+P002500 	B Camshaft Position (Bank2) Timing over-retarded
+P003000 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 1)
+P003100 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 1) Low
+P003200 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 1) High
+P003300 	Turbo Charger Bypass Valve Control Circuit
+P003400 	Turbo Charger Bypass Valve Control Circuit Low
+P003500 	Turbo Charger Bypass Valve Control Circuit High
+P003600 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 2)
+P003700 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 2) Low
+P003800 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 2) High
+P003900 	Turbo/Super Charger Bypass Valve Control Circuit Range/Performance
+P004000 	O2 Sensor Signals Swapped Bank 1 Sensor 1/ Bank 2 Sensor 1
+P004100 	O2 Sensor Signals Swapped Bank 1 Sensor 2/ Bank 2 Sensor 2
+P004200 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 3)
+P004300 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 3) Low
+P004400 	O2 Sensor Heater Contr. Circ.(Bank1(1)Sensor 3) High
+P004500 	Turbocharger/Supercharger Boost Control Solenoid "A" Circuit/Open
+P004700 	Turbocharger/Supercharger Boost Control Solenoid "A" Circuit Low
+P004800 	Turbocharger/Supercharger Boost Control Solenoid "A" Circuit High
+P004900 	Turbocharger/Supercharger Turbine Overspeed
+P004A00 	Turbocharger/Supercharger Boost Control Solenoid "B" Circuit / Open
+P004C00 	Turbocharger/Supercharger Boost Control Solenoid "B" Circuit Low
+P004D00 	Turbocharger/Supercharger Boost Control Solenoid "B" Circuit High
+P005000 	O2 Sensor Heater Contr. Circ.(Bank2 Sensor 1)
+P005100 	O2 Sensor Heater Contr. Circ.(Bank2 Sensor 1) Low
+P005200 	O2 Sensor Heater Contr. Circ.(Bank2 Sensor1) High
+P005600 	O2 Sensor Heater Contr. Circ.(Bank2 Sensor 2)
+P005700 	O2 Sensor Heater Contr. Circ.(Bank2 Sensor 2) Low
+P005800 	O2 Sensor Heater Contr. Circ.(Bank2 Sensor2) High
+P006200 	HO2S Heater Control Circuit
+P006300 	HO2S Heater Control Circuit Low
+P006400 	HO2S Heater Control Circuit High Bank2 Sensor3
+P006500 	Air Assisted Injector Control Range/Performance
+P006600 	Air Assisted Injector Control Circuit low
+P006700 	Air Assisted Injector Control Circuit high
+P006800 	MAP/MAF - Throttle Position Correlation
+P006900 	Manifold Absolute Pressure - Barometric Pressure Correlation
+P007000 	Ambient Air Temperature Sensor Circuit
+P007100 	Ambient Air Temperature Sensor Circuit Range/Performance
+P007200 	Ambient Air Temperature Sensor Circuit Low
+P007300 	Ambient Air Temperature Sensor Circuit High
+P007400 	Ambient Air Temperature Sensor Circuit Intermittent
+P007C00 	Charge Air Cooler Temperature Sensor Circuit Low Bank 1
+P007D00 	Charge Air Cooler Temperature Sensor Circuit High Bank 1
+P008700 	Fuel Rail/System Pressure - Too Low
+P008800 	Fuel Rail/System Pressure - Too High
+P008900 	Fuel Pressure Regulator 1 Performance
+P008A00 	Low Pressure Fuel System Pressure - Too Low
+P008B00 	Low Pressure Fuel System Pressure - Too High
+P009000 	Fuel Pressure Regulator 1Control Circuit
+P009100 	Fuel Pressure Regulator 1 Control Circuit Low
+P009200 	Fuel Pressure Regulator 1 Control Circuit High
+P009500 	Intake Air Temperature Sensor 2 Circuit
+P009600 	Intake Air Temperature Sensor 2 Circuit Bank 1 Range/Performance
+P009700 	Intake Air Temperature Sensor 2 Circuit Low
+P009800 	Intake Air Temperature Sensor 2 Circuit High
+P009900 	Intake Air Temperature Sensor 2 Circuit Intermittent/Erratic
+P009B00 	Fuel Pressure Relief Control Circuit/Open
+P009C00 	Fuel Pressure Relief Control Circuit Low
+P009D00 	Fuel Pressure Relief Control Circuit High
+P009E00 	Fuel Pressure Relief Control Performance/Stuck Off
+P009F00 	Fuel Pressure Relief Control Stuck on
+P00A200 	Charge Air Cooler Temperature Sensor Circuit Low Bank 2
+P00A300 	Charge Air Cooler Temperature Sensor Circuit High Bank 2
+P00A600 	Intake Air Temperature Sensor 2 Circuit Bank 2 Range/Performance
+P00AF00 	Turbocharger/Supercharger Boost Control "A" Module Performance
+P00B000 	Turbocharger/Supercharger Boost Control "B" Module Performance
+P00C600 	Fuel Rail Pressure Too Low - Engine Cranking
+P010000 	Mass or Volume Air Flow Circuit
+P010100 	Mass or Volume Air Flow Circ. Range/Performance
+P010200 	Mass or Volume Air Flow Circ. Low Input
+P010300 	Mass or Volume Air Flow Circ. High Input
+P010400 	Mass or Volume Air Flow Circuit Intermittent
+P010500 	Manifolt Absolut Pressure/Barometic Pressure Circuit
+P010600 	Manifold Abs.Pressure or Bar.Pressure Range/Performance
+P010700 	Manifold Abs.Pressure or Bar.Pressure Low Input
+P010800 	Manifold Abs.Pressure or Bar.Pressure High Input
+P010A00 	Mass or Volume Air Flow "B" Circuit
+P010B00 	Mass or Volume Air Flow "B" Circuit Range/Performance
+P010C00 	Mass or Volume Air Flow "B" Circuit Low Input
+P010D00 	Mass or Volume Air Flow "B" Circuit High Input
+P010E00 	Mass or Volume Air Flow "B" Circuit Intermittent/Erratic
+P010F00 	Mass or Volume Air Flow Sensor A/B Correlation
+P011000 	Intake Air Temperature Sensor 1 Circuit
+P011100 	Intake Air Temp.Circ. Range/Performance
+P011200 	Intake Air Temp.Circ. Low Input
+P011300 	Intake Air Temp.Circ. High Input
+P011400 	Intake Air Temp.Circ. Intermittend
+P011500 	Engine Coolant Temperature Sensor 1 Circuit
+P011600 	Engine Coolant Temperature Sensor 1 Circuit Range/Performance
+P011700 	Engine Coolant Temperature Sensor 1 Circuit Low
+P011800 	Engine Coolant Temperature Sensor 1 Circuit High
+P011A00 	Engine Coolant Temperature Sensor 1/2 Correlation
+P012000 	Throttle/Pedal Pos.Sensor A Circ. Malfunction
+P012100 	Throttle/Pedal Pos.Sensor A Circ. Range/Performance
+P012200 	Throttle/Pedal Pos.Sensor A Circ. Low Input
+P012300 	Throttle/Pedal Pos.Sensor A Circ. High Input
+P012500 	Insufficient Coolant Temp.for Closed Loop Fuel Control
+P012800 	Coolant Termostat ( Coolant Temperature Below Thermostat Regulating Temperature)
+P012A00 	Turbocharger/Supercharger Inlet Pressure Sensor Circuit
+P012B00 	Turbocharger/Supercharger Inlet Pressure Sensor Circuit Range/Performance
+P012C00 	Turbocharger/Supercharger Inlet Pressure Sensor Circuit Low
+P012D00 	Turbocharger/Supercharger Inlet Pressure Sensor Circuit High
+P013000 	O2 Sensor Circ.,Bank1-Sensor1 Malfunction
+P013100 	O2 Sensor Circ.,Bank1-Sensor1 Low Voltage
+P013200 	O2 Sensor Circ.,Bank1-Sensor1 High Voltage
+P013300 	O2 Sensor Circ.,Bank1-Sensor1 Slow Response
+P013400 	O2 Sensor Circ.,Bank1-Sensor1 No Activity Detected
+P013500 	O2 Sensor Heater Circ.,Bank1-Sensor1 Malfunction
+P013600 	O2 Sensor Circ.,Bank1-Sensor2 Malfunction
+P013700 	O2 Sensor Circ.,Bank1-Sensor2 Low Voltage
+P013800 	O2 Sensor Circ.,Bank1-Sensor2 High Voltage
+P013900 	O2 Sensor Circ.,Bank1-Sensor2 Slow Response
+P014000 	O2 Sensor Circ.,Bank1-Sensor2 No Activity Detected
+P014100 	O2 Sensor Heater Circ.,Bank1-Sensor2 Malfunction
+P014200 	O2 Sensor Circ.,Bank1-Sensor3
+P014300 	O2 Sensor Circ.,Bank1-Sensor3 Low Voltage
+P014400 	O2 Sensor Circ.,Bank1-Sensor3 High Voltage
+P014500 	O2 Sensor Circ.,Bank1-Sensor3 Slow Response
+P014600 	O2 Sensor Circ.,Bank1-Sensor3 No Activity Detected
+P014700 	O2 Sensor Heater Circ.,Bank1-Sensor3
+P014800 	Fuel Delivery Error
+P014900 	Fuel Timing Error
+P015000 	O2 Sensor Circ.,Bank2-Sensor1 Malfunction
+P015100 	O2 Sensor Circ.,Bank2-Sensor1 Low Voltage
+P015200 	O2 Sensor Circ.,Bank2-Sensor1 High Voltage
+P015300 	O2 Sensor Circ.,Bank2-Sensor1 Slow Response
+P015400 	O2 Sensor Circ.,Bank2-Sensor1 No Activity Detected
+P015500 	O2 Sensor Heater Circ.,Bank2-Sensor1 Malfunction
+P015600 	O2 Sensor Circ.,Bank2-Sensor2 Malfunction
+P015700 	O2 Sensor Circ.,Bank2-Sensor2 Low Voltage
+P015800 	O2 Sensor Circ.,Bank2-Sensor2 High Voltage
+P015900 	O2 Sensor Circ.,Bank2-Sensor2 Slow Response
+P016000 	O2 Sensor Circ.,Bank2-Sensor2 No Activity Detected
+P016100 	O2 Sensor Heater Circ.,Bank2-Sensor2 Malfunction
+P016200 	O2 Sensor Circ.,Bank2-Sensor3 Malfunction
+P016300 	O2 Sensor Circ.,Bank2-Sensor3 Low Voltage
+P016400 	O2 Sensor Circ.,Bank2-Sensor3 High Voltage
+P016500 	O2 Sensor Circ.,Bank2-Sensor3 Slow Response
+P016600 	O2 Sensor Circ.,Bank2-Sensor3 No Activity Detected
+P016700 	O2 Sensor Heater Circ.,Bank2-Sensor3 Malfunction
+P016900 	Incorrect Fuel Composition
+P017000 	Fuel Trim,Bank1 Malfunction
+P017100 	Fuel Trim,Bank1 System too Lean
+P017200 	Fuel Trim,Bank1 System too Rich
+P017300 	Fuel Trim,Bank2 Malfunction
+P017400 	Fuel Trim,Bank2 System too Lean
+P017500 	Fuel Trim,Bank2 System too Rich
+P017700 	Fuel Composition Sensor Circuit Range/Performance
+P017800 	Fuel Composition Sensor Circuit Low
+P017900 	Fuel Composition Sensor Circuit High
+P018100 	Fuel Temperature Sensor A Circuit Range/Performance
+P018200 	Fuel Temperature Sensor A Circuit Low Input
+P018300 	Fuel Temperature Sensor A Circuit High Input
+P018600 	Fuel Temperature Sensor B Circuit Range/Performance
+P018700 	Fuel Temperature Sensor B Circuit Low
+P018800 	Fuel Temperature Sensor B Circuit High
+P018A00 	Fuel Pressure Sensor "B" Circuit
+P018B00 	Fuel Pressure Sensor "B" Circuit Range/Performance
+P018C00 	Fuel Pressure Sensor "B" Circuit Low
+P019000 	Fuel Rail Pressure Sensor "A" Circuit
+P019100 	Fuel Rail Pressure Sensor "A" Circuit Range/Performance
+P019200 	Fuel Rail Pressure Sensor "A" Circuit Low Input
+P019300 	Fuel Rail Pressure Sensor "A" Circuit High Input
+P019400 	Fuel Rail Pressure Sensor "A" Circuit intermittent
+P019500 	Engine Oil Temperature Sensor Circuit
+P019600 	Engine Oil Temperature Sensor Circuit range/performance
+P019700 	Engine Oil Temperature Sensor Circuit low
+P019800 	Engine Oil Temperature Sensor Circuit high
+P019900 	Engine Oil Temperature Sensor Circuit Intermittent/Erratic
+P020000 	Injector Circuit open
+P020100 	Cylinder 1- Injector Circuit
+P020200 	Cylinder 2- Injector Circuit
+P020300 	Cylinder 3- Injector Circuit
+P020400 	Cylinder 4- Injector Circuit
+P020500 	Cylinder 5- Injector Circuit
+P020600 	Cylinder 6- Injector Circuit
+P020700 	Cylinder 7- Injector Circuit
+P020800 	Cylinder 8- Injector Circuit
+P020900 	Cylinder 9- Injector Circuit
+P020A00 	Cylinder 1 Injection Timing
+P020B00 	Cylinder 2 Injection Timing
+P020C00 	Cylinder 3 Injection Timing
+P020D00 	Cylinder 4 Injection Timing
+P020E00 	Cylinder 5 Injection Timing
+P020F00 	Cylinder 6 Injection Timing
+P021000 	Cylinder 10- Injector Circuit
+P021100 	Cylinder 11- Injector Circuit
+P021200 	Cylinder 12- Injector Circuit
+P021500 	Engine Shutoff Solenoid
+P021600 	Injection Timing Control Circuit
+P021800 	Transmission Fluid Over Temperature Condition
+P021900 	Engine Overspeed Condition
+P021A00 	Cylinder 7 Injection Timing
+P021B00 	Cylinder 8 Injection Timing
+P021C00 	Cylinder 9 Injection Timing
+P021D00 	Cylinder 10 Injection Timing
+P021E00 	Cylinder 11 Injection Timing
+P021F00 	Cylinder 12 Injection Timing
+P022100 	Throttle/Pedal Position Sensor/Switch B Range/Performance
+P022200 	Throttle/Pedal Position Sensor/Switch B Low Input
+P022300 	Throttle/Pedal Position Sensor/Switch B High Input
+P022500 	Throttle/Pedal Position Sensor/Switch C
+P022600 	Throttle/Pedal Position Sensor/Switch C Circuit Range/Performance
+P022700 	Throttle/Pedal Position Sensor/Switch C Circuit Low Input
+P022800 	Throttle/Pedal Position Sensor/Switch C Circuit High Input
+P022A00 	Charge Air Cooler Bypass Control "A" Circuit /Open
+P022B00 	Charge Air Cooler Bypass Control "A" Circuit Low
+P022C00 	Charge Air Cooler Bypass Control "A" Circuit High
+P023000 	Fuel Pump Primary Circuit
+P023400 	Turbo/Super Charger Overboost Condition
+P023500 	Turbo/Super Charger Boost Sensor A Circ.
+P023600 	Turbocharger Boost Sensor (A) Circ. Range/Performance
+P023700 	Turbocharger Boost Sensor (A) Circ. Low Input
+P023800 	Turbocharger Boost Sensor (A) Circ. High Input
+P023F00 	Fuel Pump Secondary Circuit/Open
+P024000 	Turbo/Super Charger Boost Sensor "B" Circuit Range/Performance
+P024100 	Turbo/Super Charger Boost Sensor "B" Circuit Low
+P024200 	Turbo/Super Charger Boost Sensor "B" Circuit High
+P024300 	Turbo/Super Charger Wastegate Solonoid A
+P024500 	Turbo/Super Charger Wasteg.Solonoid A Low
+P024600 	Turbo/Sup.Charger Wasteg.Solonoid A High
+P024900 	Turbo/Super Charger Wastegate Solenoid "B" Low
+P024A00 	Charge Air Cooler Bypass Control "A" Range/Performance
+P024B00 	Charge Air Cooler Bypass Control "A" Stuck
+P025000 	Turbo/Super Charger Wastegate Solenoid "B" High
+P025100 	Injection Pump Fuel Metering Control "A" (Cam/Rotor/Injector)
+P025200 	Injection Pump Fuel Metering Control A Range/Performance (Cam/Rotor/Injector)
+P025A00 	Fuel Pump Module Control Circuit/Open
+P025B00 	Fuel Pump Module Control Circuit Range/Performance
+P025C00 	Fuel Pump Module Control Circuit Low
+P025D00 	Fuel Pump Module Control Circuit High
+P026100 	Cylinder 1- Injector Circuit Low
+P026200 	Cylinder 1- Injector Circuit High
+P026300 	Cylinder 1 Contribution/Balance
+P026400 	Cylinder 2- Injector Circuit Low
+P026500 	Cylinder 2- Injector Circuit High
+P026600 	Cylinder 2 Contribution/Balance
+P026700 	Cylinder 3- Injector Circuit Low
+P026800 	Cylinder 3- Injector Circuit High
+P026900 	Cylinder 3 Contribution/Balance
+P027000 	Cylinder 4- Injector Circuit Low
+P027100 	Cylinder 4- Injector Circuit High
+P027200 	Cylinder 4 Contribution/Balance
+P027300 	Cylinder 5- Injector Circuit Low
+P027400 	Cylinder 5- Injector Circuit High
+P027500 	Cylinder 5 Contribution/Balance
+P027600 	Cylinder 6- Injector Circuit Low
+P027700 	Cylinder 6- Injector Circuit High
+P027800 	Cylinder 6 Contribution/Balance
+P027900 	Cylinder 7- Injector Circuit Low
+P028000 	Cylinder 7- Injector Circuit High
+P028100 	Cylinder 7 Contribution/Balance
+P028200 	Cylinder 8- Injector Circuit Low
+P028300 	Cylinder 8- Injector Circuit High
+P028400 	Cylinder 8 Contribution/Balance
+P028500 	Cylinder 9- Injector Circuit Low
+P028600 	Cylinder 9- Injector Circuit High
+P028700 	Cylinder 9 Contribution/Balance
+P028800 	Cylinder 10- Injector Circuit Low
+P028900 	Cylinder 10- Injector Circuit High
+P029000 	Cylinder 10 Contribution/Balance
+P029100 	Cylinder 11- Injector Circuit Low
+P029200 	Cylinder 11- Injector Circuit High
+P029300 	Cylinder 11 Contribution/Balance
+P029400 	Cylinder 12- Injector Circuit Low
+P029500 	Cylinder 12- Injector Circuit High
+P029600 	Cylinder 12 Contribution/Balance
+P029900 	Turbo/Super Charger Underboost
+P02CA00 	Turbocharger/Supercharger "B" Overboost Condition
+P02CB00 	Turbocharger/Supercharger "B" Underboost Condition
+P02CD00 	Cylinder 1 Fuel Injector Offset Learning At Max Limit
+P02CF00 	Cylinder 2 Fuel Injector Offset Learning At Max Limit
+P02D100 	Cylinder 3 Fuel Injector Offset Learning At Max Limit
+P02D300 	Cylinder 4 Fuel Injector Offset Learning At Max Limit
+P030000 	Random/Multiple Cylinder Misfire Detected
+P030100 	Cyl.1 Misfire Detected
+P030200 	Cyl.2 Misfire Detected
+P030300 	Cyl.3 Misfire Detected
+P030400 	Cyl.4 Misfire Detected
+P030500 	Cyl.5 Misfire Detected
+P030600 	Cyl.6 Misfire Detected
+P030700 	Cyl.7 Misfire Detected
+P030800 	Cyl.8 Misfire Detected
+P030900 	Cyl.9 Misfire Detected
+P031000 	Cyl.10 Misfire Detected
+P031100 	Cyl.11 Misfire Detected
+P031200 	Cyl.12 Misfire Detected
+P031300 	Misfire Detected with Low Fuel
+P031400 	Single Cylinder Misfire
+P031800 	Rough Road Sensor "A" Signal Circuit
+P032100 	Ign./Distributor Eng.Speed Inp.Circ. Range/Performance
+P032200 	Ign./Distributor Eng.Speed Inp.Circ. No Signal
+P032400 	Knock Control System Error
+P032500 	Knock Sensor 1 Circuit Malfunktion
+P032600 	Knock Sensor 1 Circuit Range/Performance
+P032700 	Knock Sensor 1 Circ. Low Input
+P032800 	Knock Sensor 1 Circ. High Input
+P033000 	Knock Sensor 2 Circuit
+P033100 	Knock Sensor 2 Circuit Range/Performance
+P033200 	Knock Sensor 2 Circ. Low Input
+P033300 	Knock Sensor 2 Circ. High Input
+P033500 	Crankshaft Position Sensor A Circuit
+P033600 	Crankshaft Position Sensor A Circuit Range/Performance
+P033700 	Crankshaft Pos.Sensor (A) Circ. Low Input
+P033900 	Crankshaft Position Sensor "A" Circuit Intermittent
+P034000 	Camshaft Position Sensor Circuit
+P034100 	Camshaft Pos.Sensor Circ. Range/Performance
+P034200 	Camshaft Pos.Sensor Circ. Low Input
+P034300 	Camshaft Pos.Sensor Circ. High Input
+P034500 	Camshaft Position Sensor Circuit Bank2
+P034600 	Camshaft Pos.Sensor Circ. (Bank2) Range/Performance
+P034700 	Camshaft Pos.Sensor "A" Circ. (Bank2) Low
+P034800 	Camshaft Pos.Sensor "A" Circ. (Bank2) High
+P035100 	Ignition Coil A Primary/secondary Circuit
+P035200 	Ignition Coil B Primary/secondary Circuit
+P035300 	Ignition Coil C Primary/secondary Circuit
+P035400 	Ignition Coil D Primary/secondary Circuit
+P035500 	Ignition Coil E Primary/secondary Circuit
+P035600 	Ignition Coil F Primary/secondary Circuit
+P035700 	Ignition Coil G Primary/secondary Circuit
+P035800 	Ignition Coil H Primary/secondary Circuit
+P035900 	Ignition Coil I Primary/secondary Circuit
+P036000 	Ignition Coil J Primary/secondary Circuit
+P036100 	Ignition Coil K Primary/secondary Circuit
+P036200 	Ignition Coil L Primary/secondary Circuit
+P036300 	Misfire Detected - Fueling Disabled
+P036500 	Camshaft Position Sensor "B" Circuit (Bank 1)
+P036600 	Camshaft Pos.Sensor "B" Circ. (Bank 1) Range/Performance
+P036700 	Camshaft Pos.Sensor "B" Circ. (Bank 1) Low Input
+P036800 	Camshaft Pos.Sensor "B" Circ. (Bank 1) High Input
+P038000 	Glow Plug/Heater Circuit "A"
+P038100 	Glow Plug/Heater Indicator Circuit
+P038300 	Glow Plug Control Module Control Circuit Low
+P038400 	Glow Plug Control Module Control Circuit High
+P039000 	Camshaft Position Sensor "B" Circuit (Bank 2)
+P039100 	Camshaft Pos.Sensor "B" Circ. (Bank 2) Range/Performance
+P039200 	Camshaft Pos.Sensor "B" Circ. (Bank 2) Low Input
+P039300 	Camshaft Pos.Sensor "B" Circ. (Bank 2) High Input
+P039B00 	Cylinder 1 Pressure Too High
+P03A500 	Cylinder 2 Pressure Too High
+P03AF00 	Cylinder 3 Pressure Too High
+P03B900 	Cylinder 4 Pressure Too High
+P03C300 	Cylinder 5 Pressure Too High
+P03CD00 	Cylinder 6 Pressure Too High
+P040000 	Exhaust Gas Recirc."A" Flow
+P040100 	Exhaust Gas Recirc.Flow Insufficient Detected
+P040200 	Exhaust Gas Recirc.Flow Excessive Detected
+P040300 	Exhaust Gas Recirculation Circuit
+P040400 	Exhaust Gas Recirculation Circuit Range/Performance
+P040500 	Exhaust Gas Recirculat.Sensor A Circuit Low
+P040600 	Exhaust Gas Recirculat.Sensor A Circuit High
+P040700 	Exhaust Gas Recirculat.Sensor B Circuit Low
+P040800 	Exhaust Gas Recirculat.Sensor B Circuit High
+P040B00 	Exhaust Gas Recirculation Temperature Sensor "A" Circuit Range/Performance
+P040C00 	Exhaust Gas Recirculation Temperature Sensor "A" Circuit Low
+P040D00 	Exhaust Gas Recirculation Temperature Sensor "A" Circuit High
+P041000 	Sec.Air Inj.Sys. Malfunction
+P041100 	Sec.Air Inj.Sys. Incorrect Flow Detected
+P041200 	Sec.Air Inj.Sys.Switching Valve A Circ. Malfunction
+P041300 	Sec.Air Inj.Sys.Switching Valve A Circ. Open
+P041400 	Sec.Air Inj.Sys.Switching Valve A Circ. Shorted
+P041500 	Sec.Air Inj.Sys.Switching Valve B Circ. Malfunction
+P041600 	Sec.Air Inj.Sys.Switching Valve B Circ. Open
+P041700 	Sec.Air Inj.Sys.Switching Valve B Circ. Shorted
+P041800 	Sec. Air Injection System Relay A Circuit
+P041900 	Sec. Air Injection System Relay B Circuit
+P042000 	Catalyst System,Bank1 Efficiency Below Threshold
+P042100 	Warm Up Catalyst, Bank1 Efficiency Below Threshold
+P042200 	Main Catalyst,Bank1 Efficiency Below Threshold
+P042500 	Catalyst Temperature Sensor Circuit
+P042600 	Catalyst Temperature Sensor Circuit Range/Performance
+P042700 	Catalyst Temperature Sensor Bank1 Low Input
+P042800 	Catalyst Temperature Sensor Bank1 High Input
+P043000 	Catalyst System, Bank2 Efficiency Below Threshold
+P043100 	Warm Up Catalyst, Bank2 Efficiency Below Threshold
+P043200 	Main Catalyst,Bank2 Efficiency Below Threshold
+P043600 	Catalyst Temperature Sensor Bank2 Range/performance
+P043700 	Catalyst Temperature Sensor Bank2 Low Input
+P043800 	Catalyst Temperature Sensor Bank2 High Input
+P044000 	EVAP Emission Contr.Sys. Malfunction
+P044100 	EVAP Emission Contr.Sys.Incorrect Purge Flow
+P044200 	EVAP Emission Contr.Sys.(Small Leak) Leak Detected
+P044300 	Evaporativ Emiss.System Purge Control Valve Circ.
+P044400 	Evaporativ Emiss.System Purge Control Valve Circ. Open
+P044500 	Evaporativ Emiss.System Purge Control Valve Circ. Shorted
+P044900 	Evaporativ Emiss.System Vent Valve/Solenoid Circ.
+P045000 	Evaporative Emission System Pressure Sensor/Switch
+P045100 	Evaporative Emission System Pressure Sensor/Switch Range/Performance
+P045200 	EVAP Emission Contr.Sys.Press.Sensor Low Input
+P045300 	EVAP Emission Contr.Sys.Press.Sensor High Input
+P045500 	EVAP Emission Contr.Sys.(Gross Leak) Leak Detected
+P045600 	EVAP Emission Contr. Sys. (very small Leak) Leak Detected
+P045800 	Evaporative Emission System Purge Control Valve Circuit Low
+P045900 	Evaporative Emission System Purge Control Valve Circuit High
+P045A00 	Exhaust Gas Recirculation "B" Control Circuit
+P045B00 	Exhaust Gas Recirculation "B" Control Circuit Range/Performance
+P045C00 	Exhaust Gas Recirculation "B" Control Circuit Low
+P045D00 	Exhaust Gas Recirculation "B" Control Circuit High
+P045E00 	Exhaust Gas Recirculation "B" Control Stuck Open
+P045F00 	Exhaust Gas Recirculation "B" Control Stuck Closed
+P046100 	Fuel Level Sensor Circ. Range/Performance
+P046200 	Fuel Lever Sensor Circuit Low Input
+P046300 	Fuel Lever Sensor Circuit High Input
+P046C00 	Exhaust Gas Recirculation Sensor "A" Circuit Range/Performance
+P046E00 	Exhaust Gas Recirculation Sensor "B" Circuit Range/Performance
+P047000 	Exhaust Pressure Sensor "A"
+P047100 	Exhaust Pressure Sensor "A" Range/Performance
+P047200 	Exhaust Pressure Sensor "A"Low
+P047300 	Exhaust Pressure Sensor "A" High
+P047500 	Exhaust Pressure Control Valve "A"
+P047600 	Exhaust Pressure Control Valve "A" Range/Performance
+P047700 	Exhaust Pressure Control Valve "A" Low
+P047800 	Exhaust Pressure Control Valve "A" High
+P047A00 	Exhaust Pressure Sensor "B"
+P047B00 	Exhaust Pressure Sensor "B" Range/Performance
+P047C00 	Exhaust Pressure Sensor "B" Low
+P047D00 	Exhaust Pressure Sensor "B" High
+P047F00 	Exhaust Pressure Control Valve "A" Stuck Open
+P048000 	Cooling Fan 1 Control Circuit
+P048100 	Cooling Fan 2 Control Circuit
+P048600 	Exhaust Gas Recirculation Sensor "B" Circuit
+P048900 	Exhaust Gas Recirculation Control Circuit Low
+P048A00 	Exhaust Pressure Control Valve "A" Stuck Closed
+P048B00 	Exhaust Pressure Control Valve Position Sensor/Switch Circuit
+P048C00 	Exhaust Pressure Control Valve Pos. Sensor/Switch Circuit Range/Performance
+P048E00 	Exhaust Pressure Control Valve Pos. Sensor/Switch Circuit High
+P049000 	Exhaust Gas Recirculation Control Circuit High
+P049100 	Secondary Air Injection System (Bank 1) insufficient flow
+P049200 	Secondary Air Injection System (Bank 2)
+P049800 	Evaporative Emission System Vent Valve Control Circuit Low
+P049900 	Evaporative Emission System Vent Valve Control Circuit High
+P049A00 	Exhaust Gas Recirc."B" Flow
+P049D00 	Exhaust Gas Recirculation "A" Control Position Exceeded Learning Limit
+P049E00 	Exhaust Gas Recirculation "B" Control Position Exceeded Learning Limit
+P050100 	Vehicle Speed Sensor "A" Range/Performance
+P050200 	Vehicle Speed Sensor "A" Circuit Low Input
+P050300 	Vehicle Speed Sensor "A" Intermittend/Erratic/High
+P050500 	Idle Control System
+P050600 	Idle Control System RPM Lower than Expected
+P050700 	Idle Control System RPM Higher than Expected
+P050A00 	Cold Start Idle Air Control System Performance
+P050B00 	Cold Start Ignition Timing Performance
+P051000 	Closed Throttle Pos.Switch Malfunction
+P051300 	Incorrect Immobilizer Key
+P053100 	A/C Refrigerant Pressure Sensor Circuit Range/Performance
+P053200 	A/C Refrigerant Pressure Sensor Circuit low Input
+P053300 	A/C Refrigerant Pressure Sensor Circuit high Input
+P053700 	A/C Evaporator Temperature Sensor Circuit Low
+P053800 	A/C Evaporator Temperature Sensor Circuit High
+P053A00 	Positive Crankcase Ventilation Heater Control Circuit /Open
+P053B00 	Positive Crankcase Ventilation Heater Control Circuit Low
+P053C00 	Positive Crankcase Ventilation Heater Control Circuit High
+P054400 	Exhaust Gas Temperatur Sensor Circuit - Bank 1
+P054500 	Exhaust Gas Temperatur Sensor Circuit - Bank 1 Low
+P054600 	Exhaust Gas Temperatur Sensor Circuit - Bank 1 High
+P054700 	Exhaust Gas Temperatur Sensor Circuit - Bank 2
+P054800 	Exhaust Gas Temperatur Sensor Circuit - Bank 2 Low
+P054900 	Exhaust Gas Temperatur Sensor Circuit - Bank 2 High
+P055000 	Power Steering Pressure Circuit
+P055100 	Power Steering Pressure Sensor Circuit Range/Performance
+P056000 	System Voltage Malfunction
+P056100 	System Voltage Unstable
+P056200 	System Voltage Low Voltage
+P056300 	System Voltage High Voltage
+P056800 	Cruise Control Set Signal
+P057100 	Cruise/Brake Switch (A) Circ. Malfunction
+P059700 	Thermostat Heater Control Circuit Open
+P059800 	Thermostat Heater Control Circuit Low
+P059900 	Thermostat Heater Control Circuit High
+P060000 	Serial Link Communication
+P060100 	Internal Contr.Module Memory Check Sum Error
+P060200 	Control Modul Programming Error
+P060300 	Internal Contr.Module (KAM) Error
+P060400 	Internal Contr.Module Random Access Memory (RAM) Error
+P060500 	Internal Contr.Module ROM Test Error
+P060600 	ECM/PCM Processor
+P060700 	Control Module Performance
+P060800 	Control Module VSS Output "A"
+P060900 	Control Module VSS Output "B"
+P060A00 	Internal Control Module Monitoring Processor Performance
+P061000 	Control Module Vehicle Options Error
+P061300 	TCM Processor
+P061400 	ECM/TCM Incompatible
+P061500 	Starter Relay Circuit
+P061600 	Starter Relay Circuit Low
+P061700 	Starter Relay Circuit High
+P062700 	Fuel Pump "A" Control Circuit/Open
+P062800 	Fuel Pump "A" Control Circuit Low
+P062900 	Fuel Pump "A" Control Circuit High
+P062B00 	Internal Control Module Fuel Injector Control Performance
+P062F00 	Internal Control Module EEPROM Error
+P063400 	PCM/ECM/TCM Internal Temperature Too High
+P063800 	Throttle Actuator Control (Bank1) Range/Performance
+P063900 	Throttle Actuator Control (Bank2) Range/Performance
+P064100 	Sensor Reference Voltage "A" Circuit Open
+P064200 	Sensor Reference Voltage "A" Circuit Low
+P064300 	Sensor Reference Voltage "A" Circuit High
+P064500 	AC clutch relais circuit
+P064C00 	Glow Plug Control Module
+P065000 	Malfunction Indicator Lamp Control Circ.
+P065100 	Sensor Reference Voltage "B" Circuit Open
+P065200 	Sensor Reference Voltage "B" Circuit Low
+P065300 	Sensor Reference Voltage "B" Circuit High
+P065400 	Engine RPM Output Circuit
+P065600 	Fuel Level Output Circuit
+P065700 	Actuator Supply Voltage "A" Circuit/Open
+P065800 	Actuator Supply Voltage "A" Circuit Low
+P065900 	Actuator Supply Voltage "A" Circuit High
+P066000 	Intake Manifold Tuning Control Circuit - Bank1
+P066100 	Intake Manifold Tuning Control Circuit - Bank1 Low
+P066200 	Intake Manifold Tuning Control Circuit - Bank1 High
+P066600 	PCM/ECM/TCM Internal Temperature Sensor "A" Circuit
+P066700 	PCM/ECM/TCM Internal Temperature Sensor "A" Range/Performance
+P066800 	PCM/ECM/TCM Internal Temperature Sensor "A" Circuit Low
+P066900 	PCM/ECM/TCM Internal Temperature Sensor "A" Circuit High
+P066A00 	Cylinder 1 Glow Plug Control Circuit Low
+P066C00 	Cylinder 2 Glow Plug Control Circuit Low
+P066E00 	Cylinder 3 Glow Plug Control Circuit Low
+P067000 	Glow Plug Module Control Circuit
+P067100 	Cylinder 1 Glow Plug Circuit
+P067200 	Cylinder 2 Glow Plug Circuit
+P067300 	Cylinder 3 Glow Plug Circuit
+P067400 	Cylinder 4 Glow Plug Circuit
+P067500 	Cylinder 5 Glow Plug Circuit
+P067600 	Cylinder 6 Glow Plug Circuit
+P067700 	Cylinder 7 Glow Plug Circuit
+P067800 	Cylinder 8 Glow Plug Circuit
+P067900 	Cylinder 9 Glow Plug Circuit
+P067A00 	Cylinder 4 Glow Plug Control Circuit Low
+P067C00 	Cylinder 5 Glow Plug Control Circuit Low
+P067E00 	Cylinder 6 Glow Plug Control Circuit Low
+P068000 	Cylinder 10 Glow Plug Circuit
+P068100 	Cylinder 11 Glow Plug Circuit
+P068200 	Cylinder 12 Glow Plug Circuit
+P068400 	Glow Plug Control Module to PCM Comm.Circuit Range/Performance
+P068500 	EMC/PCM Power Relay Control Circuit Open
+P068600 	EMC/PCM Power Relay Control Circuit Low
+P068700 	EMC/PCM Power Relay Control Circuit High
+P068800 	EMC/PCM Power Relay Sense Circuit Open
+P068A00 	ECM/PCM Power Relay De-Energized Performance - Too Early
+P068B00 	ECM/PCM Power Relay De-Energized Performance - Too Late
+P068C00 	Cylinder 7 Glow Plug Control Circuit Low
+P068E00 	Cylinder 8 Glow Plug Control Circuit Low
+P069100 	Cooling Fan 1 Control Circuit Low
+P069200 	Cooling Fan 1 Control Circuit High
+P069300 	Cooling Fan 2 Control Circuit Low
+P069400 	Cooling Fan 2 Control Circuit High
+P069700 	Sensor Reference Voltage "C" Circuit Open
+P069800 	Sensor Reference Voltage "C" Circuit Low
+P069900 	Sensor Reference Voltage "C" Circuit High
+P069A00 	Cylinder 9 Glow Plug Control Circuit Low
+P069C00 	Cylinder 10 Glow Plug Control Circuit Low
+P06A300 	Sensor Reference Voltage "D" Circuit/Open
+P06B900 	Cylinder 1 Glow Plug Circuit Range/Performance
+P06BA00 	Cylinder 2 Glow Plug Circuit Range/Performance
+P06BB00 	Cylinder 3 Glow Plug Circuit Range/Performance
+P06BC00 	Cylinder 4 Glow Plug Circuit Range/Performance
+P06BD00 	Cylinder 5 Glow Plug Circuit Range/Performance
+P06BE00 	Cylinder 6 Glow Plug Circuit Range/Performance
+P06BF00 	Cylinder 7 Glow Plug Circuit Range/Performance
+P06C000 	Cylinder 8 Glow Plug Circuit Range/Performance
+P06C100 	Cylinder 9 Glow Plug Circuit Range/Performance
+P06C200 	Cylinder 10 Glow Plug Circuit Range/Performance
+P06C300 	Cylinder 11 Glow Plug Circuit Range/Performance
+P06C400 	Cylinder 12 Glow Plug Circuit Range/Performance
+P06C500 	Cylinder 1 Glow Plug Incorrect
+P06C600 	Cylinder 2 Glow Plug Incorrect
+P06C700 	Cylinder 3 Glow Plug Incorrect
+P06C800 	Cylinder 4 Glow Plug Incorrect
+P06C900 	Cylinder 5 Glow Plug Incorrect
+P06CA00 	Cylinder 6 Glow Plug Incorrect
+P06CB00 	Cylinder 7 Glow Plug Incorrect
+P06CC00 	Cylinder 8 Glow Plug Incorrect
+P06CD00 	Cylinder 9 Glow Plug Incorrect
+P06CE00 	Cylinder 10 Glow Plug Incorrect
+P06CF00 	Cylinder 11 Glow Plug Incorrect
+P06D000 	Cylinder 12 Glow Plug Incorrect
+P06D200 	Sensor Reference Voltage "E" Circuit/Open
+P06E000 	Cylinder 11 Glow Plug Control Circuit Low
+P06E200 	Cylinder 12 Glow Plug Control Circuit Low
+P070000 	Transm.Contr.System Malfunction
+P070100 	Transm.Contr.System Range/Performance
+P070200 	Transm.Contr.System Electrical
+P070300 	Torque Converter/Brake Switch B Circ. Malfunction
+P070400 	Clutch Switch Input Circuit
+P070500 	Transm.Range Sensor "A" Circ.(PRNDL Inp.) Malfunction
+P070600 	Transm.Range Sensor "A" Circ. Range/Performance
+P070700 	Transm.Range Sensor "A" Circ. Low Input
+P070800 	Transm.Range Sensor "A" Circ. High Input
+P071000 	Transm.Fluid Temp.Sensor Circ. Malfunction
+P071100 	Transm.Fluid Temp.Sensor Circ. Range/Performance
+P071200 	Transm.Fluid Temp.Sensor Circ. Low Input
+P071300 	Transm.Fluid Temp.Sensor Circ. High Input
+P071400 	Transm.Fluid Temp.Sensor Circ. Intermittent
+P071500 	Input Turbine/Speed Sensor "A" Circ.
+P071600 	Input Turbine/Speed Sensor "A"Circ. Range/Performance
+P071700 	Input Turbine/Speed Sensor "A"Circ. No Signal
+P072000 	Output Speed Sensor Circ. Malfunction
+P072100 	Output Speed Sensor Circ. Range/Performance
+P072200 	Output Speed Sensor Circ. No Signal
+P072500 	Engine Speed Input Ciruit
+P072600 	Engine Speed Inp.Circ. Range/Performance
+P072700 	Engine Speed Inp.Circ. No Signal
+P072900 	Gear 6 Incorrect Ratio
+P072B00 	Stuck in Reverse
+P072C00 	Stuck in Gear 1
+P072D00 	Stuck in Gear 2
+P072E00 	Stuck in Gear 3
+P072F00 	Stuck in Gear 4
+P073000 	Gear Incorrect Ratio
+P073100 	Gear 1 Incorrect Ratio
+P073200 	Gear 2 Incorrect Ratio
+P073300 	Gear 3 Incorrect Ratio
+P073400 	Gear 4 Incorrect Ratio
+P073500 	Gear 5 Incorrect Ratio
+P073600 	Reverse Incorrect Ratio
+P073A00 	Stuck in Gear 5
+P073B00 	Stuck in Gear 6
+P073C00 	Stuck in Gear 7
+P073E00 	Unable to Engage Reverse
+P073F00 	Unable to Engage Gear 1
+P074000 	Torque Converter Clutch Circ. Malfunction
+P074100 	Torque Converter Clutch Circ. Performance or Stuck Off
+P074300 	Torque Converter Clutch Circ. Electrical
+P074600 	Pressure Contr.Solenoid A Performance or Stuck Off
+P074700 	Pressure Contr.Solenoid A Stuck On
+P074800 	Pressure Contr.Solenoid A Electrical
+P074900 	Pressure Contr.Solenoid A Intermittent
+P074A00 	Unable to Engage Gear 2
+P074B00 	Unable to Engage Gear 3
+P074C00 	Unable to Engage Gear 4
+P074D00 	Unable to Engage Gear 5
+P074E00 	Unable to Engage Gear 6
+P074F00 	Unable to Engage Gear 7
+P075000 	Shift Solenoid A Malfunction
+P075100 	Shift Solenoid A Performance or Stuck Off
+P075200 	Shift Solenoid A Stuck On
+P075300 	Shift Solenoid A Electrical
+P075400 	Shift Solenoid "A" Intermittent
+P075600 	Shift Solenoid B Performance or Stuck Off
+P075700 	Shift Solenoid B Stuck On
+P075800 	Shift Solenoid B Electrical
+P076100 	Shift Solenoid C Performance or Stuck Off
+P076200 	Shift Solenoid C Stuck On
+P076300 	Shift Solenoid C Electrical
+P076400 	Shift Solenoid "C" Intermittent
+P076600 	Shift Solenoid D Performance or Stuck Off
+P076800 	Shift Solenoid D Electrical
+P077100 	Shift Solenoid E Performance or Stuck Off
+P077300 	Shift Solenoid E Electrical
+P077600 	Pressure Contr.Solenoid B Performance or Stuck Off
+P077700 	Pressure Contr.Solenoid B Stuck On
+P077800 	Pressure Contr.Solenoid B Electrical
+P077900 	Pressure Contr.Solenoid B Intermittent
+P078000 	Shift
+P078100 	1-2 Shift
+P078200 	2-3 Shift
+P078300 	3-4 Shift
+P078400 	4-5 Shift
+P078500 	Shift/Timing Solenoid
+P079000 	Normal/Performance Switch Circ. Malfunction
+P079100 	Intermediate Shaft Speed Sensor "A" Circuit
+P079600 	Pressure Contr.Solenoid C Performance or Stuck Off
+P079700 	Pressure Contr.Solenoid C Stuck On
+P079800 	Pressure Contr.Solenoid C Electrical
+P079900 	Pressure Contr.Solenoid C Intermittent
+P080500 	Clutch Position Sensor Circuit
+P080700 	Clutch Position Sensor Circuit Low
+P080800 	Clutch Position Sensor Circuit High
+P081000 	Clutch Position Control Error
+P081100 	Excessive Clutch Slippage
+P081500 	Upshift Switch Circuit
+P081600 	Downshift Switch Circuit
+P081700 	Starter Disable Circuit
+P082000 	Gear Lever X-Y Position Sensor Circuit
+P082600 	Up and Down Shift Switch Circuit
+P082900 	5-6 Shift
+P084000 	Transmission Fluid Pressure Sensor/Switch A
+P084100 	Transmission Fluid Pressure Sensor/Switch A Range/Performance
+P084200 	Transmission Fluid Pressure Sensor/Switch "A" Circuit Low
+P084300 	Transmission Fluid Pressure Sensor/Switch "A" Circuit High
+P084400 	Transmission Fluid Pressure Sensor/Switch "A" Intermittend
+P084500 	Transmission Fluid Pressure Sensor/Switch B
+P084600 	Transmission Fluid Pressure Sensor/Switch B Range/Performance
+P084700 	Transmission Fluid Pressure Sensor/Switch "B" Circuit Low
+P084800 	Transmission Fluid Pressure Sensor/Switch "B" Circuit High
+P084900 	Transmission Fluid Pressure Sensor/Switch "B" Intermittend
+P085000 	Park/Neutral Switch Input Circuit
+P085100 	Park/Neutral Switch Input Circuit Low
+P085200 	Park/Neutral Switch Input Circuit High
+P086300 	TCM Communication Circuit
+P086400 	TCM Communication Circuit Range/Performance
+P086500 	TCM Communication Circuit Low
+P086800 	Transmission Fluid Pressure Low
+P088400 	TCM Power Input Signal Intermittent
+P088600 	TCM Power Relay Control Circuit Low
+P088700 	TCM Power Relay Control Circuit High
+P088900 	TCM Power Relay Sense Circuit Range/Performance
+P089000 	TCM Power Relay Sense Circuit Low
+P089100 	TCM Power Relay Sense Circuit High
+P089200 	TCM Power Relay Sense Circuit Intermittent
+P089700 	Transmission Fluid Deteriorated
+P090400 	Gate Select Position Circuit
+P090500 	Gate Select Position Circuit Range/Performance
+P090600 	Gate Select Position Low
+P090700 	Gate Select Position Circuit High
+P091400 	Gear Shift Position Circuit
+P091600 	Gear Shift Position Circuit Low
+P091700 	Gear Shift Position Circuit High
+P091900 	Gear Shift Position Control Error
+P092800 	Gear Shift Lock Solenoid Control Circuit/Open
+P092900 	Gear Shift Lock Solenoid Control Circuit Range/Performance
+P093000 	Gear Shift Lock Solenoid Control Circuit Low
+P093100 	Gear Shift Lock Solenoid Control Circuit High
+P094400 	Hydraulic Pressure Unit Loss of Pressure
+P094500 	Hydraulic Pump Relay Circuit/Open
+P094700 	Hydraulic Pump Relay Circuit Low
+P094800 	Hydraulic Pump Relay Circuit High
+P0A0900 	DC/DC Converter Status Circuit Low
+P0A0A00 	High Voltage System Inter-Lock Circuit
+P0A1F00 	Battery Energy Control Module
+P0A2A00 	Drive Motor "A" Temperature Sensor Circuit
+P0A2B00 	Drive Motor "A" Temperature Sensor Circuit Range/Performance
+P0A2C00 	Drive Motor "A" Temperature Sensor Circuit Low
+P0A2D00 	Drive Motor "A" Temperature Sensor Circuit High
+P0A4000 	Drive Motor "A" Position Sensor Circuit Range/Performance
+P0A4100 	Drive Motor "A" Position Sensor Circuit Low
+P0A4200 	Drive Motor "A" Position Sensor Circuit High
+P0A4400 	Drive Motor "A" Position Sensor Circuit Overspeed
+P0A5200 	Drive Motor "A" Current Sensor Circuit Range/Performance
+P0A5300 	Drive Motor "A" Current Sensor Circuit Low
+P0A5400 	Drive Motor "A" Current Sensor Circuit High
+P0A5D00 	Drive Motor "A" Phase U Current
+P0A5E00 	Drive Motor "A" Phase U Current Low
+P0A5F00 	Drive Motor "A" Phase U Current High
+P0A6000 	Drive Motor "A" Phase V Current
+P0A6100 	Drive Motor "A" Phase V Current Low
+P0A6200 	Drive Motor "A" Phase V Current High
+P0A7E00 	Hybrid Battery Pack Over Temperature
+P0A7F00 	Hybrid Battery Pack Deterioration
+P0A8000 	Replace Hybrid Battery Pack
+P0A8B00 	14 Volt Power Module System Voltage
+P0A8D00 	14 Volt Power Module System Voltage Low
+P0A8E00 	14 Volt Power Module System Voltage High
+P0A9000 	Drive Motor "A" Performance
+P0A9500 	High Voltage Fuse
+P0A9D00 	Hybrid Battery Temperature Sensor "A" Circuit Low
+P0A9E00 	Hybrid Battery Temperature Sensor "A" Circuit High
+P0AA600 	Hybrid Battery Voltage System Isolation Fault
+P0AAE00 	Hybrid Battery Pack Air Temperature Sensor "A" Circuit Low
+P0AAF00 	Hybrid Battery Pack Air Temperature Sensor "A" Circuit High
+P0AB300 	Hybrid Battery Pack Air Temperature Sensor "B" Circuit Low
+P0AB400 	Hybrid Battery Pack Air Temperature Sensor "B" Circuit High
+P0ABB00 	Hybrid Battery Pack Voltage Sense "A" Circuit Range/Performance
+P0ABC00 	Hybrid Battery Pack Voltage Sense "A" Circuit Low
+P0ABD00 	Hybrid Battery Pack Voltage Sense "A" Circuit High
+P0ABF00 	Hybrid Battery Pack Current Sensor "A" Circuit
+P0AC000 	Hybrid Battery Pack Current Sensor "A" Circuit Range/Performance
+P0AC100 	Hybrid Battery Pack Current Sensor "A" Circuit Low
+P0AC200 	Hybrid Battery Pack Current Sensor "A" Circuit High
+P0AC700 	Hybrid Battery Temperature Sensor "B" Circuit Low
+P0AC800 	Hybrid Battery Temperature Sensor "B" Circuit High
+P0AED00 	Drive Motor Inverter Temperature Sensor "A" Circuit
+P0AEE00 	Drive Motor Inverter Temperature Sensor "A" Circuit Range/Performance
+P0AEF00 	Drive Motor Inverter Temperature Sensor "A" Circuit Low
+P0AF000 	Drive Motor Inverter Temperature Sensor "A" Circuit High
+P0AF800 	Hybrid Battery System Voltage
+P0AFA00 	Hybrid Battery System Voltage Low
+P0AFB00 	Hybrid Battery System Voltage High
+P0AFC00 	Hybrid Battery Pack Sensor Module
+P0AFD00 	Hybrid Battery Pack Temperature Too Low
+P0B1500 	Hybrid Battery Pack Voltage Sense "B" Circuit Range/Performance
+P0B1600 	Hybrid Battery Pack Voltage Sense "B" Circuit Low
+P0B1700 	Hybrid Battery Pack Voltage Sense "B" Circuit High
+P0B2400 	Hybrid Battery "A" Voltage Unstable
+P0B2500 	Hybrid Battery "A" Voltage Low
+P0B2600 	Hybrid Battery "A" Voltage High
+P0B2900 	Hybrid Battery "B" Voltage Low
+P0B2A00 	Hybrid Battery "B" Voltage High
+P100000 	Cyl.9-Fuel Inj.Circ. -N299 Malfunction
+P100100 	Cyl.10-Fuel Inj.Circ. -N300 Malfunction
+P100200 	Cyl.11-Fuel Inj.Circ. -N301 Malfunction
+P100300 	Cyl.12-Fuel Inj.Circ. -N302 Malfunction
+P100400 	Torque difference cylinder 1 Limiting value exceeded
+P100500 	Torque difference cylinder 2 Limiting value exceeded
+P100600 	Torque difference cylinder 3 Limiting value exceeded
+P100700 	Torque difference cylinder 4 Limiting value exceeded
+P100800 	Air mass meter 1/2 Implausible signal
+P100900 	Air mass meter 1/2 implausible signal from load detection
+P100A00 	Recirculating valve for turbocharger bank 2 Electrical malfunction
+P100B00 	Recirculating valve for turbocharger bank 2 Short-circuit to ground
+P100C00 	Recirculating valve for turbocharger bank 2 Short circuit to B+
+P100D00 	Turbocharger Adjustment difficulty of movement or blocked
+P100E00 	Torque intervention due to turbocharger protection
+P100F00 	Fuel injector Mechanical malfunction
+P101000 	Cyl.9-Fuel Inj.Circ. -N299 Open circuit
+P101100 	Cyl.10-Fuel Inj.Circ. -N300 Open circuit
+P101200 	Cyl.11-Fuel Inj.Circ. -N301 Open circuit
+P101300 	Cyl.12-Fuel Inj.Circ. -N302 Open circuit
+P101400 	Bypass Flap Filter Valve -N275- Short circuit to B+
+P101500 	Bypass Flap Filter Valve -N275- Short-circuit to ground
+P101600 	Bypass Flap Filter Valve -N275- Open circuit
+P101700 	Intake Manifold Runner Bank 2 Upper stop not reached
+P101800 	Intake Manifold Runner Bank 2 lower limit not reached
+P101900 	NOX Sensor -G295 Slow Response
+P101A00 	Activation of turbocharger adjustment Short circuit to ground/open circuit
+P101B00 	Activation of turbocharger adjustment Short circuit to B+
+P101C00 	Activation of turbocharger adjustment bank 2 Short circuit to ground/open circuit
+P101D00 	Activation of turbocharger adjustment bank 2 Short circuit to B+
+P101E00 	Rpm limit due to excess temperature
+P101F00 	Fuel high pressure Maximum exceeded
+P102000 	Fuel Pressure Regulation Value above upper control limit
+P102100 	'A' Camshaft Position (Bank 1) Timing Over-Advanced or System Performance
+P102200 	'A' Camshaft Position (Bank 1) Timing Over-Advanced or System Performance
+P102300 	Fuel Pressure Regulator Valve Short-circuit to ground
+P102400 	Fuel Pressure Regulator Valve Open circuit
+P102500 	Fuel Pressure Regulator Valve Mechanical malfunction
+P102600 	Intake manifold Runner Control (IMRC) Short circuit to B+
+P102700 	Intake manifold Runner Control (IMRC) Short-circuit to ground
+P102800 	Intake manifold Runner Control (IMRC) Open circuit
+P102900 	Intake Manifold Runner Control (IMRC) Valve -N316- Upper stop not reached
+P102A00 	Torque limitation due to coolant temperature
+P102B00 	Torque limitation due to engine oil temperature
+P102C00 	Torque limitation due to fuel temperature
+P102D00 	Torque limitation due to intake air temperature
+P102E00 	Torque limitation due to exhaust temperature
+P103000 	Intake Manifold Runner Control (IMRC) Valve -N316- lower limit not reached
+P103100 	Intake Manifold Runner Control (IMRC) Valve -N316- Target value not reached
+P103200 	NOX Sensor Signal too high
+P103300 	NOX Sensor Signal too low
+P103400 	NOX Sensor Signal outside tolerance
+P103500 	NOX Sensor Implausible signal
+P103600 	Heater activation sensor for NOX Short circuit to B+
+P103700 	Heater activation sensor for NOX Short-circuit to ground
+P103800 	Heater activation sensor for NOX Open circuit
+P103900 	Fuel Injector Group "A" Supply Voltage Circuit Short circuit
+P104000 	Fuel Injector Group "A" Supply Voltage Circuit Malfunction
+P104100 	Fuel Injector Group "B" Supply Voltage Circuit Short circuit
+P104200 	Fuel Injector Group "B" Supply Voltage Circuit Malfunction
+P104300 	Fuel Injector Group -C- Supply Voltage Circuit Short circuit
+P104400 	Fuel Injector Group C - Supply voltage circuit Malfunction
+P104500 	Fuel Injector Group -D- Supply Voltage Circuit Short circuit
+P104600 	Fuel Injector Group -D- Supply Voltage Circuit Malfunction
+P104700 	Bank1, Camshaft Adjustment Valve 1 (exhaust) -N318- Malfunction
+P104800 	Bank1, Camshaft Adjustment Valve 1 (exhaust) -N318- Short circuit to B+
+P104900 	Bank1, Camshaft Adjustment Valve 1 (exhaust) -N318- Short-circuit to ground
+P105000 	Bank1, Camshaft Adjustment Valve 1 (exhaust) -N318- Open circuit
+P105100 	Bank2, Camshaft Adjustment Valve2 (exhaust) -N319- Malfunction
+P105200 	Bank2, Camshaft Adjustment Valve2 (exhaust) -N319- Short circuit to B+
+P105300 	Bank2, Camshaft Adjustment Valve2 (exhaust) -N319- Short-circuit to ground
+P105400 	Bank2, Camshaft Adjustment Valve2 (exhaust) -N319- Open circuit
+P105500 	Bank 1, camshaft adjustment, exhaust Short circuit to B+
+P105600 	Bank 1, camshaft adjustment, exhaust Short-circuit to ground
+P105700 	Bank 1, camshaft adjustment, exhaust Open circuit
+P105800 	Bank2, camshaft adjustment, exhaust Short circuit to B+
+P105900 	Bank2, camshaft adjustment, exhaust Short-circuit to ground
+P106000 	Bank2, camshaft adjustment, exhaust Open circuit
+P106100 	'A' Camshaft Position (Bank 2) Timing Over-Advanced or System Performance
+P106200 	'A' Camshaft Position (Bank 2) Timing Over-Advanced or System Performance
+P106300 	Fuel Pressure Regulation Value below lower control limit
+P106400 	Fuel pressure system Mechanical malfunction
+P106500 	Fuel Pressure Regulation Control difference
+P106600 	Intake Air Switch-over valve -N335- Short circuit to B+
+P106700 	Intake Air Switch-over valve -N335- Short-circuit to ground
+P106800 	Intake Air Switch-over valve -N335- Open circuit
+P106900 	NOX Sensor -G295- heating control signal Short-circuit to ground
+P106A00 	Bank 2 Intake manifold press/air mass <-> throttle valve angle deviation
+P106B00 	Throttle valve difficulty of movement or blocked
+P106C00 	Throttle valve 2 difficulty of movement or blocked
+P107000 	NOX Sensor -G295- heating control signal Short circuit to B+
+P107100 	NOX Sensor -G295- heating control signal Implausible signal
+P107200 	NOX Sensor -G295- heating control signal Electrical malfunction in circuit
+P107300 	Mass Air Flow (MAF) Sensor 2 -G246 Signal too low
+P107400 	Mass Air Flow (MAF) Sensor 2 -G246 Signal too high
+P107500 	Oxygen sensor control, emissions bank 3 System too lean
+P107600 	Oxygen sensor control, emissions bank 3 System too rich
+P107700 	Oxygen sensor control, emissions bank 4 System too lean
+P107800 	Oxygen sensor control, emissions bank 4 System too rich
+P107900 	Oxygen sensor control, emissions bank 3 Implausible control value
+P108000 	Oxygen sensor control, emissions bank 4 Implausible control value
+P108100 	Exhaust bank3, mixture adaptation range 1 System too lean
+P108200 	Exhaust bank3, mixture adaptation range 2 System too lean
+P108300 	Exhaust bank3, mixture adaptation range 1 System too rich
+P108400 	Exhaust bank3, mixture adaptation range 2 System too rich
+P108500 	Exhaust bank4, mixture adaptation range 1 System too lean
+P108600 	Exhaust bank4, mixture adaptation range 2 System too lean
+P108700 	Exhaust bank4, mixture adaptation range 1 System too rich
+P108800 	Exhaust bank4, mixture adaptation range 2 System too rich
+P108900 	Bank2, mixture adaptation range 1 System too lean
+P109000 	Bank2, mixture adaptation range 2 System too lean
+P109100 	Bank2, mixture adaptation range 1 System too rich
+P109200 	Bank2, mixture adaptation range 2 System too rich
+P109300 	Bank1, fuel measuring system 2 Malfunction
+P109400 	Bank2, fuel measuring system 2 Malfunction
+P109500 	Intake Manifold Runner Position Sensor -G336 Short circuit to B+
+P109600 	Intake Manifold Runner Position Sensor -G336 Short-circuit to ground
+P109700 	Intake Manifold Runner Position Sensor -G336 Open circuit
+P109800 	Intake Manifold Runner Position Sensor -G336 Open circuit/short circuit to B+
+P109900 	Intake manifold Runner Control (IMRC) Electrical malfunction
+P10A000 	Actuation regulating flap for intake air Electrical malfunction
+P10A100 	Actuation regulating flap for intake air Short circuit to B+
+P10A200 	Actuation regulating flap for intake air Short-circuit to ground
+P10A300 	Actuation regulating flap for intake air Open circuit
+P10A400 	Regulating flap for intake air Mechanical malfunction
+P10A500 	Potentiometer regulating flap for intake air Signal too high
+P10A600 	Potentiometer regulating flap for intake air Signal too low
+P10A700 	Adaptation regulating flap for intake air soiled
+P10A800 	Adaptation regulating flap for intake air lower limit not reached
+P10A900 	Magnetic clutch for mechanical charger does not open
+P10AA00 	Magnetic clutch for mechanical charger does not close
+P10AB00 	Magnetic clutch for mechanical charger excessive wear
+P10AC00 	Magnetic clutch for mechanical charger Short-circuit to ground
+P10AD00 	Magnetic clutch for mechanical charger Open circuit
+P10AE00 	Current sensor for magnetic clutch for mechanical charger Electrical malfunction
+P10AF00 	Magnetic clutch for mechanical charger Malfunction
+P10B000 	Magnetic clutch for mechanical charger Short circuit to B+
+P10B100 	Monitoring of fuel injector for cylinder 1 failure detected
+P10B200 	Monitoring of fuel injector for cylinder 2 failure detected
+P10B300 	Monitoring of fuel injector for cylinder 3 failure detected
+P10B400 	Monitoring of fuel injector for cylinder 4 failure detected
+P110000 	O2 Sensor Heater Circ.,Bank1-Sensor2 Performance too low
+P110100 	O2 Sensor Circuit,Bank1-Sensor1 Voltage too low/air leak
+P110200 	O2 Sensor Heater Circ.,Bank1-Sensor1 Short circuit to B+
+P110300 	O2 Sensor Heater Circ.,Bank1-Sensor1 Performance too low
+P110400 	O2 Sensor Circuit,Bank1-Sensor2 Voltage too low/air leak
+P110500 	O2 Sensor Heater Circ.,Bank1-Sensor2 Short circuit to B+
+P110600 	O2 Sensor Circuit,Bank2-Sensor1 Voltage too low/air leak
+P110700 	O2 Sensor Heater Circ.,Bank2-Sensor1 Short circuit to B+
+P110800 	O2 Sensor Heater Circ.,Bank2-Sensor1 Performance too low
+P110900 	O2 Sensor Circuit,Bank2-Sensor2 Voltage too low/air leak
+P110A00 	Fuel Pressure Regulator Valve Short-circuit to ground
+P110B00 	Fuel Pressure Regulator Valve Open circuit
+P110C00 	Fuel Pressure Regulator Valve Mechanical malfunction
+P110D00 	Intake manifold Runner Control (IMRC) Short circuit to B+
+P110E00 	Intake manifold Runner Control (IMRC) Short-circuit to ground
+P110F00 	Intake manifold Runner Control (IMRC) Open circuit
+P111000 	O2 Sensor Heater Circ.,Bank2-Sensor2 Short circuit to B+
+P111100 	Oxygen sensor control (Bank 1) System too lean
+P111200 	Oxygen sensor control (Bank 1) System too rich
+P111300 	Bank 1, sensor 1 Internal resistance too Large
+P111400 	Bank 1, sensor 2 Internal resistance too Large
+P111500 	O2 Sensor Heater Circ.,Bank1-Sensor1 Short-circuit to ground
+P111600 	O2 Sensor Heater Circ.,Bank1-Sensor1 Open circuit
+P111700 	O2 Sensor Heater Circ.,Bank1-Sensor2 Short-circuit to ground
+P111800 	O2 Sensor Heater Circ.,Bank1-Sensor2 Open circuit
+P111900 	O2 Sensor Heater Circ.,Bank2-Sensor1 Short-circuit to ground
+P111A00 	NOX Sensor -G295 Signal too low
+P111B00 	NOX Sensor -G295 Signal outside tolerance
+P111C00 	NOX Sensor -G295 Implausible signal
+P111D00 	Heater activation sensor for NOX Short circuit to B+
+P111E00 	Heater activation sensor for NOX Short-circuit to ground
+P111F00 	Heater activation sensor for NOX Open circuit
+P112000 	O2 Sensor Heater Circ.,Bank2-Sensor1 Open circuit
+P112100 	O2 Sensor Heater Circ.,Bank2-Sensor2 Short-circuit to ground
+P112200 	O2 Sensor Heater Circ.,Bank2-Sensor2 Open circuit
+P112300 	Long Term Fuel Trim Add.Air.,Bank1 System too rich
+P112400 	Long Term Fuel Trim Add.Air.,Bank1 System too lean
+P112500 	Long Term Fuel Trim Add.Air.,Bank2 System too rich
+P112600 	Long Term Fuel Trim Add.Air.,Bank2 System too lean
+P112700 	Long Term Fuel Trim mult.,Bank1 System too rich
+P112800 	Long Term Fuel Trim mult.,Bank1 System too lean
+P112900 	Long Term Fuel Trim mult.,Bank2 System too rich
+P113000 	Long Term Fuel Trim mult.,Bank2 System too lean
+P113100 	Bank 2, sensor 1 Internal resistance too Large
+P113200 	O2 Sensor Heating Circ.,Bank1+2-Sensor1 Short circuit to B+
+P113300 	O2 Sensor Heating Circ.,Bank1+2-Sensor1 Malfunction
+P113400 	O2 Sensor Heating Circ.,Bank1+2-Sensor2 Short circuit to B+
+P113500 	O2 Sensor Heating Circ.,Bank1+2-Sensor2 Malfunction
+P113600 	Long Term Fuel Trim Add.Fuel,Bank1 System too lean
+P113700 	Long Term Fuel Trim Add.Fuel,Bank1 System too rich
+P113800 	Long Term Fuel Trim Add.Fuel,Bank2 System too lean
+P113900 	Long Term Fuel Trim Add.Fuel,Bank2 System too rich
+P114000 	Bank 2, sensor 2 Internal resistance too Large
+P114100 	Load detection implausible value
+P114200 	Load detection value below lower limit
+P114300 	Load detection value above upper limit
+P114400 	Mass Air Flow (MAF) Sensor -G70- Open circuit/short circuit to ground
+P114500 	Mass Air Flow (MAF) Sensor -G70- Short circuit to B+
+P114600 	Mass Air Flow (MAF) Sensor -G70- Supply voltage
+P114700 	Oxygen sensor control, Bank 2 System too lean
+P114800 	Oxygen sensor control, Bank 2 System too rich
+P114900 	Oxygen sensor control, Bank 1 Implausible control value
+P115000 	Oxygen sensor control, Bank 2 Implausible control value
+P115100 	Bank1, mixture adaptation, range 1 System too lean
+P115200 	Bank1, mixture adaptation, range 2 System too lean
+P115300 	Oxygen sensors behind catalytic converter Swapped
+P115400 	Two-path intake manifold Malfunction
+P115500 	Manifold Absolute Pressure (MAP) Sensor -G71 Short circuit to B+
+P115600 	Manifold Absolute Pressure (MAP) Sensor -G71 Open circuit/short circuit to ground
+P115700 	Manifold Absolute Pressure (MAP) Sensor -G71 Supply voltage
+P115800 	Manifold Absolute Pressure (MAP) Sensor -G71 Implausible signal
+P115900 	Signal of Mass Air Flow (MAF) sensor 1/2 Implausible relation
+P115A00 	Manifold Absolute Pressure (MAP) Sensor 2 Implausible signal
+P115B00 	Manifold Absolute Pressure (MAP) Sensor 2 Signal too low
+P115C00 	Manifold Absolute Pressure (MAP) Sensor 2 Signal too high
+P115D00 	Sensor 2 for air pressure Implausible signal
+P115E00 	Sensor 2 for air pressure Signal too low
+P115F00 	Sensor 2 for air pressure Signal too high
+P116000 	Manifold Temp.Sensor Circ. -G72 Short-circuit to ground
+P116100 	Manifold Temp.Sensor Circ. -G72 Open circuit/short circuit to B+
+P116200 	Fuel Temperature Sensor A Circuit Low Input -G81 Short-circuit to ground
+P116300 	Fuel Temperature Sensor A Circuit Low Input -G81 Open circuit/short circuit to B+
+P116400 	Fuel Temperature Sensor A Circuit Low Input -G81 Implausible signal
+P116500 	Bank1, mixture adaptation, range 1 System too rich
+P116600 	Bank1, mixture adaptation, range 2 System too rich
+P116700 	Mass Air Flow (MAF) Sensor 2 -G246 Implausible signal
+P116800 	Mass Air Flow (MAF) Sensor 2 -G246 Open circuit/short circuit to ground
+P116900 	Mass Air Flow (MAF) Sensor 2 -G246 Short circuit to B+
+P116A00 	Intake manifold press./air press. - Throttle valve pos. bank 2 Correlation at idle
+P116B00 	Intake manifold press./air press. - Throttle valve pos. bank 2 Correlation in partial throttle
+P116C00 	Leaking air in intake system, bank 2
+P116F00 	Mass air flow sensor interrupted signal
+P117000 	Mass Air Flow (MAF) Sensor 2 -G246 Supply voltage
+P117100 	Throttle/Pedal Position Sensor/Switch -B- Circuit -G188 Implausible signal
+P117200 	Throttle/Pedal Position Sensor/Switch -B- Circuit -G188 Signal too low
+P117300 	Throttle/Pedal Position Sensor/Switch -B- Circuit -G188 Signal too high
+P117400 	Bank 1, fuel calculation system Injection Timing Deviation
+P117500 	Pre-injection switched off
+P117600 	O2 Correction Behind Catalyst,B1 Control limit reached
+P117700 	O2 Correction Behind Catalyst,B2 Control limit reached
+P117800 	Linear oxygen sensor/pump current Open circuit
+P117900 	Linear oxygen sensor/pump current Short-circuit to ground
+P117A00 	Bank1, Lambda correction center sensor Control limit reached
+P117B00 	Bank2, Lambda correction center sensor Control limit reached
+P117C00 	Bank3,oxygen sensor correction behind cat Lean control limit exceeded
+P117D00 	Bank3,oxygen sensor correction behind cat Rich control limit exceeded
+P117E00 	Bank4,oxygen sensor correction behind cat Lean control limit exceeded
+P117F00 	Bank4,oxygen sensor correction behind cat Rich control limit exceeded
+P118000 	Linear oxygen sensor/pump current Short circuit to B+
+P118100 	Linear oxygen sensor/reference voltage Open circuit
+P118200 	Linear oxygen sensor/reference voltage Short-circuit to ground
+P118300 	Linear oxygen sensor/reference voltage Short circuit to B+
+P118400 	linear Lambda probe / common ground wire Open circuit
+P118500 	linear Lambda probe / common ground wire Short-circuit to ground
+P118600 	linear Lambda probe / common ground wire Short circuit to B+
+P118700 	linear Lambda probe/compensat. resistor Open circuit
+P118800 	linear Lambda probe/compensat. resistor Short-circuit to ground
+P118900 	linear Lambda probe/compensat. resistor Short circuit to B+
+P118A00 	Bank3-sensor1 Voltage too low/air leak
+P118B00 	Bank4-sensor1 Voltage too low/air leak
+P119000 	Linear oxygen sensor/reference voltage Implausible
+P119100 	linear Lambda probe before catalyst swapped
+P119200 	Fuel Pressure Sensor -G247- Supply voltage
+P119300 	Fuel Pressure Sensor -G247- Open circuit/short circuit to B+
+P119400 	Fuel Pressure Regulator Valve Short circuit to B+
+P119500 	Fuel Pressure Regulator Valve Open circuit/short circuit to ground
+P119600 	O2 Sensor Heater Circ.,Bank1-Sensor1 Malfunction
+P119700 	O2 Sensor Heater Circ.,Bank2-Sensor1 Malfunction
+P119800 	O2 Sensor Heater Circ.,Bank1-Sensor2 Malfunction
+P119900 	O2 Sensor Heater Circ.,Bank2-Sensor2 Malfunction
+P119A00 	Fuel Pressure Sensor -G247- Malfunction
+P119B00 	Fuel pressure sensor 2 Malfunction
+P119C00 	Fuel Volume Regulator Control Exceeded Learning lower Limit
+P119D00 	Fuel Volume Regulator Control Exceeded Learning upper Limit
+P11A100 	Cam Shift Actuator "A" Cylinder 1 Circuit/Open
+P11A200 	Cam Shift Actuator "A" Cylinder 1 Range/Performance
+P11A300 	Cam Shift Actuator "B" Cylinder 1 Circuit/Open
+P11A400 	Cam Shift Actuator "B" Cylinder 1 Range/Performance
+P11A500 	Cam Shift Actuator "A" Cylinder 2 Circuit/Open
+P11A600 	Cam Shift Actuator "A" Cylinder 2 Range/Performance
+P11A700 	Cam Shift Actuator "B" Cylinder 2 Circuit/Open
+P11A800 	Cam Shift Actuator "B" Cylinder 2 Range/Performance
+P11A900 	Cam Shift Actuator "A" Cylinder 3 Circuit/Open
+P11AA00 	Cam Shift Actuator "A" Cylinder 3 Range/Performance
+P11AB00 	Cam Shift Actuator "B" Cylinder 3 Circuit/Open
+P11AC00 	Cam Shift Actuator "B" Cylinder 3 Range/Performance
+P11AD00 	Cam Shift Actuator "A" Cylinder 4 Circuit/Open
+P11AE00 	Cam Shift Actuator "A" Cylinder 4 Range/Performance
+P11AF00 	Cam Shift Actuator "B" Cylinder 4 Circuit/Open
+P11B000 	Cam Shift Actuator "B" Cylinder 4 Range/Performance
+P11B100 	Cam Shift Actuator "A" Cylinder 5 Circuit/Open
+P11B200 	Cam Shift Actuator "A" Cylinder 5 Range/Performance
+P11B300 	Cam Shift Actuator "B" Cylinder 5 Circuit/Open
+P11B400 	Cam Shift Actuator "B" Cylinder 5 Range/Performance
+P11B500 	Cam Shift Actuator "A" Cylinder 6 Circuit/Open
+P11B600 	Cam Shift Actuator "A" Cylinder 6 Range/Performance
+P11B700 	Cam Shift Actuator "B" Cylinder 6 Circuit/Open
+P11B800 	Cam Shift Actuator "B" Cylinder 6 Range/Performance
+P11B900 	Camshaft adjustment bank 1 Supply voltage
+P11BA00 	Camshaft adjustment bank 2 Supply voltage
+P120000 	Recirculating valve for turbocharger -N249, Mechanical malfunction
+P120100 	Cylinder 1 Fuel Injector -N30- electrical malfunction in circuit
+P120200 	Cylinder 2 Fuel Injector -N31- electrical malfunction in circuit
+P120300 	Cylinder 3 Fuel Injector -N32- electrical malfunction in circuit
+P120400 	Cylinder 4 Fuel Injector -N33- electrical malfunction in circuit
+P120500 	Cylinder 5 Fuel Injector -N83- electrical malfunction in circuit
+P120600 	Cylinder 6 Fuel Injector -N84- electrical malfunction in circuit
+P120700 	Cylinder 7 Fuel Injector -N85- electrical malfunction in circuit
+P120800 	Cylinder 8 Fuel Injector -N86- electrical malfunction in circuit
+P120900 	Cylinder Shut-off, Intake Deactivation Valves Short-circuit to ground
+P120A00 	Injectors control module 1 Electrical malfunction in circuit
+P120B00 	Injectors control module 2 Electrical malfunction in circuit
+P120C00 	Injectors control module 1 Short circuit between activation wires, Low-Side
+P120D00 	Injectors control module 2 Short circuit between activation wires, Low-Side
+P121000 	Cylinder Shut-off, Intake Deactivation Valves Short circuit to B+
+P121100 	Cylinder Shut-off, Intake Deactivation Valves Open circuit
+P121200 	Cylinder shut-off, bank 1
+P121300 	Cylinder 1 Fuel Injector -N30- Short circuit to B+
+P121400 	Cylinder 2 Fuel Injector -N31- Short circuit to B+
+P121500 	Cylinder 3 Fuel Injector -N32- Short circuit to B+
+P121600 	Cylinder 4 Fuel Injector -N33- Short circuit to B+
+P121700 	Cylinder 5 Fuel Injector -N83- Short circuit to B+
+P121800 	Cylinder 6 Fuel Injector -N84- Short circuit to B+
+P121900 	Cylinder 7 Fuel Injector -N85- Short circuit to B+
+P122000 	Cylinder 8 Fuel Injector -N86- Short circuit to B+
+P122100 	Cylinder Shut-off, Exhaust Deactivation Valves Short-circuit to ground
+P122200 	Cylinder Shut-off, Exhaust Deactivation Valves Short circuit to B+
+P122300 	Cylinder Shut-off, Exhaust Deactivation Valves Open circuit
+P122400 	Cylinder shut-off, bank 2
+P122500 	Cylinder 1 Fuel Injector -N30- Short-circuit to ground
+P122600 	Cylinder 2 Fuel Injector -N31- Short-circuit to ground
+P122700 	Cylinder 3 Fuel Injector -N32- Short-circuit to ground
+P122800 	Cylinder 4 Fuel Injector -N33- Short-circuit to ground
+P122900 	Cylinder 5 Fuel Injector -N83- Short-circuit to ground
+P123000 	Cylinder 6 Fuel Injector -N84- Short-circuit to ground
+P123100 	Cylinder 7 Fuel Injector -N85- Short-circuit to ground
+P123200 	Cylinder 8 Fuel Injector -N86- Short-circuit to ground
+P123300 	Load detection Malfunction
+P123400 	fuel lead missing
+P123500 	O2 Correction Behind Catalyst, exhaust gas bank 3 Control limit reached
+P123600 	O2 Correction Behind Catalyst, exhaust gas bank 4 Control limit reached
+P123700 	Cylinder 1 Fuel Injector -N30- Open circuit
+P123800 	Cylinder 2 Fuel Injector -N31- Open circuit
+P123900 	Cylinder 3 Fuel Injector -N32- Open circuit
+P124000 	Cylinder 4 Fuel Injector -N33- Open circuit
+P124100 	Cylinder 5 Fuel Injector -N83- Open circuit
+P124200 	Cylinder 6 Fuel Injector -N84- Open circuit
+P124300 	Cylinder 7 Fuel Injector -N85- Open circuit
+P124400 	Cylinder 8 Fuel Injector -N86- Open circuit
+P124500 	Needle Lift Sensor -G80 Short-circuit to ground
+P124600 	Needle Lift Sensor -G80 Implausible signal
+P124700 	Needle Lift Sensor -G80 Open circuit/short circuit to B+
+P124800 	Commencement of injection regulation Control difference
+P124900 	Fuel consumption signal Electrical malfunction in circuit
+P125000 	Fuel level too low
+P125100 	Commencement of injection valve -N108 Short circuit to B+
+P125200 	Commencement of injection valve -N108 Open circuit/short circuit to ground
+P125300 	Fuel consumption signal Short-circuit to ground
+P125400 	Fuel consumption signal Short circuit to B+
+P125500 	Engine Coolant Temperature (ECT) Sensor -G62 Short-circuit to ground
+P125600 	Engine Coolant Temperature (ECT) Sensor -G62 Open circuit/short circuit to B+
+P125700 	Coolant Thermostat/Valve. Open circuit
+P125800 	Coolant Thermostat/Valve. Short circuit to B+
+P125900 	Coolant Thermostat/Valve. Short-circuit to ground
+P125E00 	Valve for pump/injector Short circuit control wire
+P125F00 	Valve for pump/injector not completely discharged
+P126000 	Unit injector solenoid valve - cylinder 1-N240 Implausible signal
+P126100 	Unit injector solenoid valve - cylinder 1-N240 Value above upper control limit
+P126200 	Unit injector solenoid valve - cylinder 1-N240 Value below lower control limit
+P126300 	Unit injector solenoid valve - cylinder 2-N241 Implausible signal
+P126400 	Unit injector solenoid valve - cylinder 2-N241 Value above upper control limit
+P126500 	Unit injector solenoid valve - cylinder 2-N241 Value below lower control limit
+P126600 	Unit injector solenoid valve - cylinder 3-N242 Implausible signal
+P126700 	Unit injector solenoid valve - cylinder 3-N242 Value above upper control limit
+P126800 	Unit injector solenoid valve - cylinder 3-N242 Value below lower control limit
+P126900 	Unit injector solenoid valve - cylinder 4-N243 Implausible signal
+P127000 	Unit injector solenoid valve - cylinder 4-N243 Value above upper control limit
+P127100 	Unit injector solenoid valve - cylinder 4-N243 Value below lower control limit
+P127200 	Unit injector solenoid valve - cylinder 5-N244 Implausible signal
+P127300 	Unit injector solenoid valve - cylinder 5-N244 Value above upper control limit
+P127400 	Unit injector solenoid valve - cylinder 5-N244 Value below lower control limit
+P127500 	Unit injector solenoid valve - cylinder 6-N245 Implausible signal
+P127600 	Unit injector solenoid valve - cylinder 6-N245 Value above upper control limit
+P127700 	Unit injector solenoid valve - cylinder 6-N245 Value below lower control limit
+P127800 	Fuel Metering Valve Short circuit to B+
+P127900 	Fuel Metering Valve Open circuit/short circuit to ground
+P128000 	Fuel Inj.Air Contr.Valve Circ. -N212 Flow too Low
+P128100 	Fuel Metering Valve Short-circuit to ground
+P128200 	Fuel Metering Valve Open circuit
+P128300 	Fuel Inj.Air Contr.Valve Circ. -N212 electrical malfunction in circuit
+P128400 	Fuel Inj.Air Contr.Valve Circ. -N212 Open circuit
+P128500 	Fuel Inj.Air Contr.Valve Circ. -N212 Short-circuit to ground
+P128600 	Fuel Inj.Air Contr.Valve Circ. -N212 Short circuit to B+
+P128700 	Recirculating valve for turbocharger -N249, Open circuit
+P128800 	Recirculating valve for turbocharger -N249, Short circuit to B+
+P128900 	Recirculating valve for turbocharger -N249, Short-circuit to ground
+P128F00 	A/C Engine Coolant Temperature (ECT) Sensor -Radiator Outlet Electrical malfunction
+P129000 	Engine Coolant Temperature (ECT) Sensor (on Radiator) -G83- Signal too high
+P129100 	Engine Coolant Temperature (ECT) Sensor (on Radiator) -G83- Signal too low
+P129200 	Map Controlled Engine Cooling Thermostat -F265- Open circuit
+P129300 	Map Controlled Engine Cooling Thermostat -F265- Short circuit to B+
+P129400 	Map Controlled Engine Cooling Thermostat -F265- Short-circuit to ground
+P129500 	Bypass turbocharger Throughput faulty
+P129600 	Malfunction in cooling system
+P129700 	Connection charger-throttle valve Pressure drop
+P129800 	Engine Coolant Temperature (ECT) Sensor (on Radiator) -G83- Implausible signal
+P129900 	Fuel Metering Valve Malfunction
+P129A00 	Fuel Pressure Regulator Valve -N276, Bank 2 Mechanical malfunction
+P129B00 	Fuel Pressure Regulator Valve -N276, Bank 2 Open circuit
+P129C00 	Fuel Pressure Regulator Valve -N276, Bank 2 Short-circuit to ground
+P129D00 	Fuel Pressure Regulator Valve -N276, Bank 2 Short circuit to B+
+P129E00 	Low Pressure Fuel System Pressure Too Low
+P129F00 	Low Pressure Fuel System Pressure Too High
+P12A000 	Low Pressure Fuel System Performance
+P130000 	Random/Multiple Cylinder. Misfire Detected Reason: Low fuel
+P130100 	Cyl.9-Knock Contr Control limit reached
+P130200 	Cyl.10-Knock Contr Control limit reached
+P130300 	Cyl.11-Knock Contr Control limit reached
+P130400 	Cyl.12-Knock Contr Control limit reached
+P130500 	Ignition control cylinder 9 Open circuit
+P130600 	Ignition control cylinder 9 Short circuit to B+
+P130700 	Ignition control cylinder 9 Short-circuit to ground
+P130800 	Ignition control cylinder 10 Open circuit
+P130900 	Ignition control cylinder 10 Short circuit to B+
+P130A00 	Hide cylinder
+P131000 	Ignition control cylinder 10 Short-circuit to ground
+P131100 	Ignition control cylinder 11 Open circuit
+P131200 	Ignition control cylinder 11 Short circuit to B+
+P131300 	Ignition control cylinder 11 Short-circuit to ground
+P131400 	Ignition control cylinder 12 Open circuit
+P131500 	Ignition control cylinder 12 Short circuit to B+
+P131600 	Ignition control cylinder 12 Short-circuit to ground
+P131700 	Cyl.13-Knock Contr Control limit reached
+P131800 	Cyl.14-Knock Contr Control limit reached
+P131900 	Knock Sensor (KS) 1 -G61 Short-circuit to ground
+P132000 	Knock Sensor (KS) 2 -G66 Short-circuit to ground
+P132100 	Knock Sensor (KS) 3 -G198 Signal too low
+P132200 	Knock Sensor (KS) 3 -G198 Signal too high
+P132300 	Knock Sensor (KS) 4 -G199 Signal too low
+P132400 	Knock Sensor (KS) 4 -G199 Signal too high
+P132500 	Cyl.1-Knock Contr Control limit reached
+P132600 	Cyl.2-Knock Contr Control limit reached
+P132700 	Cyl.3-Knock Contr Control limit reached
+P132800 	Cyl.4-Knock Contr Control limit reached
+P132900 	Cyl.5-Knock Contr Control limit reached
+P132A00 	Knock Sensor (KS) 3 Electrical malfunction in circuit
+P132B00 	Knock Sensor (KS) 4 Electrical malfunction in circuit
+P133000 	Cyl.6-Knock Contr Control limit reached
+P133100 	Cyl.7-Knock Contr Control limit reached
+P133200 	Cyl.8-Knock Contr Control limit reached
+P133300 	Cyl.15-Knock Contr Control limit reached
+P133400 	Cyl.16-Knock Contr Control limit reached
+P133500 	Engine torque monitoring 2 Value above upper control limit
+P133600 	Engine torque monitoring Value above upper control limit
+P133700 	Camshaft Pos. (CMP) Sensor, Bank1=>-G40 Short-circuit to ground
+P133800 	Camshaft Pos. (CMP) Sensor, Bank1=>-G40 Open circuit/short circuit to B+
+P133900 	Crankshaft Pos./Engine Speed Sensor swapped
+P134000 	Camshaft Position Sensor-G40,Engine Speed Sensor-G28 Incorrect allocation
+P134100 	Ignition output 1 Short-circuit to ground
+P134200 	Ignition output 1 Short circuit to B+
+P134300 	Ignition output 2 Short-circuit to ground
+P134400 	Ignition output 2 Short circuit to B+
+P134500 	Ignition output 3 Short-circuit to ground
+P134600 	Ignition output 3 Short circuit to B+
+P134700 	Camshaft Position Sensor 2-G163/Engine Speed (RPM) Sensor -G28 Incorrect allocation
+P134800 	Ignition output 1 Open circuit
+P134900 	Ignition output 2 Open circuit
+P135000 	Ignition output 3 Open circuit
+P135100 	Camshaft Pos. (CMP) Sensor, Bank1=>-G40 Implausible signal during start
+P135200 	Bank1, camshaft adjustment Specification not reached
+P135300 	Engine Coolant Temperature/Intake Air Temperature Correlation
+P135400 	Modulating piston movement sender -G149 electrical malfunction in circuit
+P135500 	Ignition control cylinder 1 Open circuit
+P135600 	Ignition control cylinder 1 Short circuit to B+
+P135700 	Ignition control cylinder 1 Short-circuit to ground
+P135800 	Ignition control cylinder 2 Open circuit
+P135900 	Ignition control cylinder 2 Short circuit to B+
+P136000 	Ignition control cylinder 2 Short-circuit to ground
+P136100 	Ignition control cylinder 3 Open circuit
+P136200 	Ignition control cylinder 3 Short circuit to B+
+P136300 	Ignition control cylinder 3 Short-circuit to ground
+P136400 	Ignition control cylinder 4 Open circuit
+P136500 	Ignition control cylinder 4 Short circuit to B+
+P136600 	Ignition control cylinder 4 Short-circuit to ground
+P136700 	Ignition control cylinder 5 Open circuit
+P136800 	Ignition control cylinder 5 Short circuit to B+
+P136900 	Ignition control cylinder 5 Short-circuit to ground
+P137000 	Ignition control cylinder 6 Open circuit
+P137100 	Ignition control cylinder 6 Short circuit to B+
+P137200 	Ignition control cylinder 6 Short-circuit to ground
+P137300 	Ignition control cylinder 7 Open circuit
+P137400 	Ignition control cylinder 7 Short circuit to B+
+P137500 	Ignition control cylinder 7 Short-circuit to ground
+P137600 	Ignition control cylinder 8 Open circuit
+P137700 	Ignition control cylinder 8 Short circuit to B+
+P137800 	Ignition control cylinder 8 Short-circuit to ground
+P137900 	Cylinder 13 Random/Multiple Cylinder. Misfire Detected
+P138000 	Cylinder 14 Random/Multiple Cylinder. Misfire Detected
+P138100 	Cylinder 15 Random/Multiple Cylinder. Misfire Detected
+P138200 	Cylinder 16 Random/Multiple Cylinder. Misfire Detected
+P138300 	Portion of alternative fuels not adapted
+P138400 	Engine control module 2 faulty
+P138500 	Control module defective
+P138600 	Control module defective
+P138700 	Control module defective
+P138800 	Control module defective
+P138900 	Diesel Direct Fuel Injection (DFI) Engine ECM 2 -J494- Defective
+P139100 	Camshaft Pos. (CMP) Sensor, Bank2=>-G163 Short-circuit to ground
+P139200 	Camshaft Pos. (CMP) Sensor, Bank2=>-G163 Open circuit/short circuit to B+
+P139300 	Ignition output 1 electrical malfunction in circuit
+P139400 	Ignition output 2 electrical malfunction in circuit
+P139500 	Ignition output 3 electrical malfunction in circuit
+P139600 	Engine speed sender -G28 Range/Performance
+P139700 	Sensor Wheel for Engine Speed adaptation limit reached
+P139800 	Engine speed signal, TD Short-circuit to ground
+P139900 	Engine speed signal, TD Short circuit to B+
+P139A00 	Engine speed (RPM) validation
+P13A000 	Signal wire 1 ion current system bank 1 Short circuit to B+
+P13A100 	Signal wire 2 ion current system bank 1 Short circuit to B+
+P13A200 	Signal wire 1 ion current system bank 1 Short-circuit to ground
+P13A300 	Signal wire 2 ion current system bank 1 Short-circuit to ground
+P13A400 	Signal wire 1 ion current system bank 2 Short circuit to B+
+P13A500 	Signal wire 2 ion current system bank 2 Short circuit to B+
+P13A600 	Signal wire 1 ion current system bank 2 Short-circuit to ground
+P13A700 	Signal wire 2 ion current system bank 2 Short-circuit to ground
+P13A800 	Ion current system cylinder 1 Trouble code detected?
+P13A900 	Ion current system cylinder 1 Implausible signal
+P13AA00 	Ion current system cylinder 2 Trouble code detected?
+P13AB00 	Ion current system cylinder 2 Implausible signal
+P13AC00 	Ion current system cylinder 3 Trouble code detected?
+P13AD00 	Ion current system cylinder 3 Implausible signal
+P13AE00 	Ion current system cylinder 4 Trouble code detected?
+P13AF00 	Ion current system cylinder 4 Implausible signal
+P13B000 	Ion current system cylinder 5 Trouble code detected?
+P13B100 	Ion current system cylinder 5 Implausible signal
+P13B200 	Ion current system cylinder 6 Trouble code detected?
+P13B300 	Ion current system cylinder 6 Implausible signal
+P13B400 	Ion current system cylinder 7 Trouble code detected?
+P13B500 	Ion current system cylinder 7 Implausible signal
+P13B600 	Ion current system cylinder 8 Trouble code detected?
+P13B700 	Ion current system cylinder 8 Implausible signal
+P13B800 	Ion current system cylinder 9 Trouble code detected?
+P13B900 	Ion current system cylinder 9 Implausible signal
+P13BA00 	Ion current system cylinder 10 Trouble code detected?
+P13BB00 	Ion current system cylinder 10 Implausible signal
+P13BC00 	Ion current system cylinder 11 Trouble code detected?
+P13BD00 	Ion current system cylinder 11 Implausible signal
+P13BE00 	Ion current system cylinder 12 Trouble code detected?
+P13BF00 	Ion current system cylinder 12 Implausible signal
+P13C000 	Ion current system cylinder 13 Trouble code detected?
+P13C100 	Ion current system cylinder 13 Implausible signal
+P13C200 	Ion current system cylinder 14 Trouble code detected?
+P13C300 	Ion current system cylinder 14 Implausible signal
+P13C400 	Ion current system cylinder 15 Trouble code detected?
+P13C500 	Ion current system cylinder 15 Implausible signal
+P13C600 	Ion current system cylinder 16 Trouble code detected?
+P13C700 	Ion current system cylinder 16 Implausible signal
+P13C800 	Ion current system bank 1, Initialization error channel 1
+P13C900 	Ion current system bank 1, Initialization error channel 2
+P13CA00 	Ion current system bank 1, Initialization error channel 1/2
+P13CB00 	Ion current system bank 2, Initialization error channel 1
+P13CC00 	Ion current system bank 2, Initialization error channel 2
+P13CD00 	Ion current system bank 2, Initialization error channel 1/2
+P13CE00 	Sensor for internal pressure of cylinder 1 Electrical malfunction
+P13CF00 	Sensor for internal pressure of cylinder 1 Short circuit to ground
+P13D000 	Sensor for internal pressure of cylinder 1 Implausible signal
+P13D100 	Sensor for internal pressure of cylinder 2 Electrical malfunction
+P13D200 	Sensor for internal pressure of cylinder 2 Short circuit to ground
+P13D300 	Sensor for internal pressure of cylinder 2 Implausible signal
+P13D400 	Sensor for internal pressure of cylinder 3 Electrical malfunction
+P13D500 	Sensor for internal pressure of cylinder 3 Short circuit to ground
+P13D600 	Sensor for internal pressure of cylinder 3 Implausible signal
+P13D700 	Sensor for internal pressure of cylinder 4 Electrical malfunction
+P13D800 	Sensor for internal pressure of cylinder 4 Short circuit to ground
+P13D900 	Sensor for internal pressure of cylinder 4 Implausible signal
+P13DA00 	Sensor for internal pressure of cylinder 5 Electrical malfunction
+P13DB00 	Sensor for internal pressure of cylinder 5 Short circuit to ground
+P13DC00 	Sensor for internal pressure of cylinder 5 Implausible signal
+P13DD00 	Sensor for internal pressure of cylinder 6 Electrical malfunction
+P13DE00 	Sensor for internal pressure of cylinder 6 Short circuit to ground
+P13DF00 	Sensor for internal pressure of cylinder 6 Implausible signal
+P13E000 	Sensor for internal pressure of cylinder 1 Malfunction
+P13E100 	Sensor for internal pressure of cylinder 2 Malfunction
+P13E200 	Sensor for internal pressure of cylinder 3 Malfunction
+P13E300 	Sensor for internal pressure of cylinder 4 Malfunction
+P13E400 	Sensor for internal pressure of cylinder 5 Malfunction
+P13E500 	Sensor for internal pressure of cylinder 6 Malfunction
+P13EA00 	Cold Start Ignition Timing Performance Off Idle
+P140000 	EGR Vacuum Regulator Solenoid Valve electrical malfunction in circuit
+P140100 	EGR Vacuum Regulator Solenoid Valve Short-circuit to ground
+P140200 	EGR Vacuum Regulator Solenoid Valve Short circuit to B+
+P140300 	Exhaust gas recirculation system Control difference
+P140400 	Exhaust gas recirculation system Basic settings not carried out
+P140500 	Exhaust gas recirculation valve 2 -N213 Malfunction
+P140600 	EGR Temp.Sensor -G98 Implausible signal
+P140700 	EGR Temp.Sensor -G98 Signal too low
+P140800 	EGR Temp.Sensor -G98 Signal too high
+P140900 	Evaporative Emission (EVAP) Canister Purge Regulator Valve -N80 electrical malfunction in circuit
+P140A00 	EGR system 2 bank 1 Control difference
+P140B00 	EGR system 2 bank 2 Control difference
+P140C00 	EGR sensor 2 bank 1 Signal too low
+P140D00 	EGR sensor 2 bank 2 Signal too low
+P140E00 	EGR sensor 2 bank 1 Signal too high
+P140F00 	EGR sensor 2 bank 2 Signal too high
+P141000 	Evaporative Emission (EVAP) Canister Purge Regulator Valve -N80 Short circuit to B+
+P141100 	Bank2, secondary air system Flow too Low
+P141200 	Pressure sensor for exhaust gas recirculation Signal too low
+P141300 	Pressure sensor for exhaust gas recirculation Signal too high
+P141400 	Bank2, secondary air system leak detected
+P141500 	EGR valve, curve adaptation characteristic curve adaptation Lower limit exceeded
+P141600 	EGR valve, curve adaptation Upper limit exceeded
+P141700 	Fuel Level Sensor (A) Circuit Signal too low
+P141800 	Fuel Level Sensor (A) Circuit Signal too high
+P141900 	Exhaust Gas Recirculation (EGR) Cool Switch-over Valve 2 -N381 Short circuit to B+
+P141A00 	Exhaust temperature sensor 3 bank 2 Electrical malfunction
+P141B00 	Exhaust temperature sensor 3 bank 2 Implausible signal
+P141C00 	Exhaust temperature sensor 3 bank 2 Short-circuit to ground
+P141D00 	Exhaust temperature sensor 3 bank 2 Short circuit to B+
+P141E00 	Exhaust Gas Recirculation Contr. Circuit Bank 2 Control difference
+P141F00 	Exhaust gas temperature sensors Implausible
+P142000 	Secondary air inlet valve-N112 electrical malfunction in circuit
+P142100 	Secondary air inlet valve-N112 Short-circuit to ground
+P142200 	Secondary air inlet valve-N112 Short circuit to B+
+P142300 	Bank1, secondary air system Flow too Low
+P142400 	Bank1, secondary air system leak detected
+P142500 	Evaporative Emission (EVAP) Canister Purge Regulator Valve -N80 Short-circuit to ground
+P142600 	Evaporative Emission (EVAP) Canister Purge Regulator Valve -N80 Open circuit
+P142700 	Brake vacuum pump activation Short circuit to B+
+P142800 	Brake vacuum pump activation Short-circuit to ground
+P142900 	Brake vacuum pump activation Open circuit
+P142A00 	Exhaust Gas Temperature Sensor 2 and 3 Circuit - Bank 1 deviation
+P142B00 	Exhaust Gas Temperature Sensor 2 and 3 Circuit - Bank 2 deviation
+P142C00 	Exhaust Gas Temperature Sensor 2 Circuit - Bank 1 and 2 deviation
+P142D00 	Exhaust Gas Temperature Sensor 3 Circuit - Bank 1 and 2 deviation
+P142E00 	EGR valve 2 bank 1 electrical malfunction in circuit
+P142F00 	EGR valve 2 bank 2 electrical malfunction in circuit
+P143000 	Brake vacuum pump activation Open circuit/short circuit to B+
+P143100 	Brake vacuum pump activation Open circuit/short circuit to ground
+P143200 	Secondary air inlet valve-N112 Open circuit
+P143300 	Secondary Air Injection (AIR) Pump Relay -J299 Open circuit
+P143400 	Secondary Air Injection (AIR) Pump Relay -J299 Short circuit to B+
+P143500 	Secondary Air Injection (AIR) Pump Relay -J299 Short-circuit to ground
+P143600 	Secondary Air Injection (AIR) Pump Relay -J299 electrical malfunction in circuit
+P143700 	EGR Vacuum Regulator Solenoid Valve 2 Short circuit to B+
+P143800 	EGR Vacuum Regulator Solenoid Valve 2 Open circuit/short circuit to ground
+P143900 	Exhaust gas recirculation potentiometer -G212 Malfunction in basic settings
+P143A00 	Bank 2 Particle Filter Post-Injection Metering Pump -V337- Short circuit to B+
+P143B00 	Bank 2 Particle Filter Post-Injection Metering Pump -V337- Short circuit to ground/open circuit
+P143C00 	Bank 1 Particle Filter Post-Injection Metering Pump -V336- Short circuit to B+
+P143D00 	Bank 1 Particle Filter Post-Injection Metering Pump -V336- Short circuit to ground/open circuit
+P143E00 	Particle Filter Post-Injection Metering Pump -V335- Short circuit to B+
+P143F00 	Particle Filter Post-Injection Metering Pump -V335- Short circuit to ground/open circuit
+P144000 	EGR Vacuum Regulator Solenoid Valve Open circuit
+P144100 	EGR Vacuum Regulator Solenoid Valve Open circuit/short circuit to ground
+P144200 	Exhaust gas recirculation potentiometer -G212 Signal too high
+P144300 	Exhaust gas recirculation potentiometer -G212 Signal too low
+P144400 	Exhaust gas recirculation potentiometer -G212 Implausible signal
+P144500 	Catalyst Temp.Sensor 2 Circ. -G132 Implausible signal
+P144600 	Catalyst Temp.Sensor 1 Circ. -G20 Short-circuit to ground
+P144700 	Catalyst Temp.Sensor 1 Circ. -G20 Open circuit/short circuit to B+
+P144800 	Catalyst Temp.Sensor 2 Circ. -G132 Short-circuit to ground
+P144900 	Catalyst Temp.Sensor 2 Circ. -G132 Open circuit/short circuit to B+
+P144A00 	EGR system 2 bank 1 Malfunction
+P144B00 	EGR system 2 bank 2 Malfunction
+P144C00 	EGR sensor 2 bank 1 Malfunction in basic settings
+P144D00 	EGR sensor 2 bank 2 Malfunction in basic settings
+P144E00 	EGR Vacuum Regulator Solenoid Valve 2 Electrical malfunction
+P144F00 	EGR Vacuum Regulator Solenoid Valve 2 Open circuit
+P145000 	Secondary air system Short circuit to B+
+P145100 	Secondary air system Short-circuit to ground
+P145200 	Secondary air system Open circuit
+P145300 	Exhaust Gas Temperature Sensor 1 Circuit, Bank 1 -G235- Open circuit/short circuit to B+
+P145400 	Exhaust Gas Temperature Sensor 1 Circuit, Bank 1 -G235- Short-circuit to ground
+P145500 	Exhaust Gas Temperature Sensor 1 Circuit, Bank 1 -G235- Implausible signal
+P145600 	Exhaust Gas Temperature Control Bank 1 Control limit reached
+P145700 	Exhaust temperature sensor 1 bank 2 - G236 Open circuit/short circuit to B+
+P145800 	Exhaust temperature sensor 1 bank 2 - G236 Short-circuit to ground
+P145900 	Exhaust temperature sensor 1 bank 2 - G236 Implausible signal
+P145A00 	Exhaust Gas Temperature Sensor 3 Circuit Electrical malfunction
+P145B00 	Exhaust Gas Temperature Sensor 3 Circuit Implausible signal
+P145C00 	Exhaust Gas Temperature Sensor 3 Circuit Short-circuit to ground
+P145D00 	Exhaust Gas Temperature Sensor 3 Circuit Short circuit to B+
+P145E00 	Air mass throughput in regeneration operation is too low
+P145F00 	Mass air flow in regeneration operation too high
+P146000 	Exhaust Gas Temperature Control Bank 2 Control limit reached
+P146100 	Exhaust Gas Temperature Control Bank 1 Implausible signal
+P146200 	Exhaust Gas Temperature Control Bank 2 Implausible signal
+P146300 	Sec.Air Inj.Sys., Bank 3 Malfunction
+P146400 	Sec.Air Inj.Sys., Bank 4 Malfunction
+P146500 	Metering pump for cleaning solution Short circuit to B+
+P146600 	Metering pump for cleaning solution Open circuit/short circuit to ground
+P146700 	Evaporative Emission (EVAP) Canister Purge Solenoid -N115 Short circuit to B+
+P146800 	Evaporative Emission (EVAP) Canister Purge Solenoid -N115 Short-circuit to ground
+P146900 	Evaporative Emission (EVAP) Canister Purge Solenoid -N115 Open circuit
+P146A00 	Malfunction Diesel particle filter bank 1 Temperature increase too low
+P146B00 	Malfunction Diesel particle filter bank 2 Temperature increase too low
+P146C00 	Acknowledgement of heating 1 for reducing agent Electrical malfunction
+P146D00 	Acknowledgement of heating 1 for reducing agent Short circuit to B+
+P146E00 	Acknowledgement of heating 2 for reducing agent Electrical malfunction
+P146F00 	Acknowledgement of heating 2 for reducing agent Short circuit to B+
+P147000 	Leak diagnosis pump - tank breather system electrical malfunction in circuit
+P147100 	Leak diagnosis pump - tank breather system Short circuit to B+
+P147200 	Leak diagnosis pump - tank breather system Short-circuit to ground
+P147300 	Leak diagnosis pump - tank breather system Open circuit
+P147400 	Evaporative Emission (EVAP) Canister Purge Solenoid -N115 Electrical malfunction in circuit
+P147500 	Leak diagnosis pump - tank breather system malfunction/no signal
+P147600 	Leak diagnosis pump - tank breather system malfunction/vacuum to low
+P147700 	Leak diagnosis pump - tank breather system Malfunction
+P147800 	Leak diagnosis pump - tank breather system blocked pipe detected
+P147900 	Brake vacuum system Mechanical malfunction
+P147A00 	Brake vacuum pump activation Electrical malfunction
+P148000 	Brake vacuum pump
+P148100 	Secondary Air Injection (AIR) Pump Relay 2 -J545- Open circuit
+P148200 	Secondary Air Injection (AIR) Pump Relay 2 -J545- Short circuit to B+
+P148300 	Secondary Air Injection (AIR) Pump Relay 2 -J545- Short-circuit to ground
+P148400 	Secondary Air Injection (AIR) Pump Relay 2 -J545- electrical malfunction in circuit
+P148500 	Secondary Air Injection (AIR) Solenoid Valve 2 -N320- Open circuit
+P148600 	Secondary Air Injection (AIR) Solenoid Valve 2 -N320- electrical malfunction in circuit
+P148700 	Secondary Air Injection (AIR) Solenoid Valve 2 -N320- Short-circuit to ground
+P148800 	Secondary Air Injection (AIR) Solenoid Valve 2 -N320- Short circuit to B+
+P148900 	Evaporative Emission (EVAP) Canister Purge Regulator -N333 Short circuit to B+
+P148A00 	Sensor for reducing agent fill level Implausible fill level
+P148B00 	End stage for reducing agent heating Defective
+P148C00 	End stage 2 for reducing agent heating Defective
+P148F00 	Exhaust Gas Recirculation (EGR) Cool Switch-Over Valve 2 Electrical malfunction
+P149000 	Evaporative Emission (EVAP) Canister Purge Regulator -N333 Short-circuit to ground
+P149100 	Evaporative Emission (EVAP) Canister Purge Regulator -N333 Open circuit
+P149200 	Evaporative Emission (EVAP) Canister Purge Regulator -N333 electrical malfunction in circuit
+P149300 	Brake vacuum pump Performance too low
+P149400 	EVAP Emission Control System 2 Throughput faulty
+P149500 	Radiator Exhaust Gas Recirculation Switch-over Valve -N345 Open circuit/short circuit to ground
+P149600 	Radiator Exhaust Gas Recirculation Switch-over Valve -N345 Short circuit to B+
+P149700 	Sec.Air Inj.Sys., Bank 3 Incorrect Flow Detected
+P149800 	Sec.Air Inj.Sys., Bank 4 Incorrect Flow Detected
+P149900 	Exhaust Gas Recirculation (EGR) Cool Switch-over Valve 2 -N381 Open circuit/short circuit to ground
+P149A00 	EGR Coolant pump Short-circuit to ground
+P149B00 	EGR Coolant pump Short circuit to B+
+P149C00 	EGR Coolant pump Open circuit
+P149D00 	Transfer pump for reducing agent Open circuit
+P149E00 	Transfer pump for reducing agent Short-circuit to ground
+P149F00 	Transfer pump for reducing agent Short circuit to B+
+P14A000 	Exhaust temperature sensor 1 bank 3 Implausible signal
+P14A100 	Exhaust temperature sensor 1 bank 3 Short-circuit to ground
+P14A200 	Exhaust temperature sensor 1 bank 3 Short circuit to B+
+P14A300 	Exhaust temperature sensor 1 bank 4 Implausible signal
+P14A400 	Exhaust temperature sensor 1 bank 4 Short-circuit to ground
+P14A500 	Exhaust temperature sensor 1 bank 4 Short circuit to B+
+P14A600 	Sensor 3a for exhaust temperature bank 1 Electrical malfunction
+P14A700 	Sensor 3a for exhaust temperature bank 1 Implausible signal
+P14A800 	Sensor 3a for exhaust temperature bank 1 Short-circuit to ground
+P14A900 	Sensor 3a for exhaust temperature bank 1 Short circuit to B+
+P150000 	Fuel pump relay -J17 electrical malfunction in circuit
+P150100 	Fuel pump relay -J17 Short-circuit to ground
+P150200 	Fuel pump relay -J17 Short circuit to B+
+P150300 	Load signal from generator DF Implausible signal
+P150400 	Air intake system leak detected
+P150500 	Closed Throttle Position (CTP) Switch -F60 does not close/open circuit
+P150600 	Closed Throttle Position (CTP) Switch -F60 does not open/short circuit to Ground (GND)
+P150700 	Idling system learnt value - lower limit reached
+P150800 	Idling system learnt value - upper limit reached
+P150900 	Idling speed stabilization valve -N71 electrical malfunction in circuit
+P150A00 	Engine Off Timer Performance
+P150B00 	Acceleration monitoring Value above upper control limit
+P150C00 	RPM request from transmission cannot be performed
+P150D00 	Chain elongation
+P150E00 	Vehicle Speed Sensor (A) Implausible to ABS Control Module
+P150F00 	External control module incorrect code
+P151000 	Idling speed stabilization valve -N71 Short circuit to B+
+P151100 	Intake manifold change-over valve -N156 electrical malfunction in circuit
+P151200 	Intake manifold change-over valve -N156 Short circuit to B+
+P151300 	Intake Manifold Changover Valve 2 circuit -N261 Short circuit to B+
+P151400 	Intake Manifold Changover Valve 2 circuit -N261 Short-circuit to ground
+P151500 	Intake Manifold Changover Valve circuit -N156 Short-circuit to ground
+P151600 	Intake Manifold Changover Valve circuit -N156 Open circuit
+P151700 	Main relay electrical malfunction in circuit
+P151800 	Main relay Short circuit to B+
+P151900 	Bank1, camshaft adjustment Malfunction
+P152000 	Intake Manifold Changover Valve 2 circuit -N261 Open circuit
+P152100 	Intake Manifold Changover Valve 2 circuit -N261 Electrical malfunction in circuit
+P152200 	A Camshaft Position Actuator Control Circuit(Bank2) Malfunction
+P152300 	Crash Signal from Airbag Control Unit Implausible signal
+P152400 	Fuel pump relay -J17 Open circuit/short circuit to ground
+P152500 	Bank1, camshaft adjustment=>-N205 electrical malfunction in circuit
+P152600 	Bank1, camshaft adjustment=>-N205 Short circuit to B+
+P152700 	Bank1, camshaft adjustment=>-N205 Short-circuit to ground
+P152800 	Bank1, camshaft adjustment=>-N205 Open circuit
+P152900 	Intake camshaft control circuit Short circuit to B+
+P153000 	Intake camshaft control circuit Short-circuit to ground
+P153100 	Intake camshaft control circuit Open circuit
+P153200 	Idle regulation lean operation RPM below specified value
+P153300 	Bank2, camshaft adjustment=>-N208 electrical malfunction in circuit
+P153400 	Bank2, camshaft adjustment=>-N208 Short circuit to B+
+P153500 	Bank2, camshaft adjustment=>-N208 Short-circuit to ground
+P153600 	Bank2, camshaft adjustment=>-N208 Open circuit
+P153700 	Fuel Cut-Off Valve -N109- Malfunction
+P153800 	Fuel Cut-Off Valve -N109- Open circuit/short circuit to ground
+P153900 	Clutch pedal switch -F36 Implausible signal
+P154000 	Vehicle Speed Sensor (A) Signal too high
+P154100 	Fuel pump relay -J17 Open circuit
+P154200 	Angle sender 1 for throttle valve drive -G187 Implausible signal
+P154300 	Angle sender 1 for throttle valve drive -G187 Signal too low
+P154400 	Angle sender 1 for throttle valve drive -G187 Signal too high
+P154500 	Throttle valve control system Malfunction
+P154600 	Wastegate Bypass Regulator Valve -N75 Short circuit to B+
+P154700 	Wastegate Bypass Regulator Valve -N75 Short-circuit to ground
+P154800 	Wastegate Bypass Regulator Valve -N75 Open circuit
+P154900 	Wastegate Bypass Regulator Valve -N75 Open circuit/short circuit to ground
+P154E00 	Charge pressure regulation bank 2 Malfunction
+P154F00 	Turbo/Super Charger Boost Sensor (A) Circuit Malfunction
+P155000 	Charging pressure Control difference
+P155100 	Altitude sender-F96 Short circuit to B+
+P155200 	Altitude sender-F96 Open circuit/short circuit to ground
+P155300 	Barometric pressure sensor/manifold absolute pressure Implausible relation
+P155400 	Throttle valve control part-J338- Conditions f. basic setting not met
+P155500 	value above maximum charge pressure
+P155600 	Turbo/Super Charger Boost Sensor (A) Circuit Value below lower control limit
+P155700 	Turbo/Super Charger Boost Sensor (A) Circuit Value above upper control limit
+P155800 	Throttle Drive (for Electronic Power Control (EPC)) -G186 electrical malfunction in circuit
+P155900 	Throttle valve control part-J338- Malfunction in basic settings
+P155A00 	Turbo/Super Charger Boost Sensor (A) Circuit Charge air pressure not reached
+P156000 	Engine Overspeed Condition
+P156100 	Quantity adjuster-N146 Control difference
+P156200 	Quantity adjuster-N146 upper limit stop value
+P156300 	Quantity adjuster-N146 lower limit stop value
+P156400 	Throttle valve control part-J338- insufficient voltage during basic settings
+P156500 	Throttle valve control part-J338- lower stop not reached
+P156600 	A/C Refrigerant Pressure Sensor (A) Circuit Implausible signal
+P156700 	A/C Refrigerant Pressure Sensor (A) Circuit No signal
+P156800 	Throttle valve control part-J338- Mechanical malfunction
+P156900 	Cruise control system switch -E45 Implausible signal
+P156A00 	Filling/throttle valve position Validation
+P156B00 	Lower mechanical stop of throttle valve Implausible signal
+P157000 	Engine Control Module (ECM) disabled
+P157100 	Left Electro-Hydraulic Engine Mount Solenoid Valve -N144- Short circuit to B+
+P157200 	Left Electro-Hydraulic Engine Mount Solenoid Valve -N144- Short-circuit to ground
+P157300 	Left Electro-Hydraulic Engine Mount Solenoid Valve -N144- Open circuit
+P157400 	Left Electro-Hydraulic Engine Mount Solenoid Valve -N144- Electrical malfunction in circuit
+P157500 	Right Electro-Hydraulic Engine Mount Solenoid Valve -N145- Short circuit to B+
+P157600 	Right Electro-Hydraulic Engine Mount Solenoid Valve -N145- Short-circuit to ground
+P157700 	Right Electro-Hydraulic Engine Mount Solenoid Valve -N145- Open circuit
+P157800 	Right Electro-Hydraulic Engine Mount Solenoid Valve -N145- Electrical malfunction in circuit
+P157900 	Throttle valve control part-J338- Adaptation not initiated
+P158000 	Throttle valve drive - bank 1 Malfunction
+P158100 	Throttle valve control part-J338- Basic settings not carried out
+P158200 	Idle speed control adaptation limit reached
+P158300 	Transmission Mount Valve -1-/-2- -N262-/-N263- Short circuit to B+
+P158400 	Transmission Mount Valve -1-/-2- -N262-/-N263- Short-circuit to ground
+P158500 	Transmission Mount Valve -1-/-2- -N262-/-N263- Open circuit
+P158600 	L/R Electr-Hydr Eng. Mount Sol Valve -N144/N145 Short circuit to B+
+P158700 	L/R Electr-Hydr Eng. Mount Sol Valve -N144/N145 Short-circuit to ground
+P158800 	L/R Electr-Hydr Eng. Mount Sol Valve -N144/N145 Open circuit
+P158900 	Temperature Selector Knob Potentiometer -G267- Short circuit to Ground (GND)
+P159000 	Temperature Selector Knob Potentiometer -G267- Open circuit
+P159100 	Wastegate Bypass Regulator Valve -N75 No function
+P159200 	Height sensor/charge pressure sensor Implausible relation
+P159300 	Altitude adaptation Signal outside tolerance
+P159400 	Engine Oil Temperature Sensor Circuit,Camshaft Control -G277 Short circuit to B+
+P159500 	Engine Oil Temperature Sensor Circuit,Camshaft Control -G277 Open circuit/short circuit to ground
+P159600 	Databus drivetrain Implausible message from level control system control module
+P159700 	Databus drivetrain missing message from level controls system control module
+P159800 	Engine Oil Temperature Sensor Circuit,Camshaft Control -G277 Implausible signal
+P159900 	Idle regulation lean operation RPM above specified value
+P159B00 	Oil Level Thermal Sensor Short circuit to B+
+P159C00 	Oil Level Thermal Sensor Short-circuit to ground
+P159D00 	Oil Level Thermal Sensor Implausible signal
+P159E00 	Oil Level Thermal Sensor No signal
+P159F00 	Function restriction by Transmission Control Module
+P15A000 	Neutral gear sensor Electrical malfunction
+P15A100 	Neutral gear sensor Implausible signal
+P15A200 	Neutral gear sensor Short-circuit to ground
+P15A300 	Neutral gear sensor Short circuit to B+
+P15A400 	vehicle shutdown activated
+P160000 	Voltage supply terminal 15 Low Voltage
+P160100 	Relay for Power Supply (B+) Terminal 30 -J317 Implausible signal
+P160200 	Power Supply (B+) Terminal 30 Low Voltage
+P160300 	Control module defective
+P160400 	Control module defective
+P160500 	Uneven road surface /acceleration sensor electrical malfunction in circuit
+P160600 	Rough Road Spec Engine Torque ABS-ECU electrical malfunction in circuit
+P160700 	Speed signal Malfunction message from instrument cluster
+P160800 	Steering angle signal Malfunction indication from steering angle sensor
+P160900 	Crash shut-off was triggered
+P160A00 	Control module defective
+P160B00 	See literature
+P160C00 	Coolant pump 2 Open circuit
+P160D00 	Coolant pump 2 Implausible signal
+P160E00 	Coolant pump 2 Short-circuit to ground
+P160F00 	Coolant pump 2 Short circuit to B+
+P161000 	Control module defective
+P161100 	Requirement - malfunction lamp on Short-circuit to ground
+P161200 	Engine Control Module (ECM) incorrect coding
+P161300 	Requirement - malfunction lamp on Open circuit/short circuit to B+
+P161400 	Requirement - malfunction lamp on Implausible signal
+P161500 	Engine Oil Temperature Sensor Circuit Implausible signal
+P161600 	Glow Plug Indicator Light -K29- Short circuit to B+
+P161700 	Glow Plug Indicator Light -K29- Open circuit/short circuit to ground
+P161800 	Glow plug relay -J52 Short circuit to B+
+P161900 	Glow plug relay -J52 Open circuit/short circuit to ground
+P161A00 	Glow plug cylinder 1 -Q10 Open circuit
+P161B00 	Glow plug cylinder 2 -Q11 Open circuit
+P161C00 	Glow plug cylinder 3 -Q12 Open circuit
+P161D00 	Glow plug cylinder 4 -Q13 Open circuit
+P161E00 	Glow plug cylinder 5 -Q14 Open circuit
+P161F00 	Glow plug cylinder 6 -Q15 Open circuit
+P162000 	Signal for coolant temperature Open/Short to B+
+P162100 	Signal for coolant temperature Short-circuit to ground
+P162200 	Signal for coolant temperature Implausible signal
+P162300 	Databus drivetrain No communication
+P162400 	Requirement - malfunction lamp on active
+P162500 	Databus drivetrain Implausible Message from Transm.Contr.
+P162600 	Databus drivetrain Missing Message from Transm.Contr.
+P162700 	Databus drivetrain missing message from fuel injection pump
+P162800 	Databus drivetrain missing message from steering sensor
+P162900 	Databus drivetrain Missing message from ADR control module
+P162A00 	Glow plug cylinder 7 -Q16 Open circuit
+P162B00 	Glow plug cylinder 8 -Q17 Open circuit
+P162C00 	Glow/Time Control Module - voltage supply Load circuit open circuit
+P162D00 	Diesel Particle Filter Indicator Lamp -K231 Malfunction
+P162E00 	Glow plug cylinder 9 -Q18 Open circuit
+P162F00 	Glow plug cylinder 10 -Q19 Open circuit
+P163000 	Accelerator position sender-G79 Signal too low
+P163100 	Accelerator position sender-G79 Signal too high
+P163200 	Accelerator position sender-G79 Supply voltage
+P163300 	Accelerator pedal position sender 2 -G185 Signal too low
+P163400 	Accelerator pedal position sender 2 -G185 Signal too high
+P163500 	Databus drivetrain missing message f.air condition control
+P163600 	Databus drivetrain missing message from Airbag control
+P163700 	Databus drivetrain Missing message f.central electr. control
+P163800 	Databus drivetrain missing message from clutch control module
+P163900 	Throttle/Pedal Position Sensor/Switch -C- Circuit Implausible signal
+P163A00 	Glow/Time Control Module 2 - voltage supply Load circuit open circuit
+P163B00 	Wakeup request constantly detected
+P163C00 	Wakeup request not detected
+P163D00 	Indicator lamp for driving program Electrical malfunction in circuit
+P163E00 	Control module defective
+P163F00 	Glow timing control module 2
+P164000 	Control module defective
+P164100 	Read DTC memory of Air Condition ECU
+P164200 	Read DTC memory of Airbag ECU
+P164300 	Read DTC memory of read out select central control
+P164400 	Read DTC memory of clutch ECU
+P164500 	Databus drivetrain missing message f.all wheel drive contr
+P164600 	Read DTC memory of four wheel drive electronics
+P164700 	Checking coding/versions of control modules in CAN-bus
+P164800 	Databus drivetrain Defective
+P164900 	Databus drivetrain missing message from break ECU
+P164A00 	Oil pressure switch Implausible signal
+P164B00 	Oil pressure switch Malfunction
+P164C00 	Oil pressure switch for reduced oil pressure Implausible signal
+P164D00 	Oil pressure switch for reduced oil pressure Malfunction
+P164E00 	Oil pressure regulation valve Electrical malfunction
+P164F00 	Torque withdrawal
+P165000 	Databus drivetrain missing message from instrument panel ECU
+P165100 	Databus drivetrain missing messages
+P165200 	Read DTC memory of transmission ECU
+P165300 	Read DTC memory of break ECU
+P165400 	Read DTC memory of instrument cluster
+P165500 	Read DTC memory of distance control ECU
+P165600 	AC Clutch Relay Control Circuit Short-circuit to ground
+P165700 	AC Clutch Relay Control Circuit Short circuit to B+
+P165800 	Databus drivetrain range/performance from distance control
+P165900 	Fan 1 control circuit Short circuit to B+
+P165A00 	Temperature sensor - fresh air intake duct Short circuit to B+
+P165B00 	Temperature sensor - fresh air intake duct Short-circuit to ground
+P165C00 	Temperature sensor - fresh air intake duct Electrical malfunction
+P165D00 	Refrigerant pressure too high
+P165E00 	Refrigerant pressure too low
+P165F00 	Oil pressure regulation valve Short-circuit to ground
+P166000 	Fan 1 control circuit Short-circuit to ground
+P166100 	Fan 2 control circuit Short circuit to B+
+P166200 	Fan 2 control circuit Short-circuit to ground
+P166300 	Activation of unit injectors Short circuit to B+
+P166400 	Activation of unit injectors Electrical malfunction in circuit
+P166500 	Activation of unit injectors Mechanical malfunction
+P166600 	Unit injector solenoid valve - cylinder 1-N240 Electrical malfunction in circuit
+P166700 	Unit injector solenoid valve - cylinder 2-N241 Electrical malfunction in circuit
+P166800 	Unit injector solenoid valve - cylinder 3-N242 Electrical malfunction in circuit
+P166900 	Unit injector solenoid valve - cylinder 4-N243 Electrical malfunction in circuit
+P166A00 	Oil temperature sensor 2 Electrical malfunction
+P166B00 	Oil temperature sensor 2 Short-circuit to ground
+P166C00 	Oil temperature sensor 2 Implausible signal
+P166D00 	Engine control module incorrect installation
+P167000 	Unit injector solenoid valve - cylinder 5-N244 Electrical malfunction in circuit
+P167100 	Unit injector solenoid valve - cylinder 6-N245 Electrical malfunction in circuit
+P167200 	Fan 1 control circuit Open circuit/short circuit to ground
+P167300 	Speed signal Malfunction message from ABS control module
+P167400 	Databus drivetrain implausible message from instrument panel ECU
+P167500 	Databus drivetrain fuel pump control module
+P167600 	Drive by Wire-MIL Circ. -K132 electrical malfunction in circuit
+P167700 	Drive by Wire-MIL Circ. -K132 Short circuit to B+
+P167800 	Drive by Wire-MIL Circ. -K132 Short-circuit to ground
+P167900 	Drive by Wire-MIL Circ. -K132 Open circuit
+P167A00 	Indicator light start/stop Electrical malfunction
+P167B00 	Driver's belt buckle Malfunction
+P167C00 	Driving program switch Electrical malfunction
+P167D00 	Switch for start/stop Electrical malfunction
+P167F00 	Injection system initialization error or impermissible operating condition
+P168000 	Reset-resistant emergency running
+P168100 	Control unit programming programming not finished
+P168200 	Databus drivetrain Implausible message from ABS control module
+P168300 	Databus drivetrain Implausible message from airbag control module
+P168400 	Control unit programming Malfunction in data transfer
+P168500 	Databus drivetrain implausible message from steering angle sensor
+P168600 	Control module defective Programming error
+P168700 	Databus drivetrain Implausible message from climate control module
+P168800 	Databus drivetrain implausible message from all wheel drive electronic
+P168900 	Databus drivetrain implausible message f.central electr. control
+P169000 	Malfunction Indicator Lamp (MIL) -K83- electrical malfunction in circuit
+P169100 	Malfunction Indicator Lamp (MIL) -K83- Open circuit
+P169200 	Malfunction Indicator Lamp (MIL) -K83- Short-circuit to ground
+P169300 	Malfunction Indicator Lamp (MIL) -K83- Short circuit to B+
+P169400 	Malfunction Indicator Lamp (MIL) -K83- Open circuit/short circuit to ground
+P169500 	Databus drivetrain implausible message from clutch control ECU
+P169600 	Databus drivetrain implausible signal from Steering Column Electronic
+P169700 	Steering angle sensors please read DTC
+P169800 	Steering Column Electronic Systems please read DTC
+P169900 	Databus drivetrain missing message from Steering Column Electronic
+P169A00 	Loading mode active
+P169B00 	Glow plug cylinder 1 Implausible signal
+P169C00 	Glow plug cylinder 2 Implausible signal
+P169D00 	Glow plug cylinder 3 Implausible signal
+P169E00 	Glow plug cylinder 4 Implausible signal
+P169F00 	Glow plug cylinder 5 Implausible signal
+P16A000 	Glow plug cylinder 6 Implausible signal
+P16A100 	Glow plug cylinder 7 Implausible signal
+P16A200 	Glow plug cylinder 8 Implausible signal
+P16A300 	Glow plug cylinder 9 Implausible signal
+P16A400 	Glow plug cylinder 10 Implausible signal
+P16A500 	Glow plug cylinder 11 Implausible signal
+P16A600 	Glow plug cylinder 12 Implausible signal
+P16A700 	Glow plug cylinder 1 Incorrect installation
+P16A800 	Glow plug cylinder 2 Incorrect installation
+P16A900 	Glow plug cylinder 3 Incorrect installation
+P16AA00 	Glow plug cylinder 4 Incorrect installation
+P16AB00 	Glow plug cylinder 5 Incorrect installation
+P16AC00 	Glow plug cylinder 6 Incorrect installation
+P16AD00 	Glow plug cylinder 7 Incorrect installation
+P16AE00 	Glow plug cylinder 8 Incorrect installation
+P16AF00 	Glow plug cylinder 9 Incorrect installation
+P16B000 	Glow plug cylinder 10 Incorrect installation
+P16B100 	Glow plug cylinder 11 Incorrect installation
+P16B200 	Glow plug cylinder 12 Incorrect installation
+P170000 	Brake Pressure Switch -F270- Implausible signal
+P170100 	Transmission control unit locked
+P170200 	Malfunction cannot activate contr. mod. replacem. func., since another malfunction with equal priority is present
+P170300 	Emergency running, control unit reset
+P170400 	Kick Down Switch -F8- electrical malfunction in circuit
+P170500 	Gear Ratio adaptation limit reached
+P170600 	Gearbox faulty
+P170700 	Interference in Mechatronic unit
+P170800 	Engine Control Modules (ECM) exchanged
+P170900 	Gear position switch 1-3 High Voltage
+P170A00 	Hill holder Incline limit exceeded
+P170B00 	Hill holder Malfunction
+P170C00 	Gear position switch 5-7 High Voltage
+P170D00 	Gear position switch 5-7 Low Voltage
+P170E00 	Gear position switch 5-7 Signal error
+P170F00 	Gear position switch 6-4 High Voltage
+P171000 	Gear position switch 6-4 Low Voltage
+P171100 	Wheel speed signal 1=>Left Front ABS Wheel Speed Sensor -G47 Implausible signal
+P171200 	Gear position switch R-2 High Voltage
+P171300 	Gear position switch R-2 Low Voltage
+P171400 	Gear position switch R-2 Signal error
+P171500 	Gear position switch 6-4 Signal error
+P171600 	Wheel speed signal 2=>Right Front ABS Wheel Speed Sensor -G45 Implausible signal
+P171700 	Gear position switch 1-3 Low Voltage
+P171800 	Gear position switch 1-3 Signal error
+P171900 	Function restriction by Engine Control Module
+P171A00 	Ignition key removal lock Open circuit
+P171B00 	Ignition key removal lock Short circuit to B+
+P171C00 	Ignition key removal lock Short-circuit to ground
+P171D00 	Ignition key removal lock Electrical malfunction
+P171E00 	Transmission Input Speed (RPM) Sensor 2 No signal
+P171F00 	Transmission Input Speed (RPM) Sensor 2 Implausible signal
+P172000 	Transmission output speed 1 Implausible signal
+P172100 	Wheel speed signal 3=>Left Rear ABS Wheel Speed Sensor -G46 Implausible signal
+P172200 	Transmission output speed 2 Implausible signal
+P172300 	Signal for starter lock Open circuit
+P172400 	Signal for starter lock Short-circuit to ground
+P172500 	Compare transmission output speeds 1 + 2 Implausible signal
+P172600 	Wheel speed signal 4=>Right Rear ABS Wheel Speed Sensor -G44 Implausible signal
+P172700 	Transmission Driving direction implausible
+P172800 	Differing wheel speeds Implausible signal
+P172900 	Signal for starter lock Short circuit to B+
+P172A00 	Clutch adjuster valve Open circuit
+P172B00 	Clutch adjuster valve Short-circuit to ground
+P172C00 	Clutch adjuster valve Short circuit to B+
+P172D00 	Clutch adjuster valve Electrical malfunction
+P172E00 	Switch actuator Mechanical malfunction
+P172F00 	Gear Position Distance Sensor 1 for gear selector Electrical malfunction
+P173000 	Gear Position Distance Sensor 2 for gear selector Electrical malfunction
+P173100 	Gear Position Distance Sensor 3 for gear selector Electrical malfunction
+P173200 	Gear Position Distance Sensor 4 for gear selector Electrical malfunction
+P173300 	Tiptronic Switch -F189-, down Short-circuit to ground
+P173400 	Starter release from the selector lever sensor system
+P173500 	Position sensor for clutch 1 Electrical malfunction
+P173600 	Position sensor for clutch 2 Electrical malfunction
+P173700 	Transmission hydraulic pressure sensor 1 Open circuit/short circuit to B+
+P173800 	Transmission hydraulic pressure sensor 2 Open circuit/short circuit to B+
+P173900 	Tiptronic Switch -F189-, up Short-circuit to ground
+P173A00 	Gear Position Distance Sensor 1 for gear selector Implausible signal
+P173B00 	Gear Position Distance Sensor 2 for gear selector Implausible signal
+P173C00 	Gear Position Distance Sensor 3 for gear selector Implausible signal
+P173D00 	Gear Position Distance Sensor 4 for gear selector Implausible signal
+P173E00 	Valve 1 in partial transmission 1 Electrical malfunction
+P173F00 	Valve 2 in partial transmission 1 Electrical malfunction
+P174000 	Clutch temperature monitoring
+P174100 	Clutch pressure adaptation at limit
+P174200 	Clutch torque adaptation, adaptation limit reached
+P174300 	Clutch slip monitoring Signal too high
+P174400 	Tiptronic Switch -F189-, recognition Short-circuit to ground
+P174500 	Transm.Contr.Unit Relay Short circuit to B+
+P174600 	Transm.Contr.Unit Relay electrical malfunction in circuit
+P174700 	Transm.Contr.Unit Relay Open circuit/short circuit to ground
+P174800 	Control module defective
+P174900 	Automatic gearbox control unit incorrect code
+P174A00 	Valve 3 in separate transmission 1 Electrical malfunction
+P174B00 	Valve 4 in partial transmission 1 Electrical malfunction
+P174C00 	Valve 1 in partial transmission 2 Electrical malfunction
+P174D00 	Valve 2 in partial transmission 2 Electrical malfunction
+P174E00 	Valve 3 in separate transmission 2 Electrical malfunction
+P174F00 	Valve 4 in partial transmission 2 Electrical malfunction
+P175000 	Voltage supply Low Voltage
+P175100 	Voltage supply High Voltage
+P175200 	Voltage supply Implausible signal
+P175300 	Tiptronic Switch -F189- Implausible signal
+P175400 	Tiptronic Switch, up F189 Open circuit/short circuit to B+
+P175500 	Tiptronic Switch, return F189 Open circuit/short circuit to B+
+P175600 	Tiptronic Switch -F189-, recognition Open circuit/short circuit to B+
+P175700 	Voltage supply Open circuit
+P175800 	Voltage supply terminal 15 Open circuit
+P175900 	Transmission fluid temperature Exceeded multiple times
+P175A00 	Actuator gear control unit separate transmission 1 Tolerance limit reached
+P175B00 	Actuator gear control unit separate transmission 2 Tolerance limit reached
+P175C00 	Actuator double clutch Tolerance limits reached
+P175D00 	Clutch 1 opens unintentionally
+P175E00 	Clutch 1 closes unintentionally
+P175F00 	Transmission system Basic settings not carried out
+P176000 	Shift lock solenoid =>solenoid -N110 electrical malfunction in circuit
+P176100 	Shift lock solenoid =>solenoid -N110 Short-circuit to ground
+P176200 	Shift lock solenoid =>solenoid -N110 Short circuit to B+
+P176300 	Shift lock solenoid =>solenoid -N110 Open circuit
+P176400 	Transmission temperature monitoring
+P176500 	Hydraulic pressure sender 2 -G194 adaptation limit reached
+P176600 	Throttle Angel Signal Open circuit/short circuit to B+
+P176700 	Throttle Angel Signal Short-circuit to ground
+P176800 	Hydraulic pressure sender 2 -G194 Signal too high
+P176900 	Hydraulic pressure sender 2 -G194 Signal too low
+P176A00 	Gear selector 1 cannot be regulated
+P176B00 	Gear selector 2 cannot be regulated
+P176C00 	Gear selector 3 cannot be regulated
+P176D00 	Gear selector 4 cannot be regulated
+P176E00 	Clutch 2 opens unintentionally
+P176F00 	Clutch 2 closes unintentionally
+P177000 	Load Signal Implausible signal
+P177100 	Load Signal Open circuit/short circuit to B+
+P177200 	Load Signal Short-circuit to ground
+P177300 	Hydraulic pressure sender 1 -G193 Signal too high
+P177400 	Hydraulic pressure sender 1 -G193 Signal too low
+P177500 	Hydraulic pressure sender 1 -G193 adaptation limit reached
+P177600 	Hydraulic pressure sender 1 -G193 Implausible signal
+P177700 	Hydraulic pressure sender 2 -G194 Implausible signal
+P177800 	Valve 7 electrical malfunction in circuit
+P177900 	Transmission input shaft 1 Overspeed
+P177A00 	Transmission input shaft 2 Overspeed
+P177B00 	Coupling 1 Tolerance limit reached
+P177C00 	Coupling 2 Tolerance limit reached
+P177D00 	Double clutch Torque too high
+P177E00 	Function restriction due to pressure drop
+P177F00 	Hydraulic pump motor Insuff. voltage
+P178000 	Torque withdrawal faulty
+P178100 	Torque reduction signal Open circuit/short circuit to ground
+P178200 	Torque reduction signal Short circuit to B+
+P178300 	Clutch torque adaptation 2 adaptation limit reached
+P178400 	Up/down shift wire Open circuit/short circuit to ground
+P178500 	Up/down shift wire Short circuit to B+
+P178600 	Reversing light signal Open circuit
+P178700 	Reversing light signal Short-circuit to ground
+P178800 	Reversing light signal Short circuit to B+
+P178900 	Idling speed adjustment Error Message from Engine Contr.
+P178A00 	Hydraulic pump Electrical malfunction
+P178B00 	Hydraulic pump Implausible behavior
+P178C00 	Clutch 1 to clutch 2 Implausible
+P178D00 	Synchronizer ring Wear
+P178E00 	Function limitation due to excessive temperature
+P178F00 	Pressure control valve soiled
+P179000 	Signal for selector range display Open circuit
+P179100 	Signal for selector range display Short-circuit to ground
+P179200 	Signal for selector range display Short circuit to B+
+P179300 	Output Speed Sensor 2 Circ. No signal
+P179500 	Signal for driving speed Open circuit
+P179600 	Signal for driving speed Short-circuit to ground
+P179700 	Signal for driving speed Short circuit to B+
+P179800 	Output Speed Sensor 2 Circ. Implausible signal
+P179900 	Output Speed Sensor 2 Circ. Rpm too High
+P179A00 	Solenoid valve Electrical malfunction
+P179B00 	Separate transmission valve Electrical malfunction
+P179C00 	Main pressure valve Electrical malfunction
+P179D00 	Cooling oil valve Electrical malfunction
+P179E00 	Sensor for transmission range Electrical malfunction
+P179F00 	Sensor for transmission range Malfunction
+P17A000 	Accumulator 1 temperature monitoring
+P17A100 	Accumulator 2 temperature monitoring
+P17A200 	Differential fluid pressure monitoring
+P17A300 	Differential fluid temperature monitoring
+P17A400 	Transverse acceleration monitoring
+P17A500 	Longitudinal acceleration monitoring
+P17A600 	Selector lever position P position1
+P17A700 	Selector lever position P position2
+P17A800 	Shift Lever Forward Valve 1 Open circuit
+P17A900 	Shift Lever Forward Valve 1 Short-circuit to ground
+P17AA00 	Shift Lever Forward Valve 1 Short circuit to B+
+P17AB00 	Shift Lever Forward Valve 1 Electrical malfunction
+P17AC00 	Shift Lever Forward Valve 2 Open circuit
+P17AD00 	Shift Lever Forward Valve 2 Short-circuit to ground
+P17AE00 	Shift Lever Forward Valve 2 Short circuit to B+
+P17AF00 	Shift Lever Forward Valve 2 Electrical malfunction
+P17B000 	Shift Lever Forward Valve 3 Open circuit
+P17B100 	Shift Lever Forward Valve 3 Short-circuit to ground
+P17B200 	Shift Lever Forward Valve 3 Short circuit to B+
+P17B300 	Shift Lever Forward Valve 3 Electrical malfunction
+P17B400 	Shift Lever Forward Valve 4 Open circuit
+P17B500 	Shift Lever Forward Valve 4 Short-circuit to ground
+P17B600 	Shift Lever Forward Valve 4 Short circuit to B+
+P17B700 	Shift Lever Forward Valve 4 Electrical malfunction
+P17B800 	Gear Recognition Potentiometer 1 Implausible signal
+P17B900 	Gear Recognition Potentiometer 1 Signal too low
+P17BA00 	Gear Recognition Potentiometer 1 Signal too high
+P17BB00 	Gear Recognition Potentiometer 2 Implausible signal
+P17BC00 	Gear Recognition Potentiometer 2 Signal too low
+P17BD00 	Gear Recognition Potentiometer 2 Signal too high
+P17BE00 	Hydraulic pump Excess temperature
+P17BF00 	Hydraulic pump Play protection
+P17C000 	Sport program button Open circuit
+P17C100 	Selector lever position display unit Electrical malfunction
+P17C200 	Selector lever position display unit Supply voltage
+P17C300 	Selector lever Defective
+P17C400 	Selector lever position display unit Defective
+P17C500 	Selector lever Implausible signal
+P17C600 	Clutch valve Electrical malfunction
+P17C700 	Transmission Input Speed (RPM) Sensor 3 electrical malfunction in circuit
+P17C800 	Transmission Input Speed (RPM) Sensor 3 Implausible signal
+P17C900 	Transmission Input Speed (RPM) Sensor 3 No signal
+P17CA00 	Basic calibration Data implausible
+P17CB00 	Clutch valve Defective
+P17CC00 	Clutch valve 2 Defective
+P17CD00 	Coupling 1 Drag torque too high
+P17CE00 	Coupling 2 Drag torque too high
+P17CF00 	Coupling 1 Slip too great
+P17D000 	Coupling 2 Slip too great
+P17D100 	Coupling 1 Pressure upper limit exceeded
+P17D200 	Coupling 2 Pressure upper limit exceeded
+P17D300 	Electrohydraulic control unit Characteristic curve deviation
+P17D400 	Valve 3 in separate transmission 1 Mechanical malfunction
+P17D500 	Valve 3 in separate transmission 2 Mechanical malfunction
+P17D600 	Coupling 1 Pressure too high
+P17D700 	Coupling 2 Pressure too high
+P17D800 	Torque limitation due to clutch temperature
+P17D900 	Gear selector sensor Characteristic curve deviation
+P17DA00 	Gear position sensor 1 Implausible
+P17DB00 	Gear position sensor 2 Implausible
+P17DC00 	Gear position sensor 3 Implausible
+P17DD00 	Gear position sensor 4 Implausible
+P17DE00 	Gear Position Distance Sensors 1 and 3 Electrical malfunction
+P17DF00 	Gear Position Distance Sensors 2 and 4 Electrical malfunction
+P17E000 	Gear selector 1 Mechanical malfunction
+P17E100 	Gear selector 2 Mechanical malfunction
+P17E200 	Gear selector 3 Mechanical malfunction
+P17E300 	Gear selector 4 Mechanical malfunction
+P17E400 	Selector lever position display unit Short circuit to B+
+P17E500 	Selector lever position sensor Mechanical malfunction
+P17E600 	Selector lever position sensor Implausible signal
+P17E700 	Selector lever position sensor Defective
+P17E800 	Locking solenoid Electrical malfunction
+P17E900 	Locking solenoid Short circuit to B+
+P17EA00 	Locking solenoid Defective
+P17EB00 	Unlock button Short-circuit to ground
+P17EC00 	Unlock button Electrical malfunction
+P17ED00 	Unlock button sticks
+P17EE00 	Unlock button Implausible signal
+P17EF00 	Solenoid for pressure accumulator Short circuit to B+
+P17F000 	Solenoid for pressure accumulator Short-circuit to ground
+P17F100 	Solenoid for pressure accumulator Open circuit
+P17F200 	Solenoid for pressure accumulator Electrical malfunction
+P17F300 	Solenoid for parking lock Short circuit to B+
+P17F400 	Solenoid for parking lock Short-circuit to ground
+P17F500 	Solenoid for parking lock Open circuit
+P17F600 	Solenoid for parking lock Electrical malfunction
+P17F700 	Sensor for parking lock Implausible signal
+P17F800 	Sensor for parking lock Electrical malfunction
+P17F900 	Parking lock Mechanical malfunction
+P17FA00 	Pressure control valve 8 electrical malfunction in circuit
+P17FB00 	Pressure control valve 8 Open circuit
+P17FC00 	Pressure control valve 8 Open circuit/short circuit to ground
+P17FD00 	Pressure control valve 8 Short circuit to B+
+P180000 	Hydraulic Actuator Valve -N331- Electrical malfunction in circuit
+P180100 	Signal buzzer activation Short circuit to B+
+P180200 	Clutch pedal switch -F194 Implausible signal
+P180300 	Planetary post-switch stage Mechanical malfunction
+P180400 	Hydraulic Actuator Range Sender -G302- Electrical malfunction in circuit
+P180500 	Hydraulic Actuator Range Sender -G302- Upper limit exceeded
+P180600 	Hydraulic Actuator Range Sender -G302- Lower limit not reached
+P180700 	Hydraulic Actuator Range Sender -G302- no or incorrect basic setting/adaptation
+P180800 	Hydraulic Actuator Range Sender -G302- Implausible signal
+P180900 	4-Low Range Hydraulic Pump -V190- Electrical malfunction in circuit
+P180A00 	Gear selector 1 Leaving Neutral not allowed
+P180B00 	Gear selector 2 Leaving Neutral not allowed
+P180C00 	Gear selector 3 Leaving Neutral not allowed
+P180D00 	Gear selector 4 Leaving Neutral not allowed
+P180E00 	Position sensor for clutch 1 Implausible signal
+P180F00 	Position sensor for clutch 2 Implausible signal
+P181300 	Pressure control valve 1 -N215 electrical malfunction in circuit
+P181400 	Pressure control valve 1 -N215 Open circuit/short circuit to ground
+P181500 	Pressure control valve 1 -N215 Short circuit to B+
+P181800 	Pressure control valve 2 -N216 electrical malfunction in circuit
+P181900 	Pressure control valve 2 -N216 Open circuit/short circuit to ground
+P182000 	Pressure control valve 2 -N216 Short circuit to B+
+P182300 	Pressure control valve 3 -N217 electrical malfunction in circuit
+P182400 	Pressure control valve 3 -N217 Open circuit/short circuit to ground
+P182500 	Pressure control valve 3 -N217 Short circuit to B+
+P182800 	Pressure control valve 4 -N218 electrical malfunction in circuit
+P182900 	Pressure control valve 4 -N218 Open circuit/short circuit to ground
+P183000 	Pressure control valve 4 -N218 Short circuit to B+
+P183300 	Pressure regulating valve -5- for automatic transmission electrical malfunction in circuit
+P183400 	Pressure regulating valve -5- for automatic transmission Open circuit/short circuit to ground
+P183500 	Pressure regulating valve -5- for automatic transmission Short circuit to B+
+P183800 	Pressure Regulating Valve 6-N371 Electrical malfunction in circuit
+P183900 	Pressure Regulating Valve 6-N371 Open circuit/short circuit to ground
+P184000 	Pressure Regulating Valve 6-N371 Short circuit to B+
+P184100 	Engine control module/Transmission Control Module (TCM) Versions not compatible
+P184200 	Read DTC memory of instrument cluster
+P184300 	Read DTC memory of distance control ECU
+P184400 	Read DTC memory of read out select central control
+P184500 	Read DTC memory of Steering Column Electronic Systems Control Module -J527-
+P184700 	Read DTC memory of break ECU
+P184800 	Read DTC memory of engine ECU
+P184900 	Read DTC memory of transmission ECU
+P184A00 	Main pressure adaptation Offset upper limit exceeded
+P184B00 	Main pressure adaptation Malfunction
+P185000 	Databus drivetrain Missing Message from Engine Contr
+P185100 	Databus drivetrain missing message from break ECU
+P185200 	Databus drivetrain Implausible Message from Engine Contr.
+P185300 	Databus drivetrain Implausible message from ABS control module
+P185400 	Databus drivetrain Defective
+P185500 	Databus drivetrain Software version monitoring
+P185600 	Throttle valve potentiometer -G69- Error Message from Engine Contr.
+P185700 	Load Signal Error Message from Engine Contr.
+P185800 	Engine Speed Input Circ. Error Message from Engine Contr.
+P185900 	Brake Light Switch -F Error Message from Engine Contr.
+P186000 	Kick Down Switch -F8- Error Message from Engine Contr.
+P186100 	Accelerator position sender-G79 Malfunction indication from Engine Control Module (ECM)
+P186200 	Databus drivetrain missing message from instrument panel ECU
+P186300 	Databus drivetrain missing message from steering angle sensor
+P186400 	Databus drivetrain Missing message from ADR control module
+P186500 	Databus drivetrain missing message f.central electr. control
+P186600 	Databus drivetrain missing messages
+P186700 	Databus drivetrain missing message from -J527-
+P186800 	Transmission Mount Valve -1- -N262- Short circuit to B+
+P186900 	Transmission Mount Valve -1- -N262- Short-circuit to ground
+P187000 	Transmission Mount Valve -1- -N262- Open circuit
+P187100 	Transmission Mount Valve -2- -N263- Short circuit to B+
+P187200 	Transmission Mount Valve -2- -N263- Short-circuit to ground
+P187300 	Transmission Mount Valve -2- -N263- Open circuit
+P187400 	Valve for torque support mount Short circuit to B+
+P187500 	Valve for torque support mount Short-circuit to ground
+P187600 	Valve for torque support mount Open circuit
+P187700 	Control Coolant System Gearbox intermittent Open circuit
+P187800 	Control Coolant System Gearbox intermittent Short circuit to B+
+P187900 	Control Coolant System Gearbox intermittent Short-circuit to ground
+P188000 	Databus missing message from Diagnostic Interface ECU
+P188100 	Data Bus missing message
+P188200 	Databus drivetrain missing message from electrical brake system ECU
+P188300 	Park/Neutral Switch Input Circuit Implausible signal
+P188400 	Reversing light signal Short-circuit to ground
+P188500 	Reversing light signal Short circuit to B+
+P188600 	Reversing light signal Open circuit
+P188700 	Vehicle Speed Signal wheel speed from brake control module Implausible signal
+P188800 	valve for coolant system circuit Short circuit to B+
+P188900 	valve for coolant system circuit Short circuit to ground/open circuit
+P188A00 	Coolant shut-off valve Electrical malfunction
+P189000 	Signal wire for Tiptronic Electrical malfunction
+P189100 	Signal wire for Tiptronic Implausible signal
+P189200 	Selector lever position detection Defective
+P189300 	Signal wire for gear display in selector lever Electrical malfunction
+P189400 	Signal wire for gear display in selector lever Implausible signal
+P189500 	Function restriction due to pressure drop
+P189600 	Coupling 1 Temperature shock
+P189700 	Coupling 2 Temperature shock
+P189800 	Coupling 1 Function restriction
+P189900 	Coupling 2 Function restriction
+P189A00 	Coupling 1 Clearance too small
+P189B00 	Coupling 2 Clearance too small
+P189C00 	Function restriction due to insufficient pressure build-up
+P190000 	Fan 2 control circuit Open circuit/short circuit to ground
+P190100 	After-Run Coolant Fan Control (FC) Control Module -J138- Short circuit to B+
+P190200 	After-Run Coolant Fan Control (FC) Control Module -J138- Open circuit/short circuit to ground
+P190300 	Coolant Fan Valve -N313- Short circuit to B+
+P190400 	Coolant Fan Valve -N313- Open circuit/short circuit to ground
+P190500 	Charge Air Cooling Pump Relay -J536- Short circuit to B+
+P190600 	Charge Air Cooling Pump Relay -J536- Open circuit/short circuit to ground
+P190700 	Engine databus/engine Defective
+P190800 	Engine databus/engine Software version monitoring
+P190900 	Engine databus/engine Missing message from Engine Control Module (ECM) 1
+P190A00 	Coolant pump for charge pressure cooler Electrical malfunction
+P190B00 	Coolant pump for charge pressure cooler Temperature shut-off
+P190C00 	Coolant pump for charge pressure cooler No signal
+P190D00 	Coolant pump for charge pressure cooler Mechanical malfunction
+P190E00 	Coolant pump for charge pressure cooler Supply voltage
+P190F00 	Coolant pump for charge pressure cooler Electrical malfunction in load circuit
+P191000 	Engine databus/engine Missing message from Engine Control Module (ECM) 2
+P191100 	Synchronization wire engine/engine Electrical malfunction in circuit
+P191200 	Pressure sensor for brake booster Open circuit/short circuit to B+
+P191300 	Pressure sensor for brake booster Short-circuit to ground
+P191400 	Pressure sensor for brake booster Implausible signal
+P191500 	Coolant Circulation Pump Relay -J151 Short circuit to B+
+P191600 	Coolant Circulation Pump Relay -J151 Short-circuit to ground
+P191700 	Coolant Circulation Pump Relay -J151 Open circuit
+P191800 	Load signal from generator DF Open circuit/short circuit to B+
+P191900 	Load signal from generator DF Short-circuit to ground
+P191A00 	Loss of crankshaft synchronization
+P191B00 	Coolant Fan Control (FC) Control Module Implausible signal
+P191C00 	Control module 2 for cooling fan Implausible signal
+P191D00 	Coolant pump for charge pressure cooler Implausible signal
+P191E00 	Actuator for structure-borne noise
+P191F00 	Pressure sensor for brake booster Electrical malfunction
+P192000 	L/R Electr-Hydr Eng. Mount Sol Valve -N144/N145 Open circuit/short circuit to ground
+P192100 	Outside Air Temperature Sensor 2 -G249- Short-circuit to ground
+P192200 	Outside Air Temperature Sensor 2 -G249- Open circuit/short circuit to B+
+P192300 	Check DTC memory of Engine Control Module (ECM) 2
+P192400 	Control module pin coding Implausible signal
+P192500 	Auxiliary Engine Coolant (EC) Pump Relay Short circuit to B+
+P192600 	Auxiliary Engine Coolant (EC) Pump Relay Short-circuit to ground
+P192700 	Auxiliary Engine Coolant (EC) Pump Relay Open circuit
+P192800 	Immobilizer inquiry not yet performed
+P192900 	Radiator fan -V7 Open circuit
+P193000 	Coolant Fan -2- Open circuit
+P193100 	Coolant Fan Control (FC) Control Module -J293 Malfunction
+P193200 	Databus drivetrain implausible message from ctrl. for access start authorization
+P193300 	Throttle plate control 2 Malfunction
+P193400 	Drive Circuit Cooling Fan Temperature Sensor -G382- Signal too low
+P193500 	Drive Circuit Cooling Fan Temperature Sensor -G382- Signal too high
+P193600 	Generator switch off Open circuit/short circuit to ground
+P193700 	Generator switch off Short circuit to B+
+P193800 	Auxiliary Engine Coolant (EC) Pump Relay -J496 Open circuit/short circuit to ground
+P193900 	Databus drivetrain missing message from ctrl. for access start authorization
+P194000 	Databus drivetrain missing message f. battery monitoring control module
+P194100 	Databus drivetrain implausible message f. battery monitoring control module
+P194200 	Databus drivetrain missing message from level control system control module
+P194300 	Databus drivetrain implausible message from level control system control module
+P194400 	Control module 1 for cooling fan Excess temperature
+P194500 	Coolant Fan Control (FC) Control Module 1, fan activation Short circuit
+P194600 	Control module 1 for cooling fan Faulty/open circuit in voltage supply
+P194700 	Control module 2 for cooling fan Excess temperature
+P194800 	Coolant Fan Control (FC) Control Module 2, fan activation Short circuit
+P194900 	Control module 2 for cooling fan Faulty/open circuit in voltage supply
+P195000 	Radiator fan -V7 difficulty of movement/blocked
+P195100 	Coolant Fan -2- difficulty of movement/blocked
+P195200 	Turbocharger (TC) control module 1 Defective
+P195300 	Turbocharger (TC) control module 2 Defective
+P195400 	Glow Plug Module 2, Control Circuit Electrical malfunction in circuit
+P195500 	Glow Plug Control Module 2 to PCM Comm.Circuit Implausible signal
+P195600 	Exhaust temperature sensor 2 bank 1 Electrical malfunction
+P195700 	Exhaust temperature sensor 2 bank 1 Short-circuit to ground
+P195800 	Exhaust temperature sensor 2 bank 1 Short circuit to B+
+P195900 	Exhaust temperature sensor 2 bank 1 Implausible signal
+P196000 	Exhaust temperature control circuit exhaust bank 3 Value above upper control limit
+P196100 	Exhaust temperature sensor 2 bank 2 - G449 Electrical malfunction
+P196200 	Exhaust temperature sensor 2 bank 2 - G449 Short-circuit to ground
+P196300 	Exhaust temperature sensor 2 bank 2 - G449 Short circuit to B+
+P196400 	Exhaust temperature sensor 2 bank 2 - G449 Implausible signal
+P196500 	Exhaust temperature control circuit exhaust bank 4 Value above upper control limit
+P196600 	Sec.Air Inj.Sys.Pump C Relay Circ Open circuit
+P196700 	Sec.Air Inj.Sys.Pump C Relay Circ Short circuit to B+
+P196800 	Sec.Air Inj.Sys.Pump C Relay Circ Short-circuit to ground
+P196900 	Sec.Air Inj.Sys.Pump C Relay Circ electrical malfunction in circuit
+P197000 	Sec.Air Inj.Sys.Pump D Relay Circ Open circuit
+P197100 	Sec.Air Inj.Sys.Pump D Relay Circ Short circuit to B+
+P197200 	Sec.Air Inj.Sys.Pump D Relay Circ Short-circuit to ground
+P197300 	Sec.Air Inj.Sys.Pump D Relay Circ electrical malfunction in circuit
+P197400 	Sec.Air Inj.Valve 3 Circ electrical malfunction in circuit
+P197500 	Sec.Air Inj.Valve 3 Circ Short-circuit to ground
+P197600 	Sec.Air Inj.Valve 3 Circ Short circuit to B+
+P197700 	Sec.Air Inj.Valve 3 Circ Open circuit
+P197800 	Sec.Air Inj.Valve 4 Circ electrical malfunction in circuit
+P197900 	Sec.Air Inj.Valve 4 Circ Short-circuit to ground
+P197A00 	Sec.Air Inj.Valve 3 Circ Mechanical malfunction
+P197B00 	Sec.Air Inj.Valve 4 Circ Mechanical malfunction
+P197C00 	Secondary air injection bank 1 and bank 2 swapped
+P198000 	Sec.Air Inj.Valve 4 Circ Short circuit to B+
+P198100 	Sec.Air Inj.Valve 4 Circ Open circuit
+P198200 	Exhaust temperature control circuit exhaust bank 3 Implausible
+P198300 	Exhaust temperature control circuit exhaust bank 4 Implausible
+P198400 	Coolant fan 3 difficulty of movement/blocked
+P198500 	Coolant FC (Fan Control) Control Module 2 Malfunction
+P198600 	Coolant Fan Control (FC) Control Module 3, fan activation Short circuit
+P198700 	Function restriction due to brake temperature
+P198800 	Coolant Fan 3 Relay -J752- Open circuit
+P198900 	Coolant Fan 3 Relay -J752- Short circuit to B+
+P199000 	Coolant Fan 3 Relay -J752- Short-circuit to ground
+P199100 	Control module defective
+P199200 	Potentiometer 2 for EGR -G466- Malfunction in basic settings
+P199300 	Potentiometer 2 for EGR -G466- Signal too high
+P199400 	Potentiometer 2 for EGR -G466- Signal too low
+P199500 	Door open signal not recognized
+P199600 	Friction too high Code E1
+P199700 	Friction too high Code A1
+P199800 	Friction too high Code E2
+P199900 	Friction too high Code E2
+P199A00 	Temperature sensor for engine temperature management Signal too high
+P199B00 	Temperature sensor for engine temperature management Signal too low
+P199C00 	Thermostat for cylinder head Short-circuit to B+
+P199D00 	Thermostat for cylinder head Short circuit to ground
+P199E00 	Thermostat for cylinder head Open circuit
+P199F00 	Thermostat control for cylinder head Excess temperature
+P19A000 	Thermostat for transmission Short-circuit to B+
+P19A100 	Thermostat for transmission Short circuit to ground
+P19A200 	Thermostat for transmission Open circuit
+P19A300 	Thermostat control for transmission Excess temperature
+P19A400 	Actuator for engine temperature regulation Short-circuit to B+
+P19A500 	Actuator for engine temperature regulation Short circuit to ground
+P19A600 	Actuator for engine temperature regulation Open circuit
+P1A0100 	Crash signal monitoring failed
+P1A0200 	Hybrid battery system Insulation malfunction warning 1
+P1A0300 	Hybrid battery system Insulation malfunction warning 2
+P1AFE00 	Next output Diagnostic Test Mode (DTM) --> confirmation
+P1AFF00 	Actuator test end
+P1B0000 	Generator Mechanical malfunction
+P1B0100 	Generator Electrical malfunction
+P1B0200 	Control unit for battery monitoring Defective
+P1B0300 	Locking electronics solenoid Short-circuit to ground
+P1B0400 	Locking electronics solenoid Short circuit to B+
+P1B0500 	Locking electronics solenoid Open circuit
+P1B0600 	Locking electronics solenoid Resistance too small
+P1B0700 	Locking electronics solenoid Short circuit between coil A and B
+P1B0800 	Locking electronics switch Short-circuit to ground
+P1B0900 	Locking electronics sensor Short circuit to ground
+P1B0A00 	Locking electronics sensor Defective
+P1B0B00 	Locking electronics sensor Open circuit/short circuit to B+
+P1B0C00 	Lock hardware Mechanical malfunction
+P200000 	NOx Adsorber Efficiency Bank 1 Below Threshold
+P200200 	Particulate Trap Bank 1 Efficiency Below Threshold
+P200300 	Particulate Trap Bank 2 Efficiency Below Threshold
+P200400 	Intake Manifold Runner Control Bank 1 Stuck Open
+P200500 	Intake Manifold Runner Control Bank 2 Stuck Open
+P200600 	Intake Manifold Runner Control Bank 1 Stuck Closed
+P200700 	Intake Manifold Runner Control Bank 2 Stuck Closed
+P200800 	Intake Manifold Runner Bank 1 Control Circuit/Open
+P200900 	Intake Manifold Runner Bank 1 Control Circuit Low
+P200A00 	Intake Manifold Runner Bank 1 Performance
+P200B00 	Intake Manifold Runner Bank 2 Performance
+P201000 	Intake Manifold Runner Bank 1 Control Circuit High
+P201100 	Intake Manifold Runner Bank 2 Control Circuit/Open
+P201200 	Intake Manifold Runner Bank 2 Control Circuit Low
+P201300 	Intake Manifold Runner Bank 2 Control Circuit High
+P201400 	Intake Manifold Runner Position Sensor/Switch Circuit
+P201500 	Intake Manifold Runner Position Sensor/Switch Circuit Range/Performance
+P201600 	Intake Manifold Runner Position Sensor/Switch Circuit Low
+P201700 	Intake Manifold Runner Position Sensor/Switch Circuit High
+P201900 	Intake Manifold Runner Position Sensor/Switch Circuit Bank 2
+P202000 	Intake Manifold Runner Pos. Sen./Switch Circuit Bank 2 Range/Performance
+P202100 	Intake Manifold Runner Pos. Sen./Switch Circuit Bank 2 Low
+P202200 	Intake Manifold Runner Pos. Sen./Switch Circuit Bank 2 High
+P202400 	Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Circuit
+P202500 	Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Performance
+P202600 	Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Circuit Low Voltage
+P202700 	Evaporative Emissions (EVAP) Fuel Vapor Temperature Sensor Circuit High Voltage
+P202A00 	Reductant Tank Heater Control Circuit/Open
+P202B00 	Reductant Tank Heater Control Circuit Low
+P202C00 	Reductant Tank Heater Control Circuit High
+P203100 	Exhaust Gas Temperature Sensor 2, Bank 1 Circuit
+P203200 	Exhaust Gas Temperature Sensor 2, Bank 1 Circuit Low
+P203300 	Exhaust Gas Temperature Sensor 2, Bank 1 Circuit High
+P203400 	Exhaust Gas Temperature Sensor 2 Bank 2 Circuit
+P203500 	Exhaust Gas Temperature Sensor 2 Bank 2 Circuit Low
+P203600 	Exhaust Gas Temperature Sensor 2 Bank 2 Circuit High
+P203A00 	Reductant Level Sensor Circuit
+P203B00 	Reductant Level Sensor Circuit Range/Performance
+P203C00 	Reductant Level Sensor Circuit Low
+P203D00 	Reductant Level Sensor Circuit High
+P204700 	Reductant Injection Valve Circuit/Open Bank 1 Unit 1
+P204800 	Reductant Injection Valve Circuit Low Bank 1 Unit 1
+P204900 	Reductant Injection Valve Circuit High Bank 1 Unit 1
+P204A00 	Reductant Pressure Sensor Circuit
+P204B00 	Reductant Pressure Sensor Circuit Range/Performance
+P204D00 	Reductant Pressure Sensor Circuit High
+P205A00 	Reductant Tank Temperature Sensor Circuit
+P205B00 	Reductant Tank Temperature Sensor Circuit Range/Performance
+P205C00 	Reductant Tank Temperature Sensor Circuit Low
+P207000 	Intake Manifold Tuning (IMT) Valve Stuck Open
+P207100 	Intake Manifold Tuning (IMT) Valve Stuck Closed
+P207300 	Manifold Absolute Pressure/Mass Air Flow - Throttle Position Correlation at Idle
+P207400 	Manifold Absolute Pressure/Mass Air Flow - Throttle Position Correlation at Higher Load
+P207500 	Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit
+P207600 	Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Range/Performance
+P207700 	Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Low
+P207800 	Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit High
+P207900 	Intake Manifold Tuning (IMT) Valve Position Sensor/Switch Circuit Intermittent
+P207F00 	Reductant Quality Performance
+P208000 	Exhaust Gas Temperature Sensor Circuit Bank1 Range/Performance
+P208200 	Exhaust Gas Temperature Sensor Circuit Bank2 Range/Performance
+P208400 	Exhaust Gas Temperature Sensor 2 Circuit Range/Performance
+P208600 	Exhaust Gas Temperature Sensor 2 Circuit Bank 2 Range/Performance
+P208800 	A Camshaft Position Actuator Control Circuit Low - Bank 1
+P208900 	A Camshaft Position Actuator Control Circuit High - Bank 1
+P208A00 	Reductant Pump "A" Control Circuit/Open
+P208B00 	Reductant Pump "A" Control Range/Performance
+P208C00 	Reductant Pump "A" Control Circuit Low
+P208D00 	Reductant Pump "A" Control Circuit High
+P208E00 	Reductant Injection Valve Stuck Closed Bank 1 Unit 1
+P209000 	B Camshaft Position Actuator Control Circuit(Bank1) Low
+P209100 	B Camshaft Position Actuator Control Circuit(Bank1) High
+P209200 	A Camshaft Position Actuator Control Circuit(Bank2) Low
+P209300 	A Camshaft Position Actuator Control Circuit(Bank2) High
+P209400 	B Camshaft Position Actuator Control Circuit(Bank2) Low
+P209500 	B Camshaft Position Actuator Control Circuit(Bank2) High
+P209600 	Post Catalyst Fuel Trim System Bank1 Too Lean
+P209700 	Post Catalyst Fuel Trim System Bank 1 Too Rich
+P209800 	Post Catalyst Fuel Trim System Bank 2 Too Lean
+P209900 	Post Catalyst Fuel Trim System Bank2 Too Rich
+P209F00 	Reductant Tank Heater Control Circuit Performance
+P20A000 	Reductant Purge Control Valve Circuit /Open
+P20A200 	Reductant Purge Control Valve Circuit Low
+P20A300 	Reductant Purge Control Valve Circuit High
+P20A500 	Reductant Purge Control Valve Stuck Closed
+P20B500 	Reductant Metering Unit Heater Control Circuit/Open
+P20B700 	Reductant Metering Unit Heater Control Circuit Low
+P20B800 	Reductant Metering Unit Heater Control Circuit High
+P20B900 	Reductant Heater "A" Control Circuit/Open
+P20BB00 	Reductant Heater "A" Control Circuit Low
+P20BC00 	Reductant Heater "A" Control Circuit High
+P20BD00 	Reductant Heater "B" Control Circuit/Open
+P20BF00 	Reductant Heater "B" Control Circuit Low
+P20C000 	Reductant Heater "B" Control Circuit High
+P20D800 	Exhaust Aftertreatment Fuel Supply Control Performance
+P20E800 	Reductant Pressure Too Low
+P20E900 	Reductant Pressure Too High
+P20EE00 	SCR NOx Catalyst Efficiency Below Threshold Bank 1
+P20F400 	Reductant Consumption Too Low
+P20F500 	Reductant Consumption Too High
+P210000 	Throttle Actuator Control Motor Circuit/Open
+P210100 	Throttle Actuator Control Motor Circuit Range/performance
+P210200 	Throttle Actuator Control Motor Circuit Low
+P210300 	Throttle Actuator "A" Control Motor Circuit High
+P210600 	Throttle Actuator Control System Forced Limited Power
+P210800 	Throttle Actuator Control Module Performance
+P210A00 	Throttle Actuator "B" Control Motor Circuit/Open
+P210B00 	Throttle Actuator "B" Control Motor Circuit Range/Performance
+P210C00 	Throttle Actuator "B" Control Motor Circuit Low
+P210D00 	Throttle Actuator "B" Control Motor Circuit High
+P211000 	Throttle Actuator Control System - Forced Limited RPM
+P211100 	Throttle Actuator Control System - Stuck Open
+P211200 	Throttle Actuator Control System - Stuck closed
+P211900 	Throttle Actuator Control Throttle Body Range/Performance
+P212200 	Throttle/Pedal Pos. Sens./Switch D Circuit Low Input
+P212300 	Throttle/Pedal Pos. Sens./Switch D Circuit High Input
+P212700 	Throttle/Pedal Pos. Sens./Switch E Circuit Low Input
+P212800 	Throttle/Pedal Pos. Sens./Switch E Circuit High Input
+P212B00 	Throttle Position Sensor/Switch "G" Circuit Range/Performance
+P212C00 	Throttle Position Sensor/Switch "G" Circuit Low
+P212D00 	Throttle Position Sensor/Switch "G" Circuit High
+P213100 	Throttle/Pedal Position Sensor/Switch "F" Circuit Range/Performance
+P213200 	Throttle/Pedal Position Sensor/Switch "F" Circuit Low
+P213300 	Throttle/Pedal Position Sensor/Switch "F" Circuit High
+P213500 	Throttle/Pedal Position Sensor/Switch "A"/"B" Voltage Correlation
+P213800 	Throttle/Pedal Position Sensor/Switch D/E Voltage Correlation
+P214600 	Fuel Injector Group "A" Supply Voltage Circuit Open
+P214700 	Fuel Injector Group "A" Supply Voltage Circuit Low
+P214800 	Fuel Injector Group "A" Supply Voltage Circuit High
+P214900 	Fuel Injector Group "B" Supply Voltage Circuit Open
+P215000 	Fuel Injector Group "B" Supply Voltage Circuit Low
+P215100 	Fuel Injector Group "B" Supply Voltage Circuit High
+P215200 	Fuel Injector Group "C" Supply Voltage Circuit/Open
+P215300 	Fuel Injector Group "C" Supply Voltage Circuit Low
+P215400 	Fuel Injector Group "C" Supply Voltage Circuit High
+P215500 	Fuel Injector Group "D" Supply Voltage Circuit/Open
+P215600 	Fuel Injector Group "D" Supply Voltage Circuit Low
+P215700 	Fuel Injector Group "D" Supply Voltage Circuit High
+P215900 	Vehicle Speed Sensor "B" Range/Performance
+P216A00 	Fuel Injector Group "E" Supply Voltage Circuit/Open
+P216B00 	Fuel Injector Group "E" Supply Voltage Circuit/Low
+P216C00 	Fuel Injector Group "E" Supply Voltage Circuit/High
+P216D00 	Fuel Injector Group "F" Supply Voltage Circuit/Open
+P216E00 	Fuel Injector Group "F" Supply Voltage Circuit/Low
+P216F00 	Fuel Injector Group "F" Supply Voltage Circuit/High
+P217300 	Throttle Actuator Control System - High Airflow Detected
+P217500 	Throttle Actuator Control System - Low Airflow Detected
+P217700 	System too lean off idle, Bank 1
+P217800 	System too rich off idle, Bank 1
+P217900 	System too lean off idle, Bank 2
+P218000 	System too rich off idle, Bank 2
+P218100 	Cooling System Performance
+P218300 	Engine Coolant Temperature Sensor 2 Circuit Range/Performance
+P218400 	Engine Coolant Temperature Sensor 2 Circuit Low
+P218500 	Engine Coolant Temperature Sensor 2 Circuit High
+P218700 	System too lean at idle, Bank 1
+P218800 	System too rich at idle, Bank 1
+P218900 	System too lean at idle, Bank 2
+P219000 	System too rich at idle, Bank 2
+P219100 	System Too Lean at Higher Load; Bank 1
+P219200 	System Too Rich at Higher Load; Bank 1
+P219300 	System Too Lean at Higher Load; Bank 2
+P219400 	System Too Rich at Higher Load; Bank 2
+P219500 	O2 Sensor Signal Stuck Lean Bank 1 Sensor 1
+P219600 	O2 Sensor Signal Stuck Rich Bank 1 Sensor 1
+P219700 	O2 Sensor Signal Stuck Lean Bank 2 Sensor 1
+P219800 	O2 Sensor Signal Stuck Rich Bank 2 Sensor 1
+P219900 	Intake Air Temperature Sensor 1/2 Correlation
+P219A00 	Bank 1 Air-Fuel Ratio Imbalance
+P219B00 	Bank 2 Air-Fuel Ratio Imbalance
+P219C00 	Cylinder 1 Air-Fuel Ratio Imbalance
+P219D00 	Cylinder 2 Air-Fuel Ratio Imbalance
+P219E00 	Cylinder 3 Air-Fuel Ratio Imbalance
+P219F00 	Cylinder 4 Air-Fuel Ratio Imbalance
+P21A000 	Cylinder 5 Air-Fuel Ratio Imbalance
+P21A100 	Cylinder 6 Air-Fuel Ratio Imbalance
+P21A200 	Cylinder 7 Air-Fuel Ratio Imbalance
+P21A300 	Cylinder 8 Air-Fuel Ratio Imbalance
+P21A400 	Cylinder 9 Air-Fuel Ratio Imbalance
+P21A500 	Cylinder 10 Air-Fuel Ratio Imbalance
+P21A600 	Cylinder 11 Air-Fuel Ratio Imbalance
+P21A700 	Cylinder 12 Air-Fuel Ratio Imbalance
+P220000 	NOx Sensor Bank 1 Sensor 1 Circuit
+P220100 	NOx Sensor Circuit Range/Performance Bank 1 Sensor 1
+P220200 	NOx Sensor Bank 1 Sensor 1 Circuit Low
+P220300 	NOx Sensor Bank 1 Sensor 1 Circuit High
+P220900 	NOx Sensor Heater Sense Bank 1 Sensor 1 Circuit Range/Performance
+P220A00 	NOx Sensor Supply Voltage Bank 1 Sensor 1 Circuit
+P220B00 	NOx Sensor Supply Voltage Bank 1 Sensor 2 Circuit
+P222700 	Barometric Pressure Circuit Range/Performance
+P222800 	Barometric Pressure Circuit Low
+P222900 	Barometric Pressure Circuit high
+P223100 	O2 Sensor Bank 1 Sensor 1 Signal Circuit Shorted to Heater Circuit
+P223200 	O2 Sensor Bank 1 Sensor 2 Signal Circuit Shorted to Heater Circuit
+P223300 	O2 Sensor Bank 1 Sensor 3 Signal Circuit Shorted to Heater Circuit
+P223400 	O2 Sensor Bank 2 Sensor 1 Signal Circuit Shorted to Heater Circuit
+P223500 	O2 Sensor Bank 2 Sensor 2 Signal Circuit Shorted to Heater Circuit
+P223600 	O2 Sensor Bank 2 Sensor 3 Signal Circuit Shorted to Heater Circuit
+P223700 	O2 Sensor Positive Current Control Circuit Bank 1 Sensor 1 Open
+P223800 	O2 Sensor Positive Current Control Circuit Bank 1 Sensor 1 Low
+P223900 	O2 Sensor Positive Current Control Circuit Bank 1 Sensor 1 High
+P224000 	O2 Sensor Positive Current Control Circuit Bank 2 Sensor 1 Open
+P224100 	O2 Sensor Positive Current Control Circuit Bank 2 Sensor 1 Low
+P224200 	O2 Sensor Positive Current Control Circuit Bank 2 Sensor 1 High
+P224300 	O2 Sensor Reference Voltage Circuit Bank 1 Sensor 1 Open
+P224400 	O2 Sensor Reference Voltage Bank 1 Sensor 1 Performance
+P224500 	O2 Sensor Reference Voltage Circuit Bank 1 Sensor 1 Low
+P224600 	O2 Sensor Reference Voltage Circuit Bank 1 Sensor 1 High
+P224700 	O2 Sensor Reference Voltage Circuit Bank 2 Sensor 1 Open
+P224800 	O2 Sensor Reference Voltage Bank 2 Sensor 1 Performance
+P224900 	O2 Sensor Reference Voltage Circuit Bank 2 Sensor 1 Low
+P225000 	O2 Sensor Reference Voltage Circuit Bank 2 Sensor 1 High
+P225100 	O2 Sensor Negative Current Control Circuit Bank 1 Sensor 1 open
+P225200 	O2 Sensor Negative Current Control Circuit Bank 1 Sensor 1 Low
+P225300 	O2 Sensor Negative Current Control Circuit Bank 1 Sensor 1 High
+P225400 	O2 Sensor Negative Current Control Circuit Bank 2 Sensor 1 open
+P225500 	O2 Sensor Negative Current Control Circuit Bank 2 Sensor 1 Low
+P225600 	O2 Sensor Negative Current Control Circuit Bank 2 Sensor 1 High
+P225700 	Secondary air injektion System Control "A" Circuit low
+P225800 	Secondary air injektion System Control "A" Circuit high
+P226100 	Turbo Boost Pressure Not Detected Mechanical
+P226200 	Turbocharger/Supercharger Boost Pressure Not Detected Mechanical
+P226300 	Turbocharger/Supercharger Boost System Performance
+P227000 	O2 Sensor Signal Stuck Lean; Bank 1 Sensor 2
+P227100 	O2 Sensor Signal Stuck Rich; Bank 1 Sensor 2
+P227200 	O2 Sensor Signal Stuck Lean; Bank 2 Sensor 2
+P227300 	O2 Sensor Signal Stuck Rich; Bank 2 Sensor 2
+P227400 	O2 Sensor Signal Stuck Lean; Bank 1 Sensor 3
+P227500 	O2 Sensor Signal Stuck Rich; Bank 1 Sensor 3
+P227600 	O2 Sensor Signal Stuck Lean; Bank 2 Sensor 3
+P227700 	O2 Sensor Signal Stuck Rich; Bank 2 Sensor 3
+P227800 	O2 Sensor Signals Swapped Bank 1 Sensor 3 / Bank 2 Sensor 3
+P227900 	Intake Air System Leak
+P228C00 	Fuel Pressure Regulator 1 Exceeded Control Limits Pressure Too Low
+P228D00 	Fuel Pressure Regulator 1 Exceeded Control Limits Pressure Too High
+P228E00 	Fuel Pressure Regulator 1 Exceeded Learning Limits Too Low
+P228F00 	Fuel Pressure Regulator 1 Exceeded Learning Limits Too High
+P229300 	Fuel Pressure Regulator 2 Performance
+P229400 	Fuel Pressure Regulator 2 Control Circuit
+P229500 	Fuel Pressure Regulator 2 Control Circuit Low
+P229600 	Fuel Pressure Regulator 2 Control Circuit High
+P229700 	02 Sensor Bank 1 Sensor 1 Out of Range During Deceleration
+P229800 	02 Sensor Bank 2 Sensor 1 Out of Range During Deceleration
+P229A00 	Fuel Pressure Regulator 2 Exceeded Control Limits Pressure Too Low
+P229B00 	Fuel Pressure Regulator 2 Exceeded Control Limits Pressure Too High
+P229E00 	NOx Sensor Bank 1 Sensor 2 Circuit
+P229F00 	NOx Sensor Circuit Range/Performance Bank 1 Sensor 2
+P22A000 	NOx Sensor Bank 1 Sensor 2 Circuit Low
+P22A100 	NOx Sensor Bank 1 Sensor 2 Circuit High
+P22A700 	NOx Sensor Heater Sense Bank 1 Sensor 2 Circuit Range/Performance
+P230000 	Ignition Coil "A" Primary Control Circuit Low
+P230100 	Ignition Coil "A" Primary Control Circuit High
+P230200 	Ignition Coil "A" Secondary Circuit
+P230300 	Ignition Coil "B" Primary Control Circuit Low
+P230400 	Ignition Coil "B" Primary Control Circuit High
+P230500 	Ignition Coil "B" Secondary Circuit
+P230600 	Ignition Coil "C" Primary Control Circuit Low
+P230700 	Ignition Coil "C" Primary Control Circuit High
+P230800 	Ignition Coil "C" Secondary Circuit
+P230900 	Ignition Coil "D" Primary Control Circuit Low
+P231000 	Ignition Coil "D" Primary Control Circuit High
+P231100 	Ignition Coil "D" Secondary Circuit
+P231200 	Ignition Coil "E" Primary Control Circuit Low
+P231300 	Ignition Coil "E" Primary Control Circuit High
+P231400 	Ignition Coil "E" Secondary Circuit
+P231500 	Ignition Coil "F" Primary Control Circuit Low
+P231600 	Ignition Coil "F" Primary Control Circuit High
+P231700 	Ignition Coil "F" Secondary Circuit
+P231800 	Ignition Coil "G" Primary Control Circuit Low
+P231900 	Ignition Coil "G" Primary Control Circuit High
+P232000 	Ignition Coil "G" Secondary Circuit
+P232100 	Ignition Coil "H" Primary Control Circuit Low
+P232200 	Ignition Coil "H" Primary Control Circuit High
+P232300 	Ignition Coil "H" Secondary Circuit
+P232400 	Ignition Coil "I" Primary Control Circuit Low
+P232500 	Ignition Coil "I" Primary Control Circuit High
+P232600 	Ignition Coil "I" Secondary Circuit
+P232700 	Ignition Coil "J" Primary Control Circuit Low
+P232800 	Ignition Coil "J" Primary Control Circuit High
+P232900 	Ignition Coil "J" Secondary Circuit
+P233000 	Ignition Coil "K" Primary Control Circuit Low
+P233100 	Ignition Coil "K" Primary Control Circuit High
+P233200 	Ignition Coil "K" Secondary Circuit
+P233300 	Ignition Coil "L" Primary Control Circuit Low
+P233400 	Ignition Coil "L" Primary Control Circuit High
+P233500 	Ignition Coil "L" Secondary Circuit
+P233600 	Cylinder #1 Above Knock Threshold
+P233700 	Cylinder #2 Above Knock Threshold
+P233800 	Cylinder #3 Above Knock Threshold
+P233900 	Cylinder #4 Above Knock Threshold
+P234000 	Cylinder #5 Above Knock Threshold
+P234100 	Cylinder #6 Above Knock Threshold
+P234200 	Cylinder #7 Above Knock Threshold
+P234300 	Cylinder #8 Above Knock Threshold
+P234400 	Cylinder #9 Above Knock Threshold
+P234500 	Cylinder #10 Above Knock Threshold
+P234600 	Cylinder #11 Above Knock Threshold
+P234700 	Cylinder #12 Above Knock Threshold
+P240000 	Evaporative Emission System Leak Detection Pump Control Circuit/Open
+P240100 	Evaporative Emission System Leak Detection Pump Control Circuit Low
+P240200 	Evaporative Emission System Leak Detection Pump Control Circuit High
+P240300 	Evaporative Emission System Leak Detection Pump Sense Circuit/Open
+P240400 	Evaporative Emission System Leak Detection Pumpe Sense Circuit Range/Performance
+P241300 	Exhaust Gas Recirculation System Performance
+P241400 	02 Sensor Exhaust Sample Error, Bank 1 Sensor 1
+P241500 	02 Sensor Exhaust Sample Error, Bank 2 Sensor 1
+P241600 	Oxygen Sensor Signals Swapped Bank 1 Sensor 2 / Bank 1 Sensor 3
+P241700 	Oxygen Sensor Signals Swapped Bank 2 Sensor 2 / Bank 2 Sensor 3
+P242100 	Evaporative Emission System Vent Valve Stuck Open
+P242200 	Evaporative Emission System Vent Valve Stuck Closed
+P242500 	Exhaust Gas Recirculation Cooling Valve Control Circuit Open
+P242600 	Exhaust Gas Recirculation Cooling Valve Control Circuit Low
+P242700 	Exhaust Gas Recirculation Cooling Valve Control Circuit High
+P242800 	Exhaust Gas Temperature Too High Bank1
+P242900 	Exhaust Gas Temperature Too High Bank2
+P242A00 	Exhaust Gas Temperature Sensor Circuit Bank 1 Sensor 3
+P242B00 	Exhaust Gas Temperature Sensor Circuit Bank 1 Sensor 3 Range/Performance
+P242C00 	Exhaust Gas Temperature Sensor Circuit Low Bank 1 Sensor 3
+P242D00 	Exhaust Gas Temperature Sensor Circuit High Bank 1 Sensor 3
+P242F00 	Diesel Particulate Filter Restriction - Ash Accumulation
+P243000 	Secondary Air Injection System Air Flow/Pressure Bank 1 Sensor Circuit
+P243100 	Secondary Air Injection System Air Flow/Pressure Bank 1 Sensor Circuit Range/Performance
+P243200 	Secondary Air Injection System Air Flow/Pressure Bank 1 Sensor Circuit Low
+P243300 	Secondary Air Injection System Air Flow/Pressure Bank 1 Sensor Circuit High
+P244000 	Secondary Air Injection System Switching Valve Stuck Open Bank1
+P244200 	Secondary Air Injection System Switching Valve Stuck Open Bank2
+P244C00 	Exhaust Temperature Too Low For Particulate Filter Regeneration Bank 1
+P245200 	Diesel Particulate Filter Differential Pressure Sensor Circuit
+P245300 	Diesel Particulate Filter Differential Pressure Sensor Circuit Range/Performance
+P245400 	Diesel Particulate Filter Differential Pressure Sensor Circuit Low
+P245500 	Diesel Particulate Filter Differential Pressure Sensor Circuit High
+P245600 	Diesel Particulate Filter Pressure Sensor "A" Circuit Intermittent/Erratic
+P245700 	Exhaust Gas Recirculation Cooling System Performance
+P245B00 	Exhaust Gas Recirculation Cooler Bypass Control Circuit Range/Performance
+P245E00 	Diesel Particulate Filter Pressure Sensor "B" Circuit
+P246000 	Diesel Particulate Filter Pressure Sensor "B" Circuit Low
+P246300 	Diesel Particulate Filter - Soot Accumulation
+P246600 	Exhaust Gas Temperature Sensor Circuit Bank 2 Sensor 3
+P246700 	Exhaust Gas Temperature Sensor Circuit Range/Performance Bank 2 Sensor 3
+P246800 	Exhaust Gas Temperature Sensor Circuit Low Bank 2 Sensor 3
+P246E00 	Exhaust Gas Temperature Sensor Circuit Bank 1 Sensor 4
+P246F00 	Exhaust Gas Temperature Sensor Circuit Bank 1 Sensor 4 Range/Performance
+P247000 	Exhaust Gas Temperature Sensor Circuit Low Bank 1 Sensor 4
+P247100 	Exhaust Gas Temperature Sensor Circuit High Bank 1 Sensor 4
+P247300 	Exhaust Gas Temperature Sensor Circuit Bank 2 Sensor 4
+P247400 	Exhaust Gas Temperature Sensor Circuit Bank 2 Sensor 4 Range/Performance
+P247500 	Exhaust Gas Temperature Sensor Circuit Low Bank 2 Sensor 4
+P247600 	Exhaust Gas Temperature Sensor Circuit High Bank 2 Sensor 4
+P247800 	Exhaust Gas Temperature Out of Range Bank 1 Sensor 1
+P247A00 	Exhaust Gas Temperature Out of Range Bank 1 Sensor 3
+P251000 	ECM/PCM Power Relay Sense Circuit Range/Performance
+P251900 	A/C Request "A" Circuit
+P252000 	A/C Request "A" Circuit Low
+P252100 	A/C Request "A" Circuit High
+P253300 	Ignition Switch Run/ Start Position Curciut
+P253500 	Ignition Switch Run/ Start Position Curciut High
+P253900 	Low Pressure Fuel System Sensor Circuit
+P254000 	Low Pressure Fuel System Sensor Circuit Range/Performance
+P254100 	Low Pressure Fuel System Sensor Circuit Low Input
+P254200 	Low Pressure Fuel System Sensor Circuit High Input
+P254300 	Low Pressure Fuel System Sensor Circuit Intermittent
+P254500 	Torque Management Request Input Signal "A" Range/Performance
+P256200 	Turbocharger Boost Control Position Sensor "A" Circuit
+P256300 	Turbocharger Boost Control Position Sensor Circuit Range/Performance
+P256400 	Turbocharger Boost Control Position Sensor Circuit Low
+P256500 	Turbocharger Boost Control Position Sensor Circuit High
+P256600 	Turbocharger Boost Control Position Sensor Circuit Intermittent
+P256800 	Direct Ozone Reduction Catalyst Temperature Sensor Circuit Range/Performance
+P256900 	Direct Ozone Reduction Catalyst Temperature Sensor Circuit Low
+P257000 	Direct Ozone Reduction Catalyst Temperature Sensor Circuit High
+P257800 	Turbocharger Speed Sensor "A" Circuit
+P257900 	Turbocharger Speed Sensor "A" Circuit Range/Performance
+P258000 	Turbocharger Speed Sensor "A" Circuit Low
+P258100 	Turbocharger Speed Sensor "A" Circuit High
+P258200 	Turbocharger Speed Sensor "A" Circuit Intermittent
+P258800 	Turbocharger Boost Control Position Sensor "B" Circuit Low
+P258900 	Turbocharger Boost Control Position Sensor "B" Circuit High
+P259300 	Turbocharger Speed Sensor "B" Circuit
+P259400 	Turbocharger Speed Sensor "B" Circuit Range/Performance
+P259500 	Turbocharger Speed Sensor "B" Circuit Low
+P259600 	Turbocharger Speed Sensor "B" Circuit High
+P259700 	Turbocharger Speed Sensor "B" Circuit Intermittent
+P260000 	Coolant Pump Control Circuit open
+P260100 	Coolant Pump Control Circuit range/performance
+P260200 	Coolant Pump Control Circuit low
+P260300 	Coolant Pump Control Circuit high
+P261000 	ECM/PCM Internal Engine Off Timer Performance
+P261200 	A/C Refrigerant Distribution Valve Control Circuit Low
+P261300 	A/C Refrigerant Distribution Valve Control Circuit High
+P261A00 	Coolant Pump "B" Control Circuit/Open
+P261B00 	Coolant Pump "B" Control Circuit Range/Performance
+P261C00 	Coolant Pump "B" Control Circuit Low
+P261D00 	Coolant Pump "B" Control Circuit High
+P262600 	O2 Sensor Pumping Current Trim Circuit/Open Bank 1, Sensor 1
+P262900 	O2 Sensor Pumping Current Trim Circuit/Open Bank 2, Sensor 1
+P263200 	Fuel Pump "B" Control Circuit Open
+P263300 	Fuel Pump "B" Control Circuit Low
+P263400 	Fuel Pump "B" Control Circuit High
+P263700 	Torque Management Feedback Signal "A"
+P270000 	Transmission Friction Element "A" Apply Time Range/Performance
+P270100 	Transmission Friction Element "B" Apply Time Range/Performance
+P270200 	Transmission Friction Element "C" Apply Time Range/Performance
+P270300 	Transmission Friction Element "D" Apply Time Range/Performance
+P270400 	Transmission Friction Element "E" Apply Time Range/Performance
+P270500 	Transmission Friction Element "F" Apply Time Range/Performance
+P270800 	Shift Solenoid F Stuck On
+P271100 	Unexpected Mechanical Gear Disengagement
+P271400 	Pressure Control Solenoid "D" Performance or Stuck Off
+P271500 	Pressure Control Solenoid "D" Stuck On
+P271600 	Pressure Control Solenoid "D" Electrical
+P271700 	Pressure Control Solenoid "D" Intermittent
+P272300 	Pressure Control Solenoid "E" Performance or Stuck Off
+P272400 	Pressure Control Solenoid "E" Stuck On
+P272500 	Pressure Control Solenoid "E" Electrical
+P272600 	Pressure Control Solenoid "E" Intermittent
+P273200 	Pressure Control Solenoid "F" Performance or Stuck Off
+P273300 	Pressure Control Solenoid "F" Stuck On
+P273400 	Pressure Control Solenoid "F" Electrical
+P273500 	Pressure Control Solenoid "F" Intermittent
+P275300 	Transmission Fluid Cooler Control Circuit/Open
+P275400 	Transmission Fluid Cooler Control Circuit Low
+P275500 	Transmission Fluid Cooler Control Circuit High
+P276500 	Input Turbine/Speed Sensor "B" Circuit
+P276600 	Input Turbine/Speed Sensor "B" Circuit Range/Performance
+P278700 	Clutch Temperature Too High
+P278900 	Clutch Adaptive Learning at Limit
+P278B00 	Kick Down Switch Circuit Range/Performance
+P281000 	Pressure Control Solenoid "G" Electrical
+P281200 	Pressure Control Solenoid "G" Control Circuit/Open
+P281400 	Pressure Control Solenoid "G" Control Circuit Low
+P281500 	Pressure Control Solenoid "G" Control Circuit High
+P2BA700 	NOx Exceedence - Empty Reagent Tank
+P300000 	Glow Plug Indicator Light -K29- Malfunction message from instrument cluster
+P300100 	Operating RPM regulation Control difference
+P300200 	Kick Down Switch -F8- Implausible signal
+P300300 	Low heat output relay-J359 Short circuit to B+
+P300400 	Low heat output relay-J359 Open circuit/short circuit to ground
+P300500 	High heat output relay -J360 Short circuit to B+
+P300600 	High heat output relay -J360 Open circuit/short circuit to ground
+P300700 	Camshaft Position (CMP) Sensor -G40- No signal
+P300800 	Camshaft Position (CMP) Sensor -G40- Signal outside tolerance
+P300900 	Relay for pump, fuel cooling -J445- Short circuit to B+
+P300A00 	Diesel Particulate Filter Differential Pressure Sensor Implausible signal
+P300B00 	Diesel Particulate Filter Differential Pressure Sensor Short-circuit to ground
+P300C00 	Diesel Particulate Filter Differential Pressure Sensor Short circuit to B+
+P300D00 	Diesel Particulate Filter Differential Pressure Sensor Electrical malfunction
+P300E00 	Particulate Trap Bank 2 restriction
+P300F00 	Fuel bypass valve Open circuit
+P301000 	Relay for pump, fuel cooling -J445- Open circuit/short circuit to ground
+P301100 	Fuel Pump (FP) 2 Relay -J49- Short circuit to B+
+P301200 	Fuel Pump (FP) 2 Relay -J49- Open circuit/short circuit to ground
+P301300 	Wastegate Bypass Regulator Valve 2 -N274- Short circuit to B+
+P301400 	Wastegate Bypass Regulator Valve 2 -N274- Open circuit/short circuit to ground
+P301500 	Fuel Bypass Valve -N312- Short circuit to B+
+P301600 	Fuel Bypass Valve -N312- Open circuit/short circuit to ground
+P301700 	Exhaust Flap Valve 1 -N321- Short circuit to B+
+P301800 	Exhaust Flap Valve 1 -N321- Short-circuit to ground
+P301900 	Exhaust Flap Valve 1 -N321- Open circuit
+P301A00 	Exhaust flap sensor bank 2 Electrical malfunction
+P301B00 	Exhaust flap sensor bank 2 Implausible signal
+P301C00 	Exhaust flap sensor bank 2 Short circuit to B+
+P301D00 	Exhaust flap bank 2 Electrical malfunction
+P301E00 	Exhaust flap bank 2 Control difference
+P301F00 	Exhaust flap bank 2 Short circuit to B+
+P302000 	Exhaust Flap Valve 1 -N321- Electrical malfunction in circuit
+P302100 	Exhaust Flap Valve 2 -N322- Short circuit to B+
+P302200 	Exhaust Flap Valve 2 -N322- Short-circuit to ground
+P302300 	Exhaust Flap Valve 2 -N322- Open circuit
+P302400 	Exhaust Flap Valve 2 -N322- Electrical malfunction in circuit
+P302500 	Throttle Drive Angle Sensor 1 -G297 Implausible signal
+P302600 	Throttle Drive Angle Sensor 1 -G297 Signal too low
+P302700 	Throttle Drive Angle Sensor 1 -G297 Signal too high
+P302800 	Throttle Drive Angle Sensor 2 -G298 Implausible signal
+P302900 	Throttle Drive Angle Sensor 2 -G298 Signal too low
+P302A00 	Low heat output relay Open circuit
+P302B00 	Relay for Preheating Coolant, High Heat Output Open circuit
+P302C00 	Low heat output relay Short-circuit to ground
+P302D00 	Relay for Preheating Coolant, High Heat Output Short-circuit to ground
+P302E00 	Relay for pump, fuel cooling Open circuit
+P302F00 	Relay for pump, fuel cooling Short-circuit to ground
+P303000 	Throttle Drive Angle Sensor 2 -G298 Signal too high
+P303100 	Throttle Actuator 2 electrical malfunction in circuit
+P303200 	Throttle Valve Control Module 2 -J544- Malfunction in basic settings
+P303300 	Intake Air Temp.Circ.2 Signal too low
+P303400 	Intake Air Temp.Circ.2 Signal too high
+P303500 	Throttle Valve Control Module 2 -J544- Mechanical malfunction
+P303600 	Throttle Valve Control Module 2 -J544- insufficient voltage during basic settings
+P303700 	Throttle Valve Control Module 2 -J544- Adaptation not initiated
+P303800 	Throttle Valve Control Module 2 -J544- lower stop not reached
+P303900 	Transmission request torque reduction Implausible
+P303A00 	Auxiliary Fuel Pump (FP) Relay Open circuit
+P303B00 	Auxiliary Fuel Pump (FP) Relay Short-circuit to ground
+P303C00 	Auxiliary Fuel Pump (FP) Relay Short circuit to B+
+P303D00 	Cold start valve Open circuit
+P303E00 	Cold start valve Short circuit to B+
+P303F00 	Cold start valve Short-circuit to ground
+P304000 	Transmission ratio Implausible
+P304100 	Databus drivetrain implausible engine temperature message from instrument ECU
+P304200 	Heater regulation Implausible signal
+P304300 	Throttle Transfer Fuel Pump (FP) Mechanical malfunction
+P304400 	Throttle Transfer Fuel Pump (FP) Short circuit
+P304500 	Fuel pump electronics Defective
+P304600 	Starter relay 1 Electrical malfunction in circuit (relay stuck/does not switch)
+P304700 	Activation starter relay 2 Short circuit to B+
+P304800 	Activation starter relay 2 Short-circuit to ground
+P304900 	Activation starter relay 2 Open circuit
+P304A00 	Starter relay 1 Short-circuit to ground
+P304B00 	Potentiometer for heater control Electrical malfunction
+P305000 	Starter relay 2 Electrical malfunction in circuit (relay stuck/does not switch)
+P305100 	Starter activation, return message terminal 50 Implausible signal
+P305200 	Starter activation, return message terminal 50 Short circuit to B+
+P305300 	Starter activation, return message terminal 50 Short circuit to ground/open circuit
+P305400 	Starter does not turn Mechanically blocked or electrical malfunction
+P305500 	Exhaust Pressure Sensor 2 Open circuit
+P305600 	Exhaust Pressure Sensor 2 Short-circuit to ground
+P305700 	Exhaust Pressure Sensor 2 Short circuit to B+
+P305800 	Exhaust Gas Recirc.Flow 2 Flow too Low
+P305900 	Exhaust Gas Recirc.Flow 2 throughput too large
+P305A00 	Gasoline operation Random/Multiple Cylinder. Misfire Detected
+P306000 	Cooling Bypass Valve, Exhaust Gas Recirculation Flow Electrical malfunction
+P306100 	Cooling Bypass Valve 2, Exhaust Gas Recirculation Flow Electrical malfunction
+P306200 	Turbo/Super Charger 2 Overboost Condition
+P306300 	Turbo/Super Charger 2 Underboost condition
+P306400 	Boost Pressure Contr.Valve 3 Circuit Electrical malfunction
+P306500 	Boost Pressure Contr.Valve 3 Circuit Short-circuit to ground
+P306600 	Boost Pressure Contr.Valve 3 Circuit Short circuit to B+
+P306700 	Boost Pressure Contr.Valve 4 Circuit Electrical malfunction
+P306800 	Boost Pressure Contr.Valve 4 Circuit Short-circuit to ground
+P306900 	Boost Pressure Contr.Valve 4 Circuit Short circuit to B+
+P307000 	Metering pump for cleaning solution Defective
+P307100 	Additive tank for particle filter empty
+P307200 	Voltage supply relay Electrical malfunction in circuit
+P307300 	Throttle Transfer Fuel Pump (FP) Electrical malfunction in circuit
+P307400 	Fuel Pump 2 Electrical malfunction in circuit
+P307500 	Turbo boost 1/2 Trim Adaptation Limit Attained
+P307600 	Engine Control Module (ECM) Error during coding
+P307700 	Fuel Pump Electronics, voltage supply Electrical malfunction
+P307800 	Throttle Valve Control Module Air Flow at idle too Low
+P307900 	Cold Start Fuel Pump (FP) Relay Short circuit to B+
+P307A00 	Intake system Air flow too low
+P307B00 	Activation Fuel pump module 2 Electrical malfunction/open
+P307C00 	Activation Fuel pump module 2 Implausible signal
+P307D00 	Activation Fuel pump module 2 Short-circuit to ground
+P307E00 	Activation Fuel pump module 2 Short circuit to B+
+P308000 	Cold Start Fuel Pump (FP) Relay -J748 Short circuit to ground/open circuit
+P308100 	Engine temperature too low
+P308200 	Clutch positioning sensor Implausible signal
+P308300 	Fuel level sensor for additive tank particulate trap, Electrical malfunction in circuit
+P308400 	Recirculating valve for turbocharger bank 2 Mechanical malfunction
+P308500 	Activation Intake Manifold Runner Bank 2 Control Electrical malfunction
+P308600 	Intake Manifold Runner Bank 2 Basic settings not carried out
+P308700 	Supply relay for engine components Electrical malfunction in circuit
+P308800 	Starter relay Electrical malfunction in circuit
+P308900 	Fuel pump electronics signal wire Electrical malfunction
+P308A00 	Fuel pump electronics NG operation signal wire Short circuit to B+
+P308B00 	Fuel pump electronics NG operation signal wire Short-circuit to ground
+P308C00 	Fuel pump electronics NG operation signal wire Open circuit
+P308D00 	Throttle Transfer Fuel Pump (FP) Engine speed too low
+P308E00 	Fuel pump electronics Excess temperature
+P309000 	Auxiliary heater signal not recognized
+P309100 	Auxiliary heater signal constant detected
+P309200 	Control module defective
+P309300 	Control module defective
+P309400 	Control module defective
+P309500 	Control module defective
+P309600 	Control module defective
+P309700 	Control module defective
+P309800 	Control module defective
+P309900 	Control module defective
+P310000 	Intake Flap Motor -V157 Short circuit to B+
+P310100 	Intake Flap Motor -V157 Open circuit/short circuit to ground
+P310200 	Intake Flap Motor -V157 No signal
+P310300 	Intake Flap Motor -V157 Defective
+P310400 	Intake manifold flap change-over valve- N239 Short circuit to B+
+P310500 	Intake manifold flap change-over valve- N239 Open circuit/short circuit to ground
+P310600 	Cylinder 7 Pump/Injector -N303- Implausible signal
+P310700 	Cylinder 7 Pump/Injector -N303- Value above upper control limit
+P310800 	Cylinder 7 Pump/Injector -N303- Value below lower control limit
+P310900 	Cylinder 7 Pump/Injector -N303- Electrical malfunction in circuit
+P310A00 	Low Fuel Pressure regulation Fuel pressure fluctuates
+P310B00 	Low Fuel Pressure regulation Fuel pressure outside specification
+P310C00 	Low Fuel Pressure regulation Fuel pressure breaks down sporadically
+P310D00 	Fuel Pressure Regulation Fuel pressure fluctuates
+P310E00 	Exhaust gas recirculation cooler bypass valve 2 Implausible signal
+P311000 	Cylinder 8 Pump/Injector -N304- Implausible signal
+P311100 	Cylinder 8 Pump/Injector -N304- Value above upper control limit
+P311200 	Cylinder 8 Pump/Injector -N304- Value below lower control limit
+P311300 	Cylinder 8 Pump/Injector -N304- Electrical malfunction in circuit
+P311400 	Cylinder 9 Pump/Injector -N305- Implausible signal
+P311500 	Cylinder 9 Pump/Injector -N305- Value above upper control limit
+P311600 	Cylinder 9 Pump/Injector -N305- Value below lower control limit
+P311700 	Cylinder 9 Pump/Injector -N305- Electrical malfunction in circuit
+P311800 	Cylinder 10 Pump/Injector -N306- Implausible signal
+P311900 	Cylinder 10 Pump/Injector -N306- Value above upper control limit
+P312000 	Cylinder 10 Pump/Injector -N306- Value below lower control limit
+P312100 	Cylinder 10 Pump/Injector -N306- Electrical malfunction in circuit
+P312200 	Cylinder 11 Pump/Injector -N307- Implausible signal
+P312300 	Cylinder 11 Pump/Injector -N307- Value above upper control limit
+P312400 	Cylinder 11 Pump/Injector -N307- Value below lower control limit
+P312500 	Cylinder 11 Pump/Injector -N307- Electrical malfunction in circuit
+P312600 	Cylinder 12 Pump/Injector -N308- Implausible signal
+P312700 	Cylinder 12 Pump/Injector -N308- Value above upper control limit
+P312800 	Cylinder 12 Pump/Injector -N308- Value below lower control limit
+P312900 	Cylinder 12 Pump/Injector -N308- Electrical malfunction in circuit
+P313000 	Exhaust Gas Recirculation (EGR) system Value above upper control limit
+P313100 	Exhaust Gas Recirculation (EGR) system Value below lower control limit
+P313200 	Glow Plug Module 2, Control Circuit Electrical malfunction in circuit
+P313300 	Automatic Glow Time Control Relay 2-J609 Implausible signal
+P313400 	Intake Manifold Runner Control (IMRC) Upper stop not reached
+P313500 	Intake Manifold Runner Control (IMRC) lower limit not reached
+P313600 	Intake Manifold Runner Control (IMRC) Target value not reached
+P313700 	Intake Manifold Runner Control (IMRC) Basic settings not carried out
+P313800 	Intake Manifold Runner Control (IMRC) Control difference
+P313900 	Intake Manifold Runner Control (IMRC) Signal outside tolerance
+P313A00 	Intake Manifold Runner Control (IMRC), bank 2 Signal outside tolerance
+P313B00 	Intake Manifold Runner Control (IMRC), bank 2 Control difference
+P313C00 	Intake Manifold Runner Control (IMRC), bank 2 difficulty of movement or blocked
+P313D00 	Intake Manifold Runner Control (IMRC) difficulty of movement or blocked
+P314000 	Valve for starting with empty tank -N349 Open circuit/short circuit to ground
+P314100 	Valve for starting with empty tank -N349 Short circuit to B+
+P314200 	Exhaust-bank2,sensor1,oxygen sensor signal implausible lean
+P314300 	Exhaust-bank2,sensor1,oxygen sensor signal Implausible rich
+P314400 	Exhaust-bank3,sensor1,oxygen sensor signal implausible lean
+P314500 	Exhaust-bank3,sensor1,oxygen sensor signal Implausible rich
+P314600 	Exhaust-bank4,sensor1,oxygen sensor signal implausible lean
+P314700 	Exhaust-bank4,sensor1,oxygen sensor signal Implausible rich
+P314800 	Exhaust bank 3, O2 sensor before cat. conv., heater circuit Regulation at upper impact
+P314900 	Exhaust bank 3, O2 sensor before cat. conv., heater circuit Regulation at lower impact
+P315000 	Exhaust bank 4, O2 sensor before cat. conv., heater circuit Regulation at upper impact
+P315100 	Exhaust bank 4, O2 sensor before cat. conv., heater circuit Regulation at lower impact
+P315200 	Exhaust gas bank3, sensor1 Internal resistance too Large
+P315300 	Exhaust gas bank4, sensor1 Internal resistance too Large
+P315400 	Exhaust-bank2-sensor1 Voltage too low/air leak
+P315500 	Emissions-bank3-sensor1 Voltage too low/air leak
+P315600 	Emissions-bank4-sensor1 Voltage too low/air leak
+P315700 	Exhaust-bank1,sensor1,oxygen sensor signal Voltage too low during deceleration
+P315800 	Exhaust-bank2,sensor1,oxygen sensor signal Voltage too low during deceleration
+P315900 	Exhaust-bank3,sensor1,oxygen sensor signal Voltage too low during deceleration
+P316000 	Exhaust-bank4,sensor1,oxygen sensor signal Voltage too low during deceleration
+P316100 	Linear oxy. sensor,exh-bank1/compensat. wire pump current Open circuit
+P316200 	Linear oxy. sensor,exh-bank2/compensat. wire pump current Open circuit
+P316300 	Linear oxy. sensor,exh-bank3/compensat. wire pump current Open circuit
+P316400 	Linear oxy. sensor,exh-bank4/compensat. wire pump current Open circuit
+P316500 	Exhaust-bank3,oxygen sensor correction behind cat Lean control limit exceeded
+P316600 	Exhaust-bank3,oxygen sensor correction behind cat Rich control limit exceeded
+P316700 	Exhaust-bank4,oxygen sensor correction behind cat Lean control limit exceeded
+P316800 	Exhaust-bank4,oxygen sensor correction behind cat Rich control limit exceeded
+P316900 	Exhaust-bank3 main catalytic converter Efficiency below threshold
+P317000 	Exhaust-bank4 main catalytic converter Efficiency below threshold
+P317100 	Exhaust-bank1, mixture adaptation range 3 System too lean
+P317200 	Exhaust-bank1, mixture adaptation range 3 System too rich
+P317300 	Exhaust-bank2, mixture adaptation range 3 System too lean
+P317400 	Exhaust-bank2, mixture adaptation range 3 System too rich
+P317500 	Exhaust bank3, mixture adaptation range 3 System too lean
+P317600 	Exhaust bank3, mixture adaptation range 3 System too rich
+P317700 	Exhaust bank4, mixture adaptation range 3 System too lean
+P317800 	Exhaust bank4, mixture adaptation range 3 System too rich
+P317900 	Cyl.13-Fuel Inj.Circ. Short-circuit to ground
+P318000 	Cyl.13-Fuel Inj.Circ. Short circuit to B+
+P318100 	Cyl.13-Fuel Inj.Circ. Open circuit
+P318200 	Cyl.14-Fuel Inj.Circ. Short-circuit to ground
+P318300 	Cyl.14-Fuel Inj.Circ. Short circuit to B+
+P318400 	Cyl.14-Fuel Inj.Circ. Open circuit
+P318500 	Cyl.15-Fuel Inj.Circ. Short-circuit to ground
+P318600 	Cyl.15-Fuel Inj.Circ. Short circuit to B+
+P318700 	Cyl.15-Fuel Inj.Circ. Open circuit
+P318800 	Cyl.16-Fuel Inj.Circ. Short-circuit to ground
+P318900 	Cyl.16-Fuel Inj.Circ. Short circuit to B+
+P319000 	Cyl.16-Fuel Inj.Circ. Open circuit
+P319100 	Intake Manifold Runner Control (IMRC) Basic setting aborted with mechanical impact open
+P319200 	Intake Manifold Runner Control (IMRC) Basic setting aborted with mechanical impact open
+P319300 	Intake Manifold Runner Control (IMRC) open impact outside valid range
+P319400 	Mass Air Flow (MAF) Sensor 3 -G456 Signal too low
+P319500 	Mass Air Flow (MAF) Sensor 3 -G456 Signal too high
+P319600 	Mass Air Flow (MAF) Sensor 4 -G457 Signal too low
+P319700 	Mass Air Flow (MAF) Sensor 4 -G457 Signal too high
+P319800 	Intake manifold Runner Control (IMRC) Implausible signal
+P319900 	Activation Intake Manifold Runner Bank 2 Control Implausible signal
+P319A00 	Air mass meter 3/4 Correlation
+P319B00 	Mass Air Flow (MAF) Sensor 3 -G456 Implausible signal
+P319C00 	Mass Air Flow (MAF) Sensor 4 -G457 Implausible signal
+P319D00 	Activation Intake Manifold Runner Bank 2 Control Short circuit to B+
+P319E00 	Activation Intake Manifold Runner Bank 2 Control Open circuit/short circuit to ground
+P320000 	Exhaust-bank3 -sensor1, heating circuit Short-circuit to ground
+P320100 	Exhaust-bank3 -sensor1, heating circuit Short circuit to B+
+P320200 	Exhaust-bank3 -sensor1, heating circuit Open circuit
+P320300 	Exhaust-bank3 -sensor1, heating circuit Malfunction
+P320400 	Emissions-bank3-sensor1 Internal resistance too Large
+P320500 	Emissions-bank3-sensor1 Low Voltage
+P320600 	Emissions-bank3-sensor1 High Voltage
+P320700 	Emissions-bank3-sensor1 electrical malfunction in circuit
+P320800 	Emissions-bank3-sensor1 No Activity Detected
+P320900 	Emissions-bank3-sensor1 Slow Response
+P321000 	Exhaust-bank3 -sensor1, heating circuit Performance too low
+P321100 	Exhaust-bank1-sensor1 Heater back-coupling
+P321200 	Exhaust-bank2-sensor1 Heater back-coupling
+P321300 	Emissions-bank3-sensor1 Heater back-coupling
+P321400 	Emissions-bank4-sensor1 Heater back-coupling
+P321500 	Emissions-bank3-sensor2,heater circuit Short-circuit to ground
+P321600 	Emissions-bank3-sensor2,heater circuit Short circuit to B+
+P321700 	Emissions-bank3-sensor2,heater circuit Open circuit
+P321800 	Emissions-bank3-sensor2,heater circuit Malfunction
+P321900 	Emissions-bank3-sensor2 Internal resistance too Large
+P322000 	Emissions-bank3-sensor2 Low Voltage
+P322100 	Emissions-bank3-sensor2 High Voltage
+P322200 	Emissions-bank3-sensor2 electrical malfunction in circuit
+P322300 	Emissions-bank3-sensor2 No Activity Detected
+P322400 	Emissions-bank3-sensor2 Slow Response
+P322500 	Exhaust-bank3,oxygen sensor correction behind cat Control limit reached
+P322600 	Exhaust-bank4,oxygen sensor correction behind cat Control limit reached
+P322700 	Exhaust-Bank1,Sensor1,Individual Cylinder Control Sensor dynamic to low
+P322800 	Exhaust-bank1,sensor1,oxygen sensor signal implausible lean
+P322900 	Exhaust-bank1,sensor1,oxygen sensor signal Implausible rich
+P323000 	Exhaust-bank4 -sensor1, heating circuit Short-circuit to ground
+P323100 	Exhaust-bank4 -sensor1, heating circuit Short circuit to B+
+P323200 	Exhaust-bank4 -sensor1, heating circuit Open circuit
+P323300 	Exhaust-bank4 -sensor1, heating circuit Malfunction
+P323400 	Emissions-bank4-sensor1 Internal resistance too Large
+P323500 	Emissions-bank4-sensor1 Low Voltage
+P323600 	Emissions-bank4-sensor1 High Voltage
+P323700 	Emissions-bank4-sensor1 electrical malfunction in circuit
+P323800 	Emissions-bank4-sensor1 No Activity Detected
+P323900 	Emissions-bank4-sensor1 Slow Response
+P324000 	Exhaust-bank4 -sensor1, heating circuit Performance too low
+P324100 	Intake Manifold Runner Control (IMRC) Temperature too high
+P324200 	Intake Manifold Runner Bank 2 Temperature too high
+P324300 	Idle Speed Contr.Throttle Pos. Electrical malfunction
+P324400 	Idle Speed Control Throttle Position 2 Electrical malfunction
+P324500 	Emissions-bank4-sensor2,heater circuit Short-circuit to ground
+P324600 	Emissions-bank4-sensor2,heater circuit Short circuit to B+
+P324700 	Emissions-bank4-sensor2,heater circuit Open circuit
+P324800 	Emissions-bank4-sensor2,heater circuit Malfunction
+P324900 	Emissions-bank4-sensor2 Internal resistance too Large
+P325000 	Emissions-bank4-sensor2 Low Voltage
+P325100 	Emissions-bank4-sensor2 High Voltage
+P325200 	Emissions-bank4-sensor2 electrical malfunction in circuit
+P325300 	Emissions-bank4-sensor2 No Activity Detected
+P325400 	Emissions-bank4-sensor2 Slow Response
+P325500 	Bank 1, O2 sensor before cat. conv., heater circuit Regulation at upper impact
+P325600 	Bank 1, O2 sensor before cat. conv., heater circuit Regulation at lower impact
+P325700 	Bank 2, O2 sensor before cat. conv., heater circuit Regulation at upper impact
+P325800 	Bank 2, O2 sensor before cat. conv., heater circuit Regulation at lower impact
+P325900 	Auxiliary fuel pump for engine start Malfunction
+P326000 	Exhaust bank 1/2 oxygen sensors before catalytic converter swapped
+P326100 	Exhaust bank 3/4 oxygen sensors before catalytic converter swapped
+P326200 	Exhaust bank 1/2 oxygen sensors behind catalytic converter swapped
+P326300 	Exhaust bank 3/4 oxygen sensors behind catalytic converter swapped
+P326400 	Pre-catalytic converter, emissions bank 3 Efficiency below threshold
+P326500 	Pre-catalytic converter, exhaust bank 4 Efficiency below threshold
+P326600 	Bank 1, sensor 1 Internal resistance too Large
+P326700 	Bank 2, sensor 1 Internal resistance too Large
+P326800 	Linear Lambda probe, exhaust gas bank 2 / pump current Open circuit
+P326900 	Linear Lambda probe, exhaust gas bank 2 / pump current Short-circuit to ground
+P327000 	Linear Lambda probe, exhaust gas bank 2 / pump current Short circuit to B+
+P327100 	Linear Lambda probe, exhaust gas bank 2 / reference voltage Open circuit
+P327200 	Linear Lambda probe, exhaust gas bank 2 / reference voltage Short-circuit to ground
+P327300 	Linear Lambda probe, exhaust gas bank 2 / reference voltage Short circuit to B+
+P327400 	Linear Lambda probe, exhaust gas bank 2 / reference voltage Implausible
+P327500 	Linear Lambda probe, exhaust bank 2 / common Ground (GND) wire Open circuit
+P327600 	Linear Lambda probe, exhaust bank 2 / common Ground (GND) wire Short-circuit to ground
+P327700 	Linear Lambda probe, exhaust bank 2 / common Ground (GND) wire Short circuit to B+
+P327800 	Linear Lambda probe, exhaust gas bank 3 / pump current Open circuit
+P327900 	Linear Lambda probe, exhaust gas bank 3 / pump current Short-circuit to ground
+P328000 	Linear Lambda probe, exhaust gas bank 3 / pump current Short circuit to B+
+P328100 	Linear Lambda probe, exhaust gas bank 3 / reference voltage Open circuit
+P328200 	Linear Lambda probe, exhaust gas bank 3 / reference voltage Short-circuit to ground
+P328300 	Linear Lambda probe, exhaust gas bank 3 / reference voltage Short circuit to B+
+P328400 	Linear Lambda probe, exhaust gas bank 3 / reference voltage Implausible
+P328500 	Linear Lambda probe, exhaust bank 3 / common Ground (GND) wire Open circuit
+P328600 	Linear Lambda probe, exhaust bank 3 / common Ground (GND) wire Short-circuit to ground
+P328700 	Linear Lambda probe, exhaust bank 3 / common Ground (GND) wire Short circuit to B+
+P328800 	Linear Lambda probe, exhaust gas bank 4 / pump current Open circuit
+P328900 	Linear Lambda probe, exhaust gas bank 4 / pump current Short-circuit to ground
+P329000 	Linear Lambda probe, exhaust gas bank 4 / pump current Short circuit to B+
+P329100 	Linear Lambda probe, exhaust gas bank 4 / reference voltage Open circuit
+P329200 	Linear Lambda probe, exhaust gas bank 4 / reference voltage Short-circuit to ground
+P329300 	Linear Lambda probe, exhaust gas bank 4 / reference voltage Short circuit to B+
+P329400 	Linear Lambda probe, exhaust gas bank 4 / reference voltage Implausible
+P329500 	Linear Lambda probe, exhaust bank 4 / common Ground (GND) wire Open circuit
+P329600 	Linear Lambda probe, exhaust bank 4 / common Ground (GND) wire Short-circuit to ground
+P329700 	Linear Lambda probe, exhaust bank 4 / common Ground (GND) wire Short circuit to B+
+P329800 	Catalytic converter system, exhaust-bank 3 Efficiency below threshold
+P329900 	Catalytic converter system, exhaust-bank 4 Efficiency below threshold
+P330000 	Bank1, Camshaft Position (CMP) Sensor, exhaust =>-G300 Short-circuit to ground
+P330100 	Bank1, Camshaft Position (CMP) Sensor, exhaust =>-G300 Open circuit/short circuit to B+
+P330200 	Bank2, Camshaft Position (CMP), exhaust =>Sensor -G301- Short-circuit to ground
+P330300 	Bank2, Camshaft Position (CMP), exhaust =>Sensor -G301- Open circuit/short circuit to B+
+P330400 	Bank1,exhaust-Camshaft Position (CMP) Sensor-G300/-G28 Incorrect allocation
+P330500 	Bank2, exhaust - Camshaft Position (CMP) Sensor-G301- / -G28- Incorrect allocation
+P330600 	Ignition control cylinder 13 Short-circuit to ground
+P330700 	Ignition control cylinder 13 Short circuit to B+
+P330800 	Ignition control cylinder 13 Open circuit
+P330900 	Ignition control cylinder 14 Short-circuit to ground
+P331000 	Ignition control cylinder 14 Short circuit to B+
+P331100 	Ignition control cylinder 14 Open circuit
+P331200 	Ignition control cylinder 15 Short-circuit to ground
+P331300 	Ignition control cylinder 15 Short circuit to B+
+P331400 	Ignition control cylinder 15 Open circuit
+P331500 	Ignition control cylinder 16 Short-circuit to ground
+P331600 	Ignition control cylinder 16 Short circuit to B+
+P331700 	Ignition control cylinder 16 Open circuit
+P331800 	Glow Plug/Heater Relay 2 Circ. Short circuit to B+
+P331900 	Glow Plug/Heater Relay 2 Circ. Open circuit/short circuit to ground
+P332000 	Unit Injector Valve Control 2 Short circuit to B+
+P332100 	Unit Injector Valve Control 2 Electrical malfunction in circuit
+P332200 	Relay 2 for Power Supply (B+) Terminal 30 Implausible signal
+P332300 	Voltage supply terminal 15 High Voltage
+P332400 	Voltage supply terminal 15 Open circuit
+P332500 	Voltage supply terminal 15 Implausible
+P332600 	Change-over valve for intake manifold flap 2 Short circuit to B+
+P332700 	Change-over valve for intake manifold flap 2 Open circuit/short circuit to ground
+P332800 	Intake Flap Motor 2 Short circuit to B+
+P332900 	Intake Flap Motor 2 Open circuit/short circuit to ground
+P333000 	Intake Flap Motor 2 No signal
+P333100 	Intake Flap Motor 2 Defective
+P333200 	Combustion detection in deceleration mode
+P333300 	Turbocharger (TC) control module 1 implausible message
+P333400 	Turbocharger (TC) control module 2 implausible message
+P333500 	Turbocharger (TC) control module 1 missing message
+P333600 	Turbocharger (TC) control module 2 missing message
+P333700 	Engine databus/engine implausible message
+P333800 	Activation glow time control module 1 Electrical malfunction in circuit
+P333900 	Activation glow time control module 2 Electrical malfunction in circuit
+P334000 	Charge Pressure Cooler Fan Relay Short circuit to B+
+P334100 	Charge Pressure Cooler Fan Relay Short-circuit to ground
+P334200 	Charge Pressure Cooler Fan Relay Open circuit
+P334300 	Exhaust turbocharger control module 1 Temperature too high
+P334400 	Exhaust turbocharger control module 1 Voltage supply outside the permissible range
+P334500 	Turbocharger 2 Control Module Temperature too high
+P334600 	Turbocharger 2 Control Module Voltage supply outside the permissible range
+P334700 	Glow Plug/Heater Relay Circ. Electrical malfunction
+P334800 	Activation turbocharger control unit bank 1 Electrical malfunction in circuit
+P334900 	Activation Turbocharger 2 Control Module Electrical malfunction in circuit
+P334A00 	Charge pressure actuator position sensor Electrical malfunction
+P335000 	Long Term Fuel Trim, NG Range 1 Too Lean
+P335100 	Long Term Fuel Trim, NG Range 1 Too Rich
+P335200 	Long Term Fuel Trim, NG Range 2 Too Lean
+P335300 	Long Term Fuel Trim, NG Range 2 Too Rich
+P335400 	Long Term Fuel Trim, NG Range 3 Too Lean
+P335500 	Long Term Fuel Trim, NG Range 3 Too Rich
+P335600 	Catalyst System,Bank1 during NG operation Efficiency below threshold
+P335700 	O2 Correction during NG operation Control limit reached
+P335800 	O2 Sensor Circ., exhaust gas Bank1-Sensor1 at NG operation Slow Response
+P335900 	O2 Sensor Circ., exhaust gas Bank1-Sensor1 at NG operation Heater back-coupling
+P335A00 	System too Lean at NG operation
+P335B00 	System Too Rich at NG operation
+P335C00 	Fuel tank pressure sensor high pressure Signal too high
+P335D00 	Fuel tank pressure sensor high pressure Signal too low
+P336000 	O2 Sensor Circ., exhaust gas Bank1-Sensor1 at NG operation No Activity Detected
+P336100 	NG operation Random/Multiple Cylinder. Misfire Detected
+P336200 	NG operation Cyl.1 Random/Multiple Cylinder. Misfire Detected
+P336300 	NG operation Cyl.2 Random/Multiple Cylinder. Misfire Detected
+P336400 	NG operation Cyl.3 Random/Multiple Cylinder. Misfire Detected
+P336500 	NG operation Cyl.4 Random/Multiple Cylinder. Misfire Detected
+P336600 	System pressure, NG too High
+P336700 	System pressure, NG too Low
+P336800 	O2 Sensor Signal Stuck Rich Bank 3 Sensor 1
+P336900 	O2 Sensor Signal Stuck Rich Bank 2 Sensor 1
+P336A00 	System pressure, NG Implausible signal
+P336B00 	NG temperature sensor Short circuit to B+
+P336C00 	NG temperature sensor Short-circuit to ground
+P336D00 	NG temperature sensor Implausible signal
+P336E00 	NG fuel pump relay Short circuit to B+
+P336F00 	NG fuel pump relay Short-circuit to ground
+P337000 	O2 Sensor Signal Stuck Rich Bank 3 Sensor 1
+P337100 	O2 Sensor Signal Stuck Rich Bank 2 Sensor 1
+P337200 	Intake Manifold Change-Over Valve Short circuit to B+
+P337300 	Intake Manifold Change-Over Valve Open circuit/short circuit to ground
+P337400 	Intake Manifold 2 Change-Over Valve Short circuit to B+
+P337500 	Intake Manifold 2 Change-Over Valve Open circuit/short circuit to ground
+P337600 	Intake Air Temperature Sensor 3 Signal too low
+P337700 	Intake Air Temperature Sensor 3 Signal too high
+P337800 	Intake Air Temperature Sensor 3 Implausible signal
+P337900 	NG High Pressure Valve Open circuit
+P337A00 	Voltage supply relay Short circuit to B+
+P337B00 	Voltage supply relay Short-circuit to ground
+P337C00 	Voltage supply relay Open circuit
+P337D00 	Relay for shut-off valve for high pressure valve Short circuit to B+
+P337E00 	Relay for shut-off valve for high pressure valve Short-circuit to ground
+P337F00 	Relay for shut-off valve for high pressure valve Open circuit
+P338000 	NG High Pressure Valve Short circuit to B+
+P338100 	NG High Pressure Valve Short-circuit to ground
+P338200 	Fuel Tank Pressure (FTP) Sensor -G400 Open circuit
+P338300 	Fuel Tank Pressure (FTP) Sensor -G400 Short circuit to B+
+P338400 	Fuel Tank Pressure (FTP) Sensor -G400 Short-circuit to ground
+P338500 	Fuel Rail Sensor Open circuit
+P338600 	Fuel Rail Sensor Short circuit to B+
+P338700 	Fuel Rail Sensor Short-circuit to ground
+P338800 	Fuel Injection Valve 1 Open circuit
+P338900 	Fuel Injection Valve 1 Short circuit to B+
+P338A00 	Fuel Tank Pressure (FTP) Sensor -G400 Implausible signal
+P338B00 	Fuel Tank Level Sensor Short circuit to B+
+P338C00 	Fuel Tank Level Sensor Short-circuit to ground
+P338D00 	Fuel Tank Level Sensor Implausible signal
+P338E00 	Indicator light for operating mode switch-over Short circuit to B+
+P338F00 	Indicator light for operating mode switch-over Short-circuit to ground
+P339000 	Fuel Injection Valve 1 Short-circuit to ground
+P339100 	Fuel Injection Valve 2 Open circuit
+P339200 	Fuel Injection Valve 2 Short circuit to B+
+P339300 	Fuel Injection Valve 2 Short-circuit to ground
+P339400 	Fuel Injection Valve 3 Open circuit
+P339500 	Fuel Injection Valve 3 Short circuit to B+
+P339600 	Fuel Injection Valve 3 Short-circuit to ground
+P339700 	Fuel Injection Valve 4 Open circuit
+P339800 	Fuel Injection Valve 4 Short circuit to B+
+P339900 	Fuel Injection Valve 4 Short-circuit to ground
+P339A00 	Shut-Off valve 1 for NG fuel tank Short circuit to B+
+P339B00 	Shut-Off valve 1 for NG fuel tank Short-circuit to ground
+P339C00 	Shut-Off valve 1 for NG fuel tank Open circuit
+P339D00 	Shut-Off valve 2 for NG fuel tank Short circuit to B+
+P339E00 	Shut-Off valve 2 for NG fuel tank Short-circuit to ground
+P339F00 	Shut-Off valve 2 for NG fuel tank Open circuit
+P33A000 	Shut-Off valve 3 for NG fuel tank Short circuit to B+
+P33A100 	Shut-Off valve 3 for NG fuel tank Short-circuit to ground
+P33A200 	Shut-Off valve 3 for NG fuel tank Open circuit
+P33A300 	Shut-Off valve 4 for NG fuel tank Short circuit to B+
+P33A400 	Shut-Off valve 4 for NG fuel tank Short-circuit to ground
+P33A500 	Shut-Off valve 4 for NG fuel tank Open circuit
+ 
