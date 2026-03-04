@@ -1,0 +1,116 @@
+{
+    "variables": {
+        "rpm": {
+            "name": "RPM",
+            "unit": "/min",
+            "decimals": 0
+        },
+        "speed": {
+            "name": "Speed",
+            "unit": "km/h",
+            "decimals": 0
+        },
+        "oil_temp": {
+            "name": "Oil Temp",
+            "unit": "\u00b0C",
+            "decimals": 0
+        },
+        "pedal": {
+            "name": "Pedal",
+            "unit": "%",
+            "decimals": 0
+        },
+        "boost": {
+            "name": "Boost",
+            "unit": "bar",
+            "decimals": 2
+        },
+        "torque": {
+            "name": "Torque",
+            "unit": "Nm",
+            "decimals": 0
+        },
+        "temp_c": {
+            "name": "Out Temp",
+            "unit": "\u00b0C",
+            "decimals": 1
+        }
+    },
+    "pages": [
+        {
+            "type": "custom",
+            "lines": {
+                "05": {
+                    "type": "text",
+                    "text": "Car Data"
+                },
+                "06": {
+                    "type": "value",
+                    "suffix": "%",
+                    "warn_high": 50,
+                    "color_mode": "warn",
+                    "key": "pedal"
+                },
+                "07": {
+                    "type": "value",
+                    "key": "temp_c",
+                    "suffix": "\u00b0C",
+                    "warn_low": 5,
+                    "color_mode": "warn",
+                    "prefix": "Outs."
+                },
+                "08": {
+                    "type": "value",
+                    "key": "rpm",
+                    "suffix": "km/h"
+                },
+                "09": {
+                    "type": "value",
+                    "key": "torque",
+                    "suffix": "bar",
+                    "warn_high": 3
+                }
+            }
+        },
+        {
+            "type": "list",
+            "title": "Preset",
+            "items": [
+                {
+                    "type": "value",
+                    "key": "rpm",
+                    "color_mode": "warn",
+                    "warn_high": 3000,
+                    "suffix": " U/min"
+                },
+                {
+                    "type": "value",
+                    "key": "oil_temp",
+                    "color_mode": "warn",
+                    "prefix": "Oil ",
+                    "suffix": "\u00b0C",
+                    "warn_low": 50,
+                    "warn_high": 150
+                },
+                {
+                    "type": "value",
+                    "key": "boost",
+                    "color_mode": "normal",
+                    "suffix": "bar"
+                },
+                {
+                    "type": "value",
+                    "key": "speed",
+                    "color_mode": "normal",
+                    "suffix": "km/h"
+                },
+                {
+                    "type": "value",
+                    "key": "torque",
+                    "color_mode": "normal",
+                    "suffix": "NM"
+                }
+            ]
+        }
+    ]
+}

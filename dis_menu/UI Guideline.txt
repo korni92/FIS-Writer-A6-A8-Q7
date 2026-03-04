@@ -1,0 +1,50 @@
+Audi A8 D3 DIS UI Developer Guidelines
+
+When building custom apps for the A8 OS, adhere to the following design language to ensure a cohesive experience across all screens.
+1. Display Zones & Line Formatting
+
+The DIS display is strictly partitioned into lines. Each app should manage its view relative to these line IDs.
+
+    Line 01: Full Top Line (Reserved for OS/OEM data injection).
+
+    Lines 02, 03, 04: Split Top Line components (OS Use).
+
+    Line 05: Middle Section Header. Always write the App Name here. Prepend your app's assigned icon (e.g., Symbols.FACTORY + " Settings").
+
+    Lines 06–09: Middle Section Body. This is your 4-line canvas for lists, data, or menus.
+
+2. Color Scheme & State Indication
+
+The hardware uses a binary color switch that behaves differently depending on the Line ID. Always use the constants defined in Symbols.
+
+    Header Line (05):
+
+        Symbols.COLOR_HEADER_WHITE (0x00) -> Standard text color. Use this.
+
+        Symbols.COLOR_HEADER_RED (0x01) -> Warning/Alert Red. Use sparingly.
+
+    Body Lines (06–09):
+
+        Symbols.COLOR_BODY_WHITE (0x01) -> Standard text color. All lists and standard data should use this.
+
+        Symbols.COLOR_BODY_THEME (0x00) -> Dynamic Theme Color (Red for Media, Green for Phone). Use this exclusively to highlight "Saved" or "Active" states in a list (e.g., indicating which setting is currently applied). Do not use this for cursor highlighting.
+
+3. Cursor & Highlighting
+
+    Do not change text color to indicate cursor position.
+
+    The system utilizes a native hardware highlight box via self.ui.set_highlight().
+
+    Pass the relative cursor position (1 to 4) to this function. Pass Arrow configuration bytes (e.g., 0x01 for Up Arrow, 0x02 for Down Arrow, 0x03 for Both) only when the list length exceeds 4 visible items to tell the driver there is more content.
+
+4. Navigation & MFSW Control Routing
+
+The OS kernel handles steering wheel button inputs and routes them to your app's virtual methods (on_up, on_down, on_ok, on_back).
+
+    MODE Short: Handled by the OS. Forces focus back to the Main Menu.
+
+    MODE Long: Handled by the OS and routed to your app's on_back() method. Your app should call self.on_blur() to release focus.
+
+    OKAY (Enter): Routed to on_ok(). Use to trigger actions or expand dropdowns.
+
+    Exiting to OEM: Individual apps cannot exit directly to the OEM screen. An app's on_back() will return the user to the Main Menu. Only selecting the explicit "Close Menu" item inside the Launcher will release Zone 0x02 back to the car's native computer.
