@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A8 DIS Dashboard Designer</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; margin: 0; padding: 0; background: #1e1e1e; color: #eee; height: 100vh; }
+        .sidebar { width: 250px; background: #252526; border-right: 1px solid #333; display: flex; flex-direction: column; }
+        .sidebar h3 { margin: 0; padding: 15px; background: #333; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+        .page-list { flex: 1; overflow-y: auto; padding: 10px; }
+        .page-item { padding: 10px; background: #333; margin-bottom: 5px; cursor: pointer; border-radius: 4px; display: flex; justify-content: space-between; }
+        .page-item:hover { background: #444; }
+        .page-item.active { background: #007acc; }
+        .btn { background: #007acc; color: white; border: none; padding: 8px; cursor: pointer; border-radius: 4px; width: 100%; margin-top: 5px;}
+        .btn:hover { background: #005f9e; }
+        .btn-danger { background: #d32f2f; width: auto; padding: 4px 8px; margin:0; }
+        
+        .main-editor { flex: 1; padding: 20px; overflow-y: auto; }
+        .form-group { margin-bottom: 15px; background: #2d2d30; padding: 15px; border-radius: 5px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #aaa; font-size: 12px; }
+        input, select { width: 100%; padding: 8px; box-sizing: border-box; background: #3c3c3c; border: 1px solid #555; color: white; border-radius: 3px; margin-bottom: 10px;}
+        .row { display: flex; gap: 10px; }
+        .row > div { flex: 1; }
+
+        .preview-panel { width: 350px; background: #252526; border-left: 1px solid #333; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        
+        /* Audi Cluster CSS */
+        .dis-screen { background: #000; border: 6px solid #111; border-radius: 10px; padding: 15px; width: 260px; box-shadow: 0 0 30px rgba(255,0,0,0.15); margin-top: 20px;}
+        .dis-line { font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bold; height: 26px; white-space: pre; letter-spacing: 0px; cursor: pointer; border: 1px dashed transparent;}
+        .dis-line:hover { border: 1px dashed #555; background: #111; }
+        .dis-line.selected { border: 1px dashed #007acc; background: #111; }
+        .color-white { color: #fff; }
+        .color-theme { color: #ff3333; }
+        .color-warn { color: #ff3333; }
+        .color-header { color: #fff; border-bottom: 2px solid #ff3333; margin-bottom: 8px; padding-bottom: 2px;}
+        .dis-arrows { text-align: right; color: #ff3333; font-size: 14px; margin-top: 5px; height: 16px;}
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Pages</h3>
+    <div class="page-list" id="pageList"></div>
+    <div style="padding: 10px;">
+        <button class="btn" onclick="addPage('custom')">+ Add Custom Page</button>
+        <button class="btn" onclick="addPage('list')" style="margin-top:5px;">+ Add Preset (List)</button>
+        <hr style="border-color:#444; margin-top:15px;">
+        <label style="margin-top:10px;">Import JSON:</label>
+        <input type="file" accept=".json" onchange="importJSON(event)" style="font-size: 11px;">
+        <button class="btn" style="background: #2e7d32; margin-top:5px;" onclick="exportJSON()">Export live_config.json</button>
+    </div>
+</div>
+
+<div class="main-editor" id="editorArea">
+    <h2 style="color:#666; text-align:center; margin-top: 20%;">Select or create a page to edit</h2>
+</div>
+
+<div class="preview-panel">
+    <h3>Live Preview</h3>
+    <label>Simulate Value Level:</label>
+    <input type="range" min="0" max="100" value="50" oninput="simVal = this.value; renderPreview();">
+    
+    <div class="dis-screen">
+        <div class="dis-line color-header" id="line05" onclick="selectLine('05')"></div>
+        <div class="dis-line color-white" id="line06" onclick="selectLine('06')"></div>
+        <div class="dis-line color-white" id="line07" onclick="selectLine('07')"></div>
+        <div class="dis-line color-white" id="line08" onclick="selectLine('08')"></div>
+        <div class="dis-line color-white" id="line09" onclick="selectLine('09')"></div>
+        <div class="dis-arrows" id="arrows"></div>
+    </div>
+    <p style="font-size: 12px; color: #888; text-align: center; margin-top: 15px;">
+        Click a line in the preview to edit its configuration!
+    </p>
+</div>
+
+<script>
+    // --- STATE ---
+    let config = { variables: {}, pages: [] };
+    let activePageIdx = -1;
+    let activeLine = null;
+    let simVal = 50;
+
+    // --- IMPORT / EXPORT ---
+    function importJSON(event) {
+        const file = event.target.files[0];
+        if(!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                config = JSON.parse(e.target.result);
+                if(!config.variables) config.variables = {};
+                if(!config.pages) config.pages = [];
+                activePageIdx = -1; activeLine = null;
+                renderSidebar(); document.getElementById('editorArea').innerHTML = ''; renderPreview();
+            } catch(err) { alert("Invalid JSON file!"); }
+        };
+        reader.readAsText(file);
+    }
+
+    function exportJSON() {
+        let blob = new Blob([JSON.stringify(config, null, 4)], {type: "application/json"});
+        let url = URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.href = url; a.download = "live_config.json"; a.click();
+    }
+
+    // --- RENDER SIDEBAR ---
+    function renderSidebar() {
+        const list = document.getElementById('pageList');
+        list.innerHTML = '';
+        config.pages.forEach((p, i) => {
+            const div = document.createElement('div');
+            div.className = `page-item ${i === activePageIdx ? 'active' : ''}`;
+            div.innerHTML = `<span>${p.title || 'Page ' + (i+1)} (${p.type})</span> <button class="btn btn-danger" onclick="deletePage(${i}, event)">X</button>`;
+            div.onclick = () => { activePageIdx = i; activeLine = null; renderEditor(); renderPreview(); renderSidebar(); };
+            list.appendChild(div);
+        });
+    }
+
+    function addPage(type) {
+        if(type === 'custom') config.pages.push({ type: "custom", lines: {"05": {type: "text", text: "New Custom Page"}} });
+        else config.pages.push({ type: "list", title: "New Preset", items: [] });
+        activePageIdx = config.pages.length - 1; activeLine = null;
+        renderSidebar(); renderEditor(); renderPreview();
+    }
+
+    function deletePage(idx, e) {
+        e.stopPropagation(); config.pages.splice(idx, 1);
+        activePageIdx = -1;
+        renderSidebar(); document.getElementById('editorArea').innerHTML = ''; renderPreview();
+    }
+
+    function selectLine(lineKey) {
+        if(activePageIdx === -1) return;
+        const page = config.pages[activePageIdx];
+        if(page.type === 'custom') {
+            activeLine = lineKey;
+            if(!page.lines[lineKey]) page.lines[lineKey] = {type: "empty"};
+            renderEditor();
+        }
+    }
+
+    // --- UPDATE LOGIC (FIX FOR FOCUS BUG) ---
+    function updateData(keysPath, val, requiresRebuild=false) {
+        // Evaluate nested path (e.g. ['pages', 0, 'lines', '07', 'text'])
+        let ref = config;
+        for(let i=0; i<keysPath.length-1; i++) ref = ref[keysPath[i]];
+        ref[keysPath[keysPath.length-1]] = val;
+        
+        if(requiresRebuild) renderEditor();
+        renderPreview();
+    }
+    
+    function addItem() { config.pages[activePageIdx].items.push({type: "value", key: Object.keys(config.variables)[0] || "rpm", color_mode: "normal"}); renderEditor(); renderPreview(); }
+    function deleteItem(idx) { config.pages[activePageIdx].items.splice(idx, 1); renderEditor(); renderPreview(); }
+
+    // --- RENDER EDITOR ---
+    function renderEditor() {
+        const area = document.getElementById('editorArea');
+        if(activePageIdx === -1) return;
+        
+        const page = config.pages[activePageIdx];
+        let html = `<h2>${page.type === 'custom' ? 'Custom Layout' : 'Preset List'} Configuration</h2>`;
+        
+        if(page.type === 'list') {
+            html += `<div class="form-group"><label>Page Title (Header)</label><input type="text" value="${page.title || ''}" oninput="updateData(['pages', ${activePageIdx}, 'title'], this.value); renderSidebar();"></div>`;
+            html += `<h3>List Items</h3>`;
+            page.items.forEach((item, i) => {
+                html += `<div class="form-group" style="border-left: 3px solid #007acc;">
+                    <b>Item ${i+1}</b> <button class="btn btn-danger" style="float:right;" onclick="deleteItem(${i})">Remove</button>
+                    ${renderItemForm(item, `['pages', ${activePageIdx}, 'items', ${i}]`)}
+                </div>`;
+            });
+            html += `<button class="btn" onclick="addItem()">+ Add Data Row</button>`;
+        } 
+        else if(page.type === 'custom') {
+            html += `<p>Click a line in the preview panel to configure it.</p>`;
+            if(activeLine) {
+                const item = page.lines[activeLine];
+                html += `<div class="form-group" style="border-left: 3px solid #ff3333;">
+                    <h3>Editing Line ${activeLine}</h3>
+                    ${renderItemForm(item, `['pages', ${activePageIdx}, 'lines', '${activeLine}']`)}
+                </div>`;
+            }
+        }
+        area.innerHTML = html;
+        document.querySelectorAll('.dis-line').forEach(el => el.classList.remove('selected'));
+        if(activeLine) document.getElementById('line' + activeLine).classList.add('selected');
+    }
+
+    function renderItemForm(item, basePathStr) {
+        let varOpts = Object.keys(config.variables).map(k => `<option value="${k}" ${item.key===k?'selected':''}>${config.variables[k].name || k}</option>`).join('');
+        if(!varOpts) varOpts = `<option value="">No Variables Found (Sync JSON first)</option>`;
+        
+        // Use true for 'type' so it rebuilds the form, false for text inputs so it doesn't lose focus!
+        let html = `
+            <div class="row">
+                <div><label>Type</label><select onchange="updateData(${basePathStr}.concat('type'), this.value, true)">
+                    <option value="empty" ${item.type==='empty'?'selected':''}>Empty</option>
+                    <option value="text" ${item.type==='text'?'selected':''}>Static Text</option>
+                    <option value="value" ${item.type==='value'?'selected':''}>Live Value</option>
+                    <option value="bar" ${item.type==='bar'?'selected':''}>Progress Bar</option>
+                </select></div>
+            </div>
+        `;
+
+        if(item.type === 'text') {
+            html += `<div class="row"><div><label>Text</label><input type="text" value="${item.text||''}" oninput="updateData(${basePathStr}.concat('text'), this.value, false)"></div></div>`;
+        }
+        
+        if(item.type === 'value' || item.type === 'bar') {
+            html += `
+                <div class="row">
+                    <div><label>Variable</label><select onchange="updateData(${basePathStr}.concat('key'), this.value, false)">${varOpts}</select></div>
+                    <div><label>Color Logic</label><select onchange="updateData(${basePathStr}.concat('color_mode'), this.value, false)">
+                        <option value="normal" ${item.color_mode==='normal'?'selected':''}>White Always</option>
+                        <option value="theme" ${item.color_mode==='theme'?'selected':''}>Color Always</option>
+                        <option value="warn" ${item.color_mode==='warn'?'selected':''}>Color on Warning</option>
+                    </select></div>
+                </div>
+            `;
+        }
+
+        if(item.type === 'value') {
+            html += `
+                <div class="row">
+                    <div><label>Prefix Text</label><input type="text" value="${item.prefix||''}" oninput="updateData(${basePathStr}.concat('prefix'), this.value, false)"></div>
+                    <div><label>Suffix Text</label><input type="text" value="${item.suffix||''}" oninput="updateData(${basePathStr}.concat('suffix'), this.value, false)"></div>
+                </div>
+            `;
+        }
+
+        if(item.type === 'bar') {
+            html += `
+                <div class="row">
+                    <div><label>Bar Min Value</label><input type="number" value="${item.min||0}" oninput="updateData(${basePathStr}.concat('min'), parseFloat(this.value)||0, false)"></div>
+                    <div><label>Bar Max Value</label><input type="number" value="${item.max||100}" oninput="updateData(${basePathStr}.concat('max'), parseFloat(this.value)||100, false)"></div>
+                </div>
+            `;
+        }
+
+        if(item.type === 'value' || item.type === 'bar') {
+            html += `
+                <div class="row">
+                    <div><label>Warn Low Threshold (Empty = None)</label><input type="number" value="${item.warn_low!==undefined?item.warn_low:''}" oninput="updateData(${basePathStr}.concat('warn_low'), this.value===''?null:parseFloat(this.value), false)"></div>
+                    <div><label>Warn High Threshold (Empty = None)</label><input type="number" value="${item.warn_high!==undefined?item.warn_high:''}" oninput="updateData(${basePathStr}.concat('warn_high'), this.value===''?null:parseFloat(this.value), false)"></div>
+                </div>
+            `;
+        }
+        return html;
+    }
+
+    // --- PREVIEW RENDERER ---
+    function buildBar(pct) {
+        let p = Math.max(0, Math.min(1, pct));
+        let filled = Math.round(p * 14);
+        let empty = 14 - filled;
+        return "[" + "|".repeat(filled) + ".".repeat(empty) + "]";
+    }
+
+    function renderPreview() {
+        let lines = ["", "", "", "", ""];
+        let colors = ["color-header", "color-white", "color-white", "color-white", "color-white"];
+        let arrows = false;
+        
+        if(activePageIdx >= 0) {
+            const page = config.pages[activePageIdx];
+            
+            const processItem = (item, isLine05) => {
+                if(!item || item.type === 'empty') return {txt: "", color: isLine05 ? "color-header" : "color-white"};
+                if(item.type === 'text') return {txt: item.text, color: isLine05 ? "color-header" : "color-white"};
+                
+                let valRaw = simVal; // 0-100 Mock
+                if(item.key === 'rpm') valRaw = (simVal/100) * 6000;
+                if(item.key === 'speed') valRaw = (simVal/100) * 200;
+                
+                let isWarn = false;
+                if(item.warn_high !== null && item.warn_high !== undefined && valRaw >= item.warn_high) isWarn = true;
+                if(item.warn_low !== null && item.warn_low !== undefined && valRaw <= item.warn_low) isWarn = true;
+                
+                let cClass = "color-white";
+                if(isLine05) { cClass = isWarn ? "color-warn" : "color-header"; } 
+                else { if(item.color_mode === 'theme' || (item.color_mode === 'warn' && isWarn)) cClass = "color-theme"; }
+
+                if(item.type === 'bar') {
+                    let min = item.min || 0; let max = item.max || 100;
+                    return {txt: buildBar((valRaw - min) / (max - min)), color: cClass};
+                }
+                
+                if(item.type === 'value') {
+                    let decs = config.variables[item.key] ? config.variables[item.key].decimals : 0;
+                    return {txt: (item.prefix||"") + valRaw.toFixed(decs) + (item.suffix||""), color: cClass};
+                }
+            };
+
+            if(page.type === 'custom') {
+                for(let i=0; i<5; i++) {
+                    let lKey = "0" + (5+i);
+                    let res = processItem(page.lines[lKey], i===0);
+                    lines[i] = (i===0 ? "> " : "") + res.txt;
+                    colors[i] = res.color;
+                }
+            } else if(page.type === 'list') {
+                lines[0] = "> " + (page.title || "List");
+                let globalWarn = false;
+                for(let i=0; i<4; i++) {
+                    if(i < page.items.length) {
+                        let res = processItem(page.items[i], false);
+                        lines[i+1] = res.txt;
+                        colors[i+1] = res.color;
+                        if(res.color === 'color-theme' && page.items[i].color_mode === 'warn') globalWarn = true;
+                    }
+                }
+                if(globalWarn) colors[0] = "color-warn color-header";
+                if(page.items.length > 4) arrows = true;
+            }
+        }
+
+        for(let i=0; i<5; i++) {
+            let el = document.getElementById('line0' + (i+5));
+            el.innerText = lines[i].substring(0, 18);
+            el.className = "dis-line " + colors[i] + (activeLine === '0'+(i+5) ? " selected" : "");
+        }
+        document.getElementById('arrows').innerText = arrows ? "▼" : "";
+    }
+</script>
+</body>
+</html>
