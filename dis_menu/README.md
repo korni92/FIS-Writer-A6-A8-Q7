@@ -76,7 +76,18 @@ Function: A simple JSON file created by app_core.py to remember user settings ac
 Role: Language Dictionary.
 Function: Maps English string keys to other languages (e.g., "Diagnostics": "Diagnose"). Read by the translation engine.
 
-
 ### fault_list.txt
 Role: DTC Lookup Table.
 Function: A tab-separated text file used by the Diagnostics App to convert raw hex fault codes (e.g., P000100) into human-readable descriptions (e.g., "Fuel Volume Regulator Control Circuit/Open").
+
+
+## Adding an APP
+1. How to Add a Completely New App
+Adding a new app involves creating a standalone class and registering it in the OS kernel.
+
+### Step 1: Create the App File (e.g., app_example.py)
+Every app must inherit from DISApp (found in app_core.py). This gives it the standard button hooks (on_up, on_ok, etc.) and screen states.
+
+### Step 2: Register it in main_sim.py
+Open main_sim.py, import your new app, and add exactly one line to the self.app_registry. The AppLauncher will automatically see it and generate a menu entry for you!
+
