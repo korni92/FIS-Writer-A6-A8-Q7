@@ -282,7 +282,7 @@ Updating just Indicator/Highlight
 Just updating the `Indicator/Highlight` is possible, by sending the Opcode `E4` with needed configuration and after ACK from cluster, just send write command `32 01 02` and this will be confirmed by the cluster. 
 
 If a line needs to be cleared, just send empty Data for it, otherwise the content stays there
-till it's overwritten. 
+till the line ID is used again.
 
 ## 6. Navigation Screen (Zone 0x03)
 
