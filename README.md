@@ -19,21 +19,21 @@ Every CAN frame uses **8 bytes**:
 Only Open Request, Heartbeat / Keep-Alive and Ping-Pong doesn't have this specific Byte 0 Protocol Header
 In the further documentation the Byte 0 is not added to the paiload for easier writing. 
 
-### Byte 0 Format
-High Nibble (4 bits) = Packet Type
-Low  Nibble  (4 bits) = Sequence Counter (0–15)
+Byte 0 of the protocol consists of two parts:
+* **High Nibble (4 bits):** Packet Type
+* **Low Nibble (4 bits):** Sequence Counter / Transaction ID (0–15)
 
 
-| Type   | Name       | Description                                          | Example     |
-|--------|------------|------------------------------------------------------|-------------|
-| `0x10` | DATA END   | Single frame **or** last frame of multi-frame msg. Expects ACK. | `0x15`      |
-| `0x20` | DATA BODY  | Intermediate frame of multi-frame message. Usually no immediate ACK. | `0x25`      |
-| `0xB0` | ACK        | Acknowledgment – contains the sequence number acked   | `0xB5`      |
+| Type   | Name       | Description                                                                                           | Example |
+|--------|------------|-------------------------------------------------------------------------------------------------------|---------|
+| `0x10` | DATA END   | Single frame **or** the last frame of a multi-frame message. Expects an immediate ACK.                | `0x15`  |
+| `0x20` | DATA BODY  | Intermediate frame of a multi-frame message. Usually does not require an immediate ACK.               | `0x25`  |
+| `0xB0` | ACK        | Acknowledgment. The lower nibble contains the sequence number the receiver expects *next*.            | `0xB5`  |
 
-**Sequence Counter rules**
-- Sender always increments modulo 16: next frame = (current + 1) % 16
-- After receiving ACK(N) → next send must use (N+1) % 16
-- After receiving DATA(N) → next send must use (N+1) % 16
+**Sequence Counter & Transaction ID Rules**
+* **Standard Increment:** The sender generally increments the counter modulo 16: `next frame = (current + 1) % 16`.
+* **ACK Handling:** After receiving an `ACK(N)` (e.g., `0xB5`), the next transmitted frame must start with Sequence ID `N` (e.g., `5`).
+* **The Transaction ID (ReqID) Concept:** The sequence counter is not just a packet counter; it acts as a logical Transaction ID. When the cluster sends an asynchronous logical response (such as a parameter response or a `3B` zone confirmation), it will stamp the response with the **exact same Sequence ID** that was used in your initial request. This allows the system to securely pair requests and responses, even if hundreds of `0xA3` Keep-Alive pings were exchanged in the meantime.
 
 ### Heartbeat / Keep-Alive
 Both sides must keep sending heartbeats or the channel dies after ~5 seconds silence from cluster (`0x491`).
@@ -216,9 +216,13 @@ Usually it looks like this when the whole content is replaced:
 - `04` → Stops showing (Success)
 - `E0` → FATAL ERROR (needs Hardware Restart)
 
-### Hardware Busy/ Error
-Just giving `9X` means we need to try again after X x 10 millisecond with the same message and same seq counter.
-If you get 0x09 02 03 E0, you have violated the transaction state machine (e.g., trying to write to Zone 0x03 without first sending a 32 Release for Zone 0x02). This causes a fatal crash requiring a hardware restart.
+**Hardware Busy (`0x9X`)**
+Receiving a `0x9X` response does **not** mean "wait X * 10 milliseconds". The `X` represents the **Sequence ID** the hardware is currently busy processing or the exact sequence where it lost synchronization.
+* **Single-Frame Scenario:** If the cluster replies with `0x9X` after a single frame, it simply means "I am currently busy processing Sequence X." **Do not resend the frame.** Reset your timeout and continue listening until the cluster finishes and sends the actual `0xBX` ACK.
+* **Multi-Frame Burst Scenario:** If the cluster replies with `0x9X` in the middle of a fast multi-frame transfer, it means "I lost sync starting at Sequence X." You must immediately abort the current transmission, wait for a short recovery delay, and **resend the entire multi-frame block** from the beginning.
+
+**Fatal Error (`0x09`)**
+If you receive a payload indicating a fatal error (e.g., `0x09 02 03 E0` inside a `0x1X` DATA END frame), you have violated the protocol's state machine. Common causes include trying to write to a zone without claiming it first, or failing to release a zone properly. This causes a crash in the cluster's internal parser. To recover, you must send a `0xA8` (Channel End / Reset) to clear the cluster's buffers and initiate a completely new `0xA0` handshake.
 
 ### DD Text Length Calculation
 Len = 2 + number_of_characters
