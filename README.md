@@ -42,7 +42,7 @@ Byte 0 of the protocol consists of two parts:
 
 2. Sequence Counters & ACKs
 The BAP transport layer is strictly sequential. Every message sent to the cluster includes a Sequence ID (0x00 to 0x0F / 0-15).
-You must wait for the cluster to send an Acknowledge (ACK, starting with 0x30 or 0x40) containing your expected sequence number before sending the next frame.
+You must wait for the cluster to send an Acknowledge (ACK, starting 0xB0) containing your expected sequence number before sending the next frame.
 If the cluster is busy rendering, it might reply with a 0x9X (Hardware Busy) ACK. You must wait (~50-100ms) and retry the same sequence.
 
 ### Heartbeat / Keep-Alive
