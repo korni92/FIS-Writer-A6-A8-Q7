@@ -1,8 +1,13 @@
 # Audi A8 DIS (Instrument Cluster)
 
-**Tested / observed on:** Audi A8 4E (D3) with MMI 2G / 2G High with PeakCan. Code is for PeakCan
+**Tested / observed on:** Audi A8 4E (D3) with MMI 2G / 2G High with PeakCan.
 
 <img width="997" height="771" alt="cluster" src="https://github.com/user-attachments/assets/94657e35-08e7-4df5-9fb7-f312ba62fa5d" />
+
+** Audi BAP DIS Protocol: The Instrument Cluster State Machine
+Through extensive reverse engineering, we have decoded how the Audi Instrument Cluster (Tacho) manages its display memory. The cluster does not draw text directly to the screen when receiving a message. Instead, it operates on a VRAM (Video RAM) Pointer State Machine.
+
+Understanding this concept is the key to creating fast, flicker-free, and bus-friendly custom interfaces without crashing the cluster.
 
 **CAN Bus:** Cluster **500 kbps**
 
@@ -17,7 +22,7 @@ Every CAN frame uses **8 bytes**:
 - **Byte 0** = Protocol Header 
 - **Bytes 1–7** = Payload
 Only Open Request, Heartbeat / Keep-Alive and Ping-Pong doesn't have this specific Byte 0 Protocol Header
-In the further documentation the Byte 0 is not added to the paiload for easier writing. 
+In the further documentation the Byte 0 is not added to the paiload for easier writing/reading. 
 
 Byte 0 of the protocol consists of two parts:
 * **High Nibble (4 bits):** Packet Type
@@ -33,13 +38,18 @@ Byte 0 of the protocol consists of two parts:
 **Sequence Counter & Transaction ID Rules**
 * **Standard Increment:** The sender generally increments the counter modulo 16: `next frame = (current + 1) % 16`.
 * **ACK Handling:** After receiving an `ACK(N)` (e.g., `0xB5`), the next transmitted frame must start with Sequence ID `N` (e.g., `5`).
-* **The Transaction ID (ReqID) Concept:** The sequence counter is not just a packet counter; it acts as a logical Transaction ID. When the cluster sends an asynchronous logical response (such as a parameter response or a `3B` zone confirmation), it will stamp the response with the **exact same Sequence ID** that was used in your initial request. This allows the system to securely pair requests and responses, even if hundreds of `0xA3` Keep-Alive pings were exchanged in the meantime.
+* **The Transaction ID (ReqID) Concept:** The sequence counter is not just a packet counter; it acts as a logical Transaction ID. When the cluster sends an asynchronous logical response (such as a parameter response or a `3B` zone confirmation), it will stamp the response with the **exact same Sequence ID** that was used in your last send data block matching the zone. This allows the system to securely pair requests and responses, even if hundreds of `0xA3` Keep-Alive pings were exchanged in the meantime.
+
+2. Sequence Counters & ACKs
+The BAP transport layer is strictly sequential. Every message sent to the cluster includes a Sequence ID (0x00 to 0x0F / 0-15).
+You must wait for the cluster to send an Acknowledge (ACK, starting with 0x30 or 0x40) containing your expected sequence number before sending the next frame.
+If the cluster is busy rendering, it might reply with a 0x9X (Hardware Busy) ACK. You must wait (~50-100ms) and retry the same sequence.
 
 ### Heartbeat / Keep-Alive
-Both sides must keep sending heartbeats or the channel dies after ~5 seconds silence from cluster (`0x491`).
+Both sides must keep sending heartbeats or the channel dies after ~5 seconds silence from cluster (`0x491`). Usually the reciever of the `open request` sends A3.
 
-- Ping: `A3` (sent by both sides)
-- Pong: `A1 0F 8A FF 4A FF` (typical response)
+- Ping: `A3` (are you stil there?)
+- Pong: `A1 0F 8A FF 4A FF` (yes I am!)
 
 ## 2. Handshake & Reconnection Sequence (Critical!)
 
@@ -51,10 +61,13 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 → MMI:   A0 0F 8A FF 4A FF
 ← Cluster: A1 0F 8A FF 4A FF
 
+The MMI takes the active part in opening the channel. The cluster will not do this. 
+
 2. **Ping-Pong Stabilization** (~1 second)
 ← Cluster: A3 ...
 → MMI:     A1 0F 8A FF 4A FF
 (repeat until stable)
+
 
 3. **Parameter Exchange** (strictly sequential – wait for ACK after each!)
 
@@ -62,7 +75,7 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 |------|-----------|--------------------------------|------------------------------------------------------|
 | 1    | → MMI     | 00 02 4D 02                    | Param Request 1 (Seq 0)                              |
 |      | ← Cluster | BX                             | ACK from Cluster (Seq 1)                             |
-|      | ← Cluster | 01 03 48 02 02                 | Param Response (Seq 0)                               |
+|      | ← Cluster | 01 03 48 02 02                 | Param Response (Seq 0) (changes with ignition on off)|
 |      | → MMI     | BX                             | ACK from MMI (Seq 1)                                 |
 | Delay| ← Cluster | A3                             | Cluster pauses to process. Keep responding to PINGs! |
 | Delay| → MMI     | A1 0F 8A FF 4A FF              | send PONG                                            |
@@ -83,19 +96,19 @@ This full sequence **must** be performed after power-on, after >5s silence, or a
 | 6    | → Cluster | A3                             | Channel Open PING                                    |
 |      | → MMI     | A1 0F 8A FF 4A FF              | Channel Open PONG                                    |
 
-Now needing to claim the desired screens
+It's important to tell the cluster which screen Display Options we want to write to
 
 | Step | Direction | Payload (after header)         | Notes                                                |
 |------|-----------|--------------------------------|------------------------------------------------------|
-| 7    | → MMI     | 30 01 01                       | Claim Area 1 (Seq 4)                                 |
+| 7    | → MMI     | 30 01 01                       | Claim Area 1 top line (Seq 4)                        |
 |      | ← Cluster | BX                             | ACK from Cluster (Seq 5)                             |
 |      | ← Cluster | 31 03 01 01 04                 | Param Response (Seq 6)                               |
 |      | → MMI     | BX                             | ACK from MMI (Seq 7)                                 |
-|      | → MMI     | 30 01 02                       | Claim Area 2 (Seq 5)                                 |
+|      | → MMI     | 30 01 02                       | Claim Area 2 middle part (Seq 5)                     |
 |      | ← Cluster | BX                             | ACK from Cluster (Seq 6)                             |
 |      | ← Cluster | 31 03 02 01 04                 | Param Response (Seq 7)                               |
 |      | → MMI     | BX                             | ACK from MMI (Seq 8)                                 |
-|      | → MMI     | 30 01 03                       | Claim Area 3 (Seq 6)                                 |
+|      | → MMI     | 30 01 03                       | Claim Area 3 navigation screen(Seq 6)                |
 |      | ← Cluster | BX                             | ACK from Cluster (Seq 7)                             |
 |      | ← Cluster | 31 03 03 01 04                 | Param Response (Seq 8)                               |
 |      | → MMI     | BX                             | ACK from MMI (Seq 9)                                 |
@@ -108,10 +121,23 @@ Now needing to claim the desired screens
 Claim Area:
 36 01 01 -> Top Line of the cluster (where Radio Station is displayed)
 36 01 02 -> To write to the middle section
-to clear an entire area write 30 instead of 36
+36 01 03 -> To write to the Nav screen
+
+###The Holy Trinity of Opcodes
+36 01 XX (Claim / Focus Pointer):
+This tells the cluster: "Set your internal memory pointer to Zone XX." It opens the context. You cannot write data unless the pointer is set to your target zone.
+
+E0, E2, E4 (Write to RAM):
+These commands write text, colors, or cursor positions into the background buffer of the currently focused zone. This does not update the physical screen yet!
+E2 and E4 can only be used, when the pointer/claimed Zone is at 02. Otherwiese the cluster will simply ignore these opcodes. Pointer/Claim MUST Show to the Zone matching the 
+desired line to send data to. Having pointer/claim at 36 01 01 (top line) and using `E0 AA 05` for middle part, will result in the cluster ignoring this data, or when pointer/Claim at 36 01 02 and sending data to line 01-04. 
+
+32 01 XX (Release / Render):
+This is the "Execute" command. It tells the cluster: "Take whatever is currently sitting in the VRAM buffer of Zone XX and push it to the physical LCD screen."
+The advantage is, you can preload data to the desired area and release when you want to. When VRAM Buffer is released, it Shows its latest content. 
 
 Write Data:
-`E0 AA BB 00 XX XX XX
+`E0 AA BB LL XX XX XX
 XX XX XX XX XX XX XX`
 
 `E0: command to write
@@ -151,6 +177,9 @@ Usually it looks like this when the whole content is replaced:
 |← Cluster| `3B 02 01 03`                    | cluster confirms that it shows top line  |
 |→ MMI    | `ACK`                            | ACK                                      |
 
+Pro-Tip: Smart Tracking (Zero-Overhead Updates)
+The pointer stays in the last claimed zone until someone else (like the OEM Radio) claims a different zone.
+If you are already in Zone 02 (e.g., scrolling through a menu), you do not need to send 36 01 02 again! You simply send the new cursor position (E4) and the Render command (32 01 02). This cuts CAN bus traffic in half and makes your UI smooth.
 
 ## 4. Important Opcodes
 
@@ -165,7 +194,7 @@ Usually it looks like this when the whole content is replaced:
 | `E4`   | `E4 ...`                         | Menu/highlight control                                      |
 | `E2`   | `E2 01 BB`                       | Force source (Phone=01, Media=06, ...)                      |
 | `3B`   | `3B 02 AA EE`                    | Cluster confirmation after Release and Status Code          |
-| `09`   | `09 ...`                         | Error from Cluster                                          |
+| `09`   | `09 ...`                         | BAP Error                                                   |
 | `DC`   | `DC FF GG HH`                    | Draw Navigation Arrow (Length + Group + Data)               |
 | `DE`   | `DE JJ KK.`                      | Draw Navigation Distance Bar (01 + Fill level, 00 hides)    |
 
@@ -223,6 +252,25 @@ Receiving a `0x9X` response does **not** mean "wait X * 10 milliseconds". The `X
 
 **Fatal Error (`0x09`)**
 If you receive a payload indicating a fatal error (e.g., `0x09 02 03 E0` inside a `0x1X` DATA END frame), you have violated the protocol's state machine. Common causes include trying to write to a zone without claiming it first, or failing to release a zone properly. This causes a crash in the cluster's internal parser. To recover, you must send a `0xA8` (Channel End / Reset) to clear the cluster's buffers and initiate a completely new `0xA0` handshake.
+
+
+03 E0: "You sent payload E0 but I don't know where to put it!"
+Cause: You tried to send data (E0/E4) without claiming a zone (36) first, or you previously released/stopped the zone and forgot to reclaim it.
+Solution: Always ensure your state machine tracks the current_active_zone. If it doesn't match your target, send 36 first.
+
+The A8 Command (TP_RESET / The Kill Switch)
+A8 is the logical channel disconnect. The cluster will send A8 to you if:
+- You ignore a 09 error and keep spamming data.
+- You take too long to respond to a Ping (TP_PING).
+- The car goes to sleep (Kl.15 / Ignition OFF).
+
+The "Fail-Fast" Rule: If you receive an A8, your code must immediately stop sending data, flush all transmit queues, and mark tacho_connected = false. You must wait, and then initiate a completely fresh A0 -> A1 handshake. If you keep sending data after an A8, your messages will timeout indefinitely and the cluster will not to react.
+
+Eviction Status for OPCODE`3B` (The Car Taking Over)
+Sometimes, the car needs the screen (e.g., for a low-fuel warning or ice warning).
+When you send a Render command (32), the cluster might reply with a confirm message ending in 00 or 02 instead of the successful 03 or 04.
+This means Eviction. The cluster is denying your render request.
+Protocol compliance: You must be a good guest. Send 34 01 XX (Stop/Abort Zone) immediately to hand control back to the car. Wait 2-3 seconds, then try to redraw your UI.
 
 ### DD Text Length Calculation
 Len = 2 + number_of_characters
