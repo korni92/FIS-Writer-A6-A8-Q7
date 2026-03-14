@@ -276,10 +276,9 @@ This means Eviction. The cluster is denying your render request.
 Protocol compliance: You must be a good guest. Send 34 01 XX (Stop/Abort Zone) immediately to hand control back to the car. Wait 2-3 seconds, then try to redraw your UI.
 
 ### DD Text Length Calculation
-Len = 2 + number_of_characters
- ↑         └───────────────┘
+Len = following Payload of data, expt Byte 0
 
-Example: `"Hello"` (5 chars) → `E0 07 01 00 48 65 6C 6C 6F`
+Example: `"Hello"` (LineID + Text color + 5 chars) → `E0 07 01 00 48 65 6C 6C 6F`
 
 ### LL Text color
 Line ID 06-09:
