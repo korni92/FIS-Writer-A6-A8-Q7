@@ -37,6 +37,7 @@ Byte 0 of the protocol consists of two parts:
 
 **Sequence Counter & Transaction ID Rules**
 * **Standard Increment:** The sender generally increments the counter modulo 16: `next frame = (current + 1) % 16`.
+* **seperate counter for rx/tx side** The MMI uses the clusters last counter to send `B0 ACK` and the cluster ueses MMIs counter to send matching `B0 ACK`
 * **ACK Handling:** After receiving an `ACK(N)` (e.g., `0xB5`), the next transmitted frame must start with Sequence ID `N` (e.g., `5`).
 * **The Transaction ID (ReqID) Concept:** The sequence counter is not just a packet counter; it acts as a logical Transaction ID. When the cluster sends an asynchronous logical response (such as a parameter response or a `3B` zone confirmation), it will stamp the response with the **exact same Sequence ID** that was used in your last send data block matching the zone. This allows the system to securely pair requests and responses, even if hundreds of `0xA3` Keep-Alive pings were exchanged in the meantime.
 
@@ -50,6 +51,8 @@ Both sides must keep sending heartbeats or the channel dies after ~5 seconds sil
 
 - Ping: `A3` (are you stil there?)
 - Pong: `A1 0F 8A FF 4A FF` (yes I am!)
+
+Both sides work asyncron!
 
 ## 2. Handshake & Reconnection Sequence (Critical!)
 
