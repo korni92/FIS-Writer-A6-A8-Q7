@@ -242,8 +242,8 @@ If you are already in Zone 02 (e.g., scrolling through a menu), you do not need 
 
 ### EE Status Code (for opcode `3B`)
 - `00` → Back to Trip Computer
-- `01` → Ready (Cluster screen is free again after showing a warning)
-- `02` → Busy (Cluster is actively displaying a vehicle warning/info. Must retry 32 release later)
+- `01` → Showing after Busy (Success) (Cluster screen is free again after showing a warning and displaying send data)
+- `02` → Busy (Cluster is actively displaying a vehicle warning/info. Will show content automatically after sending status 01)
 - `03` → Showing (Success)
 - `04` → Stops showing (Success)
 - `E0` → FATAL ERROR (needs Hardware Restart)
@@ -256,6 +256,8 @@ Receiving a `0x9X` response does **not** mean "wait X * 10 milliseconds". The `X
 **Fatal Error (`0x09`)**
 If you receive a payload indicating a fatal error (e.g., `0x09 02 03 E0` inside a `0x1X` DATA END frame), you have violated the protocol's state machine. Common causes include trying to write to a zone without claiming it first, or failing to release a zone properly. This causes a crash in the cluster's internal parser. To recover, you must send a `0xA8` (Channel End / Reset) to clear the cluster's buffers and initiate a completely new `0xA0` handshake.
 
+**Busy `02`/showing after busy `01`
+When the zone is claimed, and the cluster needs it for itself: it sends lineID + 00. When the cluster is finishing shownig whatever it needed the screen for it will send LineID + 01 and showing the last screen content of the zone from VRAM. When trying to new data while cluster is using the zone itself, it will tell LineID + 02, when its done it will send LineID + ß1 and start showing the content. 
 
 03 E0: "You sent payload E0 but I don't know where to put it!"
 Cause: You tried to send data (E0/E4) without claiming a zone (36) first, or you previously released/stopped the zone and forgot to reclaim it.
