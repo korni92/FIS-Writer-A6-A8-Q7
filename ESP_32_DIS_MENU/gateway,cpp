@@ -1,0 +1,85 @@
+#include <string.h>
+#include "gateway.h"
+#include "can_data.h"
+
+// 0 = Debug off
+// 1 = just text
+// 2 = just MMI/CAR CAN
+// 3 = just cluster CAN
+// 4 = All CAN messages (for debugging, can be very verbose) - also passthrough messages
+uint8_t debug_level = 4; 
+volatile uint32_t last_bus_activity = 0;
+
+// --- automotive Flooding Protection ---
+// max x messages per bus per tick, to prevent flooding and to avoid blocking the CPU (gives FreeRTOS some breathing room).
+const uint8_t MAX_MSG_PER_TICK = 15; 
+
+void print_raw_can(const char* direction, const can_msg_t* msg) {
+    if (debug_level <= 1) return; 
+    if (debug_level == 2 && strstr(direction, "TACHO") != nullptr) return;
+    if (debug_level == 3 && strstr(direction, "MMI") != nullptr) return;
+
+    Serial.printf("%-15s | ID: 0x%03X | Len: %d | Data: ", direction, msg->id, msg->dlc);
+    for (int i = 0; i < msg->dlc; i++) {
+        Serial.printf("%02X ", msg->data[i]);
+    }
+    Serial.println();
+}
+
+void gateway_init() {
+    Serial.println("GATEWAY: Initialisiere Smart Router...");
+    hal_can_init();
+}
+
+void gateway_tick() {
+    can_msg_t msg;
+    uint8_t processed_mmi = 0;
+    uint8_t processed_tacho = 0;
+
+    // =========================================================================
+    // 1. MMI-SIDE (BUS_TACHO_IN)
+    // =========================================================================
+    while (processed_mmi < MAX_MSG_PER_TICK && hal_can_receive(BUS_TACHO_IN, &msg)) {
+        last_bus_activity = millis();
+        update_vehicle_data_from_can(msg.id, msg.data, msg.dlc);
+
+        if (msg.id == 0x490) {
+            print_raw_can("MMI -> ESP32", &msg);
+            stack_mmi_rx(&msg);
+        } else {
+            hal_can_send(BUS_TACHO_OUT, &msg);
+        }
+        processed_mmi++;
+    }
+
+    // =========================================================================
+    // 2. CLUSTER SIDE (BUS_TACHO_OUT)
+    // =========================================================================
+    while (processed_tacho < MAX_MSG_PER_TICK && hal_can_receive(BUS_TACHO_OUT, &msg)) {
+        last_bus_activity = millis();
+        update_vehicle_data_from_can(msg.id, msg.data, msg.dlc);
+
+        if (msg.id == 0x491) {
+            print_raw_can("TACHO -> ESP32", &msg);
+            stack_tacho_rx(&msg);
+        } else {
+            hal_can_send(BUS_TACHO_IN, &msg);
+        }
+        processed_tacho++;
+    }
+
+    // OPptional: wanrnig at strong bursts (only if debug = 4)
+    if (debug_level == 4 && (processed_mmi == MAX_MSG_PER_TICK || processed_tacho == MAX_MSG_PER_TICK)) {
+        Serial.println("GATEWAY: [WARNUNG] CAN-Burst erkannt. Quota-Limit erreicht.");
+    }
+
+    // =========================================================================
+    // 3. COMFORT/ DRIVETRAIN CAN PREP
+    // =========================================================================
+    /*
+    uint8_t processed_comfort = 0;
+    while (processed_comfort < MAX_MSG_PER_TICK && hal_can_receive(BUS_COMFORT, &msg)) {
+        processed_comfort++;
+    }
+    */
+}
